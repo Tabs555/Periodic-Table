@@ -208,6 +208,9 @@ namespace Periodic_GUI
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.Molarity = new System.Windows.Forms.TabPage();
+            this.clearMolality = new System.Windows.Forms.Button();
+            this.clearConversion = new System.Windows.Forms.Button();
+            this.clearMolarity = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.densityConvert = new System.Windows.Forms.RichTextBox();
             this.button20 = new System.Windows.Forms.Button();
@@ -251,9 +254,11 @@ namespace Periodic_GUI
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.clearMolarity = new System.Windows.Forms.Button();
-            this.clearConversion = new System.Windows.Forms.Button();
-            this.clearMolality = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabPage1.SuspendLayout();
             this.Balancer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -1553,10 +1558,10 @@ namespace Periodic_GUI
             // 
             // Molybdenum
             // 
+            resources.ApplyResources(this.Molybdenum, "Molybdenum");
             this.Molybdenum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(150)))));
             this.Molybdenum.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Molybdenum.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            resources.ApplyResources(this.Molybdenum, "Molybdenum");
             this.Molybdenum.Name = "Molybdenum";
             this.Molybdenum.UseVisualStyleBackColor = false;
             this.Molybdenum.Click += new System.EventHandler(this.molybdenum_Click);
@@ -1863,245 +1868,246 @@ namespace Periodic_GUI
             this.MolarMass.Controls.Add(this.button6);
             this.MolarMass.Controls.Add(this.button7);
             this.MolarMass.Controls.Add(this.button8);
+            this.MolarMass.Controls.Add(this.label7);
             resources.ApplyResources(this.MolarMass, "MolarMass");
             this.MolarMass.Name = "MolarMass";
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.DarkGray;
             resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.Color.DarkGray;
             this.label2.Name = "label2";
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.Gray;
             resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Gray;
             this.label1.Name = "label1";
             // 
             // mmProduct3
             // 
+            resources.ApplyResources(this.mmProduct3, "mmProduct3");
             this.mmProduct3.BackColor = System.Drawing.Color.LightCyan;
             this.mmProduct3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmProduct3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.mmProduct3, "mmProduct3");
             this.mmProduct3.Name = "mmProduct3";
             this.mmProduct3.ReadOnly = true;
             this.mmProduct3.TextChanged += new System.EventHandler(this.mmProduct3_TextChanged);
             // 
             // mmProduct2
             // 
+            resources.ApplyResources(this.mmProduct2, "mmProduct2");
             this.mmProduct2.BackColor = System.Drawing.Color.LightCyan;
             this.mmProduct2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmProduct2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.mmProduct2, "mmProduct2");
             this.mmProduct2.Name = "mmProduct2";
             this.mmProduct2.ReadOnly = true;
             this.mmProduct2.TextChanged += new System.EventHandler(this.mmProduct2_TextChanged);
             // 
             // mmProduct1
             // 
+            resources.ApplyResources(this.mmProduct1, "mmProduct1");
             this.mmProduct1.BackColor = System.Drawing.Color.LightCyan;
             this.mmProduct1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmProduct1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.mmProduct1, "mmProduct1");
             this.mmProduct1.Name = "mmProduct1";
             this.mmProduct1.ReadOnly = true;
             this.mmProduct1.TextChanged += new System.EventHandler(this.mmProduct1_TextChanged);
             // 
             // mmReactant3
             // 
+            resources.ApplyResources(this.mmReactant3, "mmReactant3");
             this.mmReactant3.BackColor = System.Drawing.Color.LightCyan;
             this.mmReactant3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmReactant3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.mmReactant3, "mmReactant3");
             this.mmReactant3.Name = "mmReactant3";
             this.mmReactant3.ReadOnly = true;
             this.mmReactant3.TextChanged += new System.EventHandler(this.mmReactant3_TextChanged);
             // 
             // mmReactant2
             // 
+            resources.ApplyResources(this.mmReactant2, "mmReactant2");
             this.mmReactant2.BackColor = System.Drawing.Color.LightCyan;
             this.mmReactant2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmReactant2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.mmReactant2, "mmReactant2");
             this.mmReactant2.Name = "mmReactant2";
             this.mmReactant2.ReadOnly = true;
             this.mmReactant2.TextChanged += new System.EventHandler(this.mmReactant2_TextChanged);
             // 
             // mmReactant1
             // 
+            resources.ApplyResources(this.mmReactant1, "mmReactant1");
             this.mmReactant1.BackColor = System.Drawing.Color.LightCyan;
             this.mmReactant1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmReactant1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.mmReactant1, "mmReactant1");
             this.mmReactant1.Name = "mmReactant1";
             this.mmReactant1.ReadOnly = true;
             this.mmReactant1.TextChanged += new System.EventHandler(this.mmReactant1_TextChanged);
             // 
             // product3
             // 
+            resources.ApplyResources(this.product3, "product3");
             this.product3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(196)))), ((int)(((byte)(157)))));
             this.product3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.product3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.product3, "product3");
             this.product3.Name = "product3";
             this.product3.ReadOnly = true;
             this.product3.TextChanged += new System.EventHandler(this.product3_TextChanged);
             // 
             // product1
             // 
+            resources.ApplyResources(this.product1, "product1");
             this.product1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(196)))), ((int)(((byte)(157)))));
             this.product1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.product1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.product1, "product1");
             this.product1.Name = "product1";
             this.product1.ReadOnly = true;
             this.product1.TextChanged += new System.EventHandler(this.product1_TextChanged);
             // 
             // product2
             // 
+            resources.ApplyResources(this.product2, "product2");
             this.product2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(196)))), ((int)(((byte)(157)))));
             this.product2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.product2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.product2, "product2");
             this.product2.Name = "product2";
             this.product2.ReadOnly = true;
             this.product2.TextChanged += new System.EventHandler(this.product2_TextChanged);
             // 
             // reactant3
             // 
+            resources.ApplyResources(this.reactant3, "reactant3");
             this.reactant3.BackColor = System.Drawing.Color.RosyBrown;
             this.reactant3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reactant3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.reactant3, "reactant3");
             this.reactant3.Name = "reactant3";
             this.reactant3.ReadOnly = true;
             this.reactant3.TextChanged += new System.EventHandler(this.reactant3_TextChanged);
             // 
             // reactant1
             // 
+            resources.ApplyResources(this.reactant1, "reactant1");
             this.reactant1.BackColor = System.Drawing.Color.RosyBrown;
             this.reactant1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reactant1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.reactant1, "reactant1");
             this.reactant1.Name = "reactant1";
             this.reactant1.ReadOnly = true;
             this.reactant1.TextChanged += new System.EventHandler(this.reactant1_TextChanged);
             // 
             // reactant2
             // 
+            resources.ApplyResources(this.reactant2, "reactant2");
             this.reactant2.BackColor = System.Drawing.Color.RosyBrown;
             this.reactant2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.reactant2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.reactant2, "reactant2");
             this.reactant2.Name = "reactant2";
             this.reactant2.ReadOnly = true;
             this.reactant2.TextChanged += new System.EventHandler(this.reactant2_TextChanged);
             // 
             // mmEquation6
             // 
+            resources.ApplyResources(this.mmEquation6, "mmEquation6");
             this.mmEquation6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(196)))), ((int)(((byte)(157)))));
             this.mmEquation6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmEquation6.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.mmEquation6, "mmEquation6");
             this.mmEquation6.Name = "mmEquation6";
             this.mmEquation6.ReadOnly = true;
             this.mmEquation6.TextChanged += new System.EventHandler(this.mmEquation6_TextChanged);
             // 
             // mmEquation5
             // 
+            resources.ApplyResources(this.mmEquation5, "mmEquation5");
             this.mmEquation5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(196)))), ((int)(((byte)(157)))));
             this.mmEquation5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmEquation5.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.mmEquation5, "mmEquation5");
             this.mmEquation5.Name = "mmEquation5";
             this.mmEquation5.ReadOnly = true;
             this.mmEquation5.TextChanged += new System.EventHandler(this.mmEquation5_TextChanged);
             // 
             // mmEquation4
             // 
+            resources.ApplyResources(this.mmEquation4, "mmEquation4");
             this.mmEquation4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(196)))), ((int)(((byte)(157)))));
             this.mmEquation4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmEquation4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.mmEquation4, "mmEquation4");
             this.mmEquation4.Name = "mmEquation4";
             this.mmEquation4.ReadOnly = true;
             this.mmEquation4.TextChanged += new System.EventHandler(this.mmEquation4_TextChanged);
             // 
             // mmEquation3
             // 
+            resources.ApplyResources(this.mmEquation3, "mmEquation3");
             this.mmEquation3.BackColor = System.Drawing.Color.RosyBrown;
             this.mmEquation3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmEquation3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.mmEquation3, "mmEquation3");
             this.mmEquation3.Name = "mmEquation3";
             this.mmEquation3.ReadOnly = true;
             this.mmEquation3.TextChanged += new System.EventHandler(this.mmEquation3_TextChanged);
             // 
             // mmEquation2
             // 
+            resources.ApplyResources(this.mmEquation2, "mmEquation2");
             this.mmEquation2.BackColor = System.Drawing.Color.RosyBrown;
             this.mmEquation2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmEquation2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.mmEquation2, "mmEquation2");
             this.mmEquation2.Name = "mmEquation2";
             this.mmEquation2.ReadOnly = true;
             this.mmEquation2.TextChanged += new System.EventHandler(this.mmEquation2_TextChanged);
             // 
             // mmEquation1
             // 
+            resources.ApplyResources(this.mmEquation1, "mmEquation1");
             this.mmEquation1.BackColor = System.Drawing.Color.RosyBrown;
             this.mmEquation1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmEquation1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.mmEquation1, "mmEquation1");
             this.mmEquation1.Name = "mmEquation1";
             this.mmEquation1.ReadOnly = true;
             this.mmEquation1.TextChanged += new System.EventHandler(this.mmEquation1_TextChanged);
             // 
             // pictureBox5
             // 
+            resources.ApplyResources(this.pictureBox5, "pictureBox5");
             this.pictureBox5.BackColor = System.Drawing.Color.Gray;
             this.pictureBox5.Image = global::Periodic_GUI.Properties.Resources.addSign13;
-            resources.ApplyResources(this.pictureBox5, "pictureBox5");
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox8
             // 
+            resources.ApplyResources(this.pictureBox8, "pictureBox8");
             this.pictureBox8.BackColor = System.Drawing.Color.Gray;
             this.pictureBox8.Image = global::Periodic_GUI.Properties.Resources.addSign13;
-            resources.ApplyResources(this.pictureBox8, "pictureBox8");
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.TabStop = false;
             // 
             // pictureBox9
             // 
+            resources.ApplyResources(this.pictureBox9, "pictureBox9");
             this.pictureBox9.BackColor = System.Drawing.Color.Gray;
             this.pictureBox9.Image = global::Periodic_GUI.Properties.Resources.addSign13;
-            resources.ApplyResources(this.pictureBox9, "pictureBox9");
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.TabStop = false;
             // 
             // pictureBox10
             // 
+            resources.ApplyResources(this.pictureBox10, "pictureBox10");
             this.pictureBox10.BackColor = System.Drawing.Color.Gray;
             this.pictureBox10.Image = global::Periodic_GUI.Properties.Resources.addSign13;
-            resources.ApplyResources(this.pictureBox10, "pictureBox10");
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.TabStop = false;
             // 
             // pictureBox11
             // 
+            resources.ApplyResources(this.pictureBox11, "pictureBox11");
             this.pictureBox11.BackColor = System.Drawing.Color.Gray;
             this.pictureBox11.Image = global::Periodic_GUI.Properties.Resources.yeilds;
-            resources.ApplyResources(this.pictureBox11, "pictureBox11");
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.TabStop = false;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
             resources.ApplyResources(this.button1, "button1");
+            this.button1.BackColor = System.Drawing.Color.Gray;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.button1.FlatAppearance.BorderSize = 5;
             this.button1.Name = "button1";
@@ -2109,56 +2115,56 @@ namespace Periodic_GUI
             // 
             // reactantBackground1
             // 
-            this.reactantBackground1.BackColor = System.Drawing.Color.Silver;
             resources.ApplyResources(this.reactantBackground1, "reactantBackground1");
+            this.reactantBackground1.BackColor = System.Drawing.Color.Silver;
             this.reactantBackground1.FlatAppearance.BorderSize = 0;
             this.reactantBackground1.Name = "reactantBackground1";
             this.reactantBackground1.UseVisualStyleBackColor = false;
             // 
             // reactantBackground2
             // 
-            this.reactantBackground2.BackColor = System.Drawing.Color.DarkGray;
             resources.ApplyResources(this.reactantBackground2, "reactantBackground2");
+            this.reactantBackground2.BackColor = System.Drawing.Color.DarkGray;
             this.reactantBackground2.FlatAppearance.BorderSize = 0;
             this.reactantBackground2.Name = "reactantBackground2";
             this.reactantBackground2.UseVisualStyleBackColor = false;
             // 
             // reactantBackgorund3
             // 
-            this.reactantBackgorund3.BackColor = System.Drawing.Color.Gray;
             resources.ApplyResources(this.reactantBackgorund3, "reactantBackgorund3");
+            this.reactantBackgorund3.BackColor = System.Drawing.Color.Gray;
             this.reactantBackgorund3.FlatAppearance.BorderSize = 0;
             this.reactantBackgorund3.Name = "reactantBackgorund3";
             this.reactantBackgorund3.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Silver;
             resources.ApplyResources(this.button4, "button4");
+            this.button4.BackColor = System.Drawing.Color.Silver;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.Name = "button4";
             this.button4.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.DarkGray;
             resources.ApplyResources(this.button5, "button5");
+            this.button5.BackColor = System.Drawing.Color.DarkGray;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.Name = "button5";
             this.button5.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.Gray;
             resources.ApplyResources(this.button6, "button6");
+            this.button6.BackColor = System.Drawing.Color.Gray;
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.Name = "button6";
             this.button6.UseVisualStyleBackColor = false;
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.Silver;
             resources.ApplyResources(this.button7, "button7");
+            this.button7.BackColor = System.Drawing.Color.Silver;
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.Name = "button7";
             this.button7.UseVisualStyleBackColor = false;
@@ -2166,8 +2172,8 @@ namespace Periodic_GUI
             // 
             // button8
             // 
-            this.button8.BackColor = System.Drawing.Color.DarkGray;
             resources.ApplyResources(this.button8, "button8");
+            this.button8.BackColor = System.Drawing.Color.DarkGray;
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.Name = "button8";
             this.button8.UseVisualStyleBackColor = false;
@@ -2210,22 +2216,59 @@ namespace Periodic_GUI
             this.Molarity.Controls.Add(this.molesLabel);
             this.Molarity.Controls.Add(this.molesMolarity);
             this.Molarity.Controls.Add(this.molaritySolve);
+            this.Molarity.Controls.Add(this.label6);
+            this.Molarity.Controls.Add(this.label5);
+            this.Molarity.Controls.Add(this.label4);
+            this.Molarity.Controls.Add(this.label3);
             resources.ApplyResources(this.Molarity, "Molarity");
             this.Molarity.Name = "Molarity";
             // 
+            // clearMolality
+            // 
+            resources.ApplyResources(this.clearMolality, "clearMolality");
+            this.clearMolality.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(122)))), ((int)(((byte)(122)))));
+            this.clearMolality.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearMolality.FlatAppearance.BorderColor = System.Drawing.Color.MistyRose;
+            this.clearMolality.FlatAppearance.BorderSize = 2;
+            this.clearMolality.Name = "clearMolality";
+            this.clearMolality.UseVisualStyleBackColor = false;
+            this.clearMolality.Click += new System.EventHandler(this.clearMolality_Click);
+            // 
+            // clearConversion
+            // 
+            resources.ApplyResources(this.clearConversion, "clearConversion");
+            this.clearConversion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(122)))), ((int)(((byte)(122)))));
+            this.clearConversion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearConversion.FlatAppearance.BorderColor = System.Drawing.Color.MistyRose;
+            this.clearConversion.FlatAppearance.BorderSize = 2;
+            this.clearConversion.Name = "clearConversion";
+            this.clearConversion.UseVisualStyleBackColor = false;
+            this.clearConversion.Click += new System.EventHandler(this.clearConversion_Click);
+            // 
+            // clearMolarity
+            // 
+            resources.ApplyResources(this.clearMolarity, "clearMolarity");
+            this.clearMolarity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(122)))), ((int)(((byte)(122)))));
+            this.clearMolarity.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.clearMolarity.FlatAppearance.BorderColor = System.Drawing.Color.MistyRose;
+            this.clearMolarity.FlatAppearance.BorderSize = 2;
+            this.clearMolarity.Name = "clearMolarity";
+            this.clearMolarity.UseVisualStyleBackColor = false;
+            this.clearMolarity.Click += new System.EventHandler(this.clearMolarity_Click);
+            // 
             // button19
             // 
-            this.button19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             resources.ApplyResources(this.button19, "button19");
+            this.button19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             this.button19.ForeColor = System.Drawing.Color.White;
             this.button19.Name = "button19";
             this.button19.UseVisualStyleBackColor = false;
             // 
             // densityConvert
             // 
+            resources.ApplyResources(this.densityConvert, "densityConvert");
             this.densityConvert.BackColor = System.Drawing.Color.LightCyan;
             this.densityConvert.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.densityConvert, "densityConvert");
             this.densityConvert.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.densityConvert.Name = "densityConvert";
             this.densityConvert.TextChanged += new System.EventHandler(this.density_TextChanged);
@@ -2233,17 +2276,17 @@ namespace Periodic_GUI
             // 
             // button20
             // 
-            this.button20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             resources.ApplyResources(this.button20, "button20");
+            this.button20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             this.button20.ForeColor = System.Drawing.Color.White;
             this.button20.Name = "button20";
             this.button20.UseVisualStyleBackColor = false;
             // 
             // molarMassConvert
             // 
+            resources.ApplyResources(this.molarMassConvert, "molarMassConvert");
             this.molarMassConvert.BackColor = System.Drawing.Color.LightCyan;
             this.molarMassConvert.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.molarMassConvert, "molarMassConvert");
             this.molarMassConvert.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.molarMassConvert.Name = "molarMassConvert";
             this.molarMassConvert.TextChanged += new System.EventHandler(this.molarMassConvert_TextChanged);
@@ -2251,24 +2294,25 @@ namespace Periodic_GUI
             // 
             // button18
             // 
-            this.button18.BackColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.button18, "button18");
+            this.button18.BackColor = System.Drawing.Color.LightGray;
             this.button18.Name = "button18";
             this.button18.UseVisualStyleBackColor = false;
             // 
             // button17
             // 
-            this.button17.BackColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.button17, "button17");
+            this.button17.BackColor = System.Drawing.Color.LightGray;
             this.button17.Name = "button17";
             this.button17.UseVisualStyleBackColor = false;
             // 
             // molalitySolve
             // 
+            resources.ApplyResources(this.molalitySolve, "molalitySolve");
             this.molalitySolve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(60)))));
+            this.molalitySolve.Cursor = System.Windows.Forms.Cursors.Hand;
             this.molalitySolve.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.molalitySolve.FlatAppearance.BorderSize = 2;
-            resources.ApplyResources(this.molalitySolve, "molalitySolve");
             this.molalitySolve.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.molalitySolve.Name = "molalitySolve";
             this.molalitySolve.UseVisualStyleBackColor = false;
@@ -2276,17 +2320,17 @@ namespace Periodic_GUI
             // 
             // button11
             // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             resources.ApplyResources(this.button11, "button11");
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             this.button11.ForeColor = System.Drawing.Color.White;
             this.button11.Name = "button11";
             this.button11.UseVisualStyleBackColor = false;
             // 
             // molalityAnswer
             // 
+            resources.ApplyResources(this.molalityAnswer, "molalityAnswer");
             this.molalityAnswer.BackColor = System.Drawing.Color.LightCyan;
             this.molalityAnswer.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.molalityAnswer, "molalityAnswer");
             this.molalityAnswer.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.molalityAnswer.Name = "molalityAnswer";
             this.molalityAnswer.TextChanged += new System.EventHandler(this.molalityAnswer_TextChanged_1);
@@ -2294,31 +2338,31 @@ namespace Periodic_GUI
             // 
             // button12
             // 
-            this.button12.BackColor = System.Drawing.Color.DimGray;
             resources.ApplyResources(this.button12, "button12");
+            this.button12.BackColor = System.Drawing.Color.DimGray;
             this.button12.Name = "button12";
             this.button12.UseVisualStyleBackColor = false;
             // 
             // button13
             // 
-            this.button13.BackColor = System.Drawing.Color.DimGray;
             resources.ApplyResources(this.button13, "button13");
+            this.button13.BackColor = System.Drawing.Color.DimGray;
             this.button13.Name = "button13";
             this.button13.UseVisualStyleBackColor = false;
             // 
             // button14
             // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             resources.ApplyResources(this.button14, "button14");
+            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             this.button14.ForeColor = System.Drawing.Color.White;
             this.button14.Name = "button14";
             this.button14.UseVisualStyleBackColor = false;
             // 
             // kgMolality
             // 
+            resources.ApplyResources(this.kgMolality, "kgMolality");
             this.kgMolality.BackColor = System.Drawing.Color.LightCyan;
             this.kgMolality.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.kgMolality, "kgMolality");
             this.kgMolality.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.kgMolality.Name = "kgMolality";
             this.kgMolality.TextChanged += new System.EventHandler(this.kgMolality_TextChanged_1);
@@ -2326,24 +2370,24 @@ namespace Periodic_GUI
             // 
             // button15
             // 
-            this.button15.BackColor = System.Drawing.Color.DimGray;
             resources.ApplyResources(this.button15, "button15");
+            this.button15.BackColor = System.Drawing.Color.DimGray;
             this.button15.Name = "button15";
             this.button15.UseVisualStyleBackColor = false;
             // 
             // button16
             // 
-            this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             resources.ApplyResources(this.button16, "button16");
+            this.button16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             this.button16.ForeColor = System.Drawing.Color.White;
             this.button16.Name = "button16";
             this.button16.UseVisualStyleBackColor = false;
             // 
             // molesMolality
             // 
+            resources.ApplyResources(this.molesMolality, "molesMolality");
             this.molesMolality.BackColor = System.Drawing.Color.LightCyan;
             this.molesMolality.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.molesMolality, "molesMolality");
             this.molesMolality.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.molesMolality.Name = "molesMolality";
             this.molesMolality.TextChanged += new System.EventHandler(this.molesMolality_TextChanged_1);
@@ -2351,10 +2395,11 @@ namespace Periodic_GUI
             // 
             // conversion
             // 
+            resources.ApplyResources(this.conversion, "conversion");
             this.conversion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(60)))));
+            this.conversion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.conversion.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.conversion.FlatAppearance.BorderSize = 2;
-            resources.ApplyResources(this.conversion, "conversion");
             this.conversion.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.conversion.Name = "conversion";
             this.conversion.UseVisualStyleBackColor = false;
@@ -2362,17 +2407,17 @@ namespace Periodic_GUI
             // 
             // molalityLabel
             // 
-            this.molalityLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             resources.ApplyResources(this.molalityLabel, "molalityLabel");
+            this.molalityLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             this.molalityLabel.ForeColor = System.Drawing.Color.White;
             this.molalityLabel.Name = "molalityLabel";
             this.molalityLabel.UseVisualStyleBackColor = false;
             // 
             // molarityConvert
             // 
+            resources.ApplyResources(this.molarityConvert, "molarityConvert");
             this.molarityConvert.BackColor = System.Drawing.Color.LightCyan;
             this.molarityConvert.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.molarityConvert, "molarityConvert");
             this.molarityConvert.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.molarityConvert.Name = "molarityConvert";
             this.molarityConvert.TextChanged += new System.EventHandler(this.molarityConvert_TextChanged);
@@ -2380,17 +2425,17 @@ namespace Periodic_GUI
             // 
             // molesLabel2
             // 
-            this.molesLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             resources.ApplyResources(this.molesLabel2, "molesLabel2");
+            this.molesLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             this.molesLabel2.ForeColor = System.Drawing.Color.White;
             this.molesLabel2.Name = "molesLabel2";
             this.molesLabel2.UseVisualStyleBackColor = false;
             // 
             // molalityConvert
             // 
+            resources.ApplyResources(this.molalityConvert, "molalityConvert");
             this.molalityConvert.BackColor = System.Drawing.Color.LightCyan;
             this.molalityConvert.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.molalityConvert, "molalityConvert");
             this.molalityConvert.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.molalityConvert.Name = "molalityConvert";
             this.molalityConvert.TextChanged += new System.EventHandler(this.molalityConvert_TextChanged);
@@ -2398,17 +2443,17 @@ namespace Periodic_GUI
             // 
             // molarityLabel
             // 
-            this.molarityLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             resources.ApplyResources(this.molarityLabel, "molarityLabel");
+            this.molarityLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             this.molarityLabel.ForeColor = System.Drawing.Color.White;
             this.molarityLabel.Name = "molarityLabel";
             this.molarityLabel.UseVisualStyleBackColor = false;
             // 
             // molarityAnswer
             // 
+            resources.ApplyResources(this.molarityAnswer, "molarityAnswer");
             this.molarityAnswer.BackColor = System.Drawing.Color.LightCyan;
             this.molarityAnswer.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.molarityAnswer, "molarityAnswer");
             this.molarityAnswer.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.molarityAnswer.Name = "molarityAnswer";
             this.molarityAnswer.TextChanged += new System.EventHandler(this.molarityAnswer_TextChanged);
@@ -2416,31 +2461,31 @@ namespace Periodic_GUI
             // 
             // eq1
             // 
-            this.eq1.BackColor = System.Drawing.Color.DimGray;
             resources.ApplyResources(this.eq1, "eq1");
+            this.eq1.BackColor = System.Drawing.Color.DimGray;
             this.eq1.Name = "eq1";
             this.eq1.UseVisualStyleBackColor = false;
             // 
             // eq2
             // 
-            this.eq2.BackColor = System.Drawing.Color.DimGray;
             resources.ApplyResources(this.eq2, "eq2");
+            this.eq2.BackColor = System.Drawing.Color.DimGray;
             this.eq2.Name = "eq2";
             this.eq2.UseVisualStyleBackColor = false;
             // 
             // litersLabel
             // 
-            this.litersLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             resources.ApplyResources(this.litersLabel, "litersLabel");
+            this.litersLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             this.litersLabel.ForeColor = System.Drawing.Color.White;
             this.litersLabel.Name = "litersLabel";
             this.litersLabel.UseVisualStyleBackColor = false;
             // 
             // litersMolarity
             // 
+            resources.ApplyResources(this.litersMolarity, "litersMolarity");
             this.litersMolarity.BackColor = System.Drawing.Color.LightCyan;
             this.litersMolarity.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.litersMolarity, "litersMolarity");
             this.litersMolarity.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.litersMolarity.Name = "litersMolarity";
             this.litersMolarity.TextChanged += new System.EventHandler(this.litersMolarity_TextChanged);
@@ -2448,24 +2493,24 @@ namespace Periodic_GUI
             // 
             // divisor1
             // 
-            this.divisor1.BackColor = System.Drawing.Color.DimGray;
             resources.ApplyResources(this.divisor1, "divisor1");
+            this.divisor1.BackColor = System.Drawing.Color.DimGray;
             this.divisor1.Name = "divisor1";
             this.divisor1.UseVisualStyleBackColor = false;
             // 
             // molesLabel
             // 
-            this.molesLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             resources.ApplyResources(this.molesLabel, "molesLabel");
+            this.molesLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(141)))), ((int)(((byte)(148)))));
             this.molesLabel.ForeColor = System.Drawing.Color.White;
             this.molesLabel.Name = "molesLabel";
             this.molesLabel.UseVisualStyleBackColor = false;
             // 
             // molesMolarity
             // 
+            resources.ApplyResources(this.molesMolarity, "molesMolarity");
             this.molesMolarity.BackColor = System.Drawing.Color.LightCyan;
             this.molesMolarity.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.molesMolarity, "molesMolarity");
             this.molesMolarity.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.molesMolarity.Name = "molesMolarity";
             this.molesMolarity.TextChanged += new System.EventHandler(this.molesMolarity_TextChanged);
@@ -2473,10 +2518,11 @@ namespace Periodic_GUI
             // 
             // molaritySolve
             // 
+            resources.ApplyResources(this.molaritySolve, "molaritySolve");
             this.molaritySolve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(60)))));
+            this.molaritySolve.Cursor = System.Windows.Forms.Cursors.Hand;
             this.molaritySolve.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.molaritySolve.FlatAppearance.BorderSize = 2;
-            resources.ApplyResources(this.molaritySolve, "molaritySolve");
             this.molaritySolve.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.molaritySolve.Name = "molaritySolve";
             this.molaritySolve.UseVisualStyleBackColor = false;
@@ -2604,35 +2650,35 @@ namespace Periodic_GUI
             this.pictureBox16.TabStop = false;
             this.pictureBox16.Click += new System.EventHandler(this.pictureBox16_Click);
             // 
-            // clearMolarity
+            // label3
             // 
-            this.clearMolarity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(122)))), ((int)(((byte)(122)))));
-            resources.ApplyResources(this.clearMolarity, "clearMolarity");
-            this.clearMolarity.FlatAppearance.BorderColor = System.Drawing.Color.MistyRose;
-            this.clearMolarity.FlatAppearance.BorderSize = 2;
-            this.clearMolarity.Name = "clearMolarity";
-            this.clearMolarity.UseVisualStyleBackColor = false;
-            this.clearMolarity.Click += new System.EventHandler(this.clearMolarity_Click);
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Name = "label3";
             // 
-            // clearConversion
+            // label4
             // 
-            this.clearConversion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(122)))), ((int)(((byte)(122)))));
-            resources.ApplyResources(this.clearConversion, "clearConversion");
-            this.clearConversion.FlatAppearance.BorderColor = System.Drawing.Color.MistyRose;
-            this.clearConversion.FlatAppearance.BorderSize = 2;
-            this.clearConversion.Name = "clearConversion";
-            this.clearConversion.UseVisualStyleBackColor = false;
-            this.clearConversion.Click += new System.EventHandler(this.clearConversion_Click);
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Name = "label4";
             // 
-            // clearMolality
+            // label5
             // 
-            this.clearMolality.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(122)))), ((int)(((byte)(122)))));
-            resources.ApplyResources(this.clearMolality, "clearMolality");
-            this.clearMolality.FlatAppearance.BorderColor = System.Drawing.Color.MistyRose;
-            this.clearMolality.FlatAppearance.BorderSize = 2;
-            this.clearMolality.Name = "clearMolality";
-            this.clearMolality.UseVisualStyleBackColor = false;
-            this.clearMolality.Click += new System.EventHandler(this.clearMolality_Click);
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Name = "label5";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Name = "label6";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Name = "label7";
             // 
             // Form1
             // 
@@ -2896,6 +2942,11 @@ namespace Periodic_GUI
         private System.Windows.Forms.Button clearMolality;
         private System.Windows.Forms.Button clearConversion;
         private System.Windows.Forms.Button clearMolarity;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
 
 
 
