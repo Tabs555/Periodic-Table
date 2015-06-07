@@ -50,6 +50,17 @@ namespace Periodic_GUI
             this.mmReactant3.SelectedText = "0g";
         }
 
+        //makes less lag
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle = cp.ExStyle | 0x2000000;
+                return cp;
+            }
+        }
+
         public void setDang(double a)
         {
             dang = a;
