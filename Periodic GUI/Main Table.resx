@@ -5572,7 +5572,7 @@
     <value>None</value>
   </data>
   <data name="mmEquation6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>971, 38</value>
+    <value>971, 36</value>
   </data>
   <data name="mmEquation6.Multiline" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -5605,7 +5605,7 @@
     <value>None</value>
   </data>
   <data name="mmEquation5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>789, 38</value>
+    <value>789, 36</value>
   </data>
   <data name="mmEquation5.Multiline" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -5638,7 +5638,7 @@
     <value>None</value>
   </data>
   <data name="mmEquation4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>607, 38</value>
+    <value>607, 36</value>
   </data>
   <data name="mmEquation4.Multiline" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -5671,7 +5671,7 @@
     <value>None</value>
   </data>
   <data name="mmEquation3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 38</value>
+    <value>22, 36</value>
   </data>
   <data name="mmEquation3.Multiline" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -5704,7 +5704,7 @@
     <value>None</value>
   </data>
   <data name="mmEquation2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>204, 38</value>
+    <value>204, 36</value>
   </data>
   <data name="mmEquation2.Multiline" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -5740,7 +5740,7 @@
     <value>Verdana, 12pt</value>
   </data>
   <data name="mmEquation1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>386, 38</value>
+    <value>386, 36</value>
   </data>
   <data name="mmEquation1.Multiline" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -5776,7 +5776,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>766, 48</value>
+    <value>766, 46</value>
   </data>
   <data name="pictureBox5.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 15</value>
@@ -5803,7 +5803,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>181, 48</value>
+    <value>181, 46</value>
   </data>
   <data name="pictureBox8.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 15</value>
@@ -5830,7 +5830,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>948, 48</value>
+    <value>948, 46</value>
   </data>
   <data name="pictureBox9.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 15</value>
@@ -5857,7 +5857,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>363, 48</value>
+    <value>363, 46</value>
   </data>
   <data name="pictureBox10.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 15</value>
@@ -5884,7 +5884,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>544, 44</value>
+    <value>544, 42</value>
   </data>
   <data name="pictureBox11.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 24</value>
@@ -5917,7 +5917,7 @@
     <value>NoControl</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 22</value>
+    <value>7, 20</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1133, 71</value>
@@ -7612,7 +7612,7 @@
     <value>2</value>
   </data>
   <data name="Molarity.Text" xml:space="preserve">
-    <value>      Molarity      </value>
+    <value>       Molarity       </value>
   </data>
   <data name="&gt;&gt;Molarity.Name" xml:space="preserve">
     <value>Molarity</value>
@@ -7942,7 +7942,7 @@
     <value>3</value>
   </data>
   <data name="tabPage2.Text" xml:space="preserve">
-    <value>tabPage2</value>
+    <value>    Stoichiometry    </value>
   </data>
   <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
     <value>tabPage2</value>

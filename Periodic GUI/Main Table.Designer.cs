@@ -207,6 +207,7 @@ namespace Periodic_GUI
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.Molarity = new System.Windows.Forms.TabPage();
             this.clearMolality = new System.Windows.Forms.Button();
             this.clearConversion = new System.Windows.Forms.Button();
@@ -242,6 +243,10 @@ namespace Periodic_GUI
             this.molesLabel = new System.Windows.Forms.Button();
             this.molesMolarity = new System.Windows.Forms.RichTextBox();
             this.molaritySolve = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.balanced6 = new System.Windows.Forms.RichTextBox();
             this.balanced5 = new System.Windows.Forms.RichTextBox();
@@ -254,11 +259,6 @@ namespace Periodic_GUI
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.tabPage1.SuspendLayout();
             this.Balancer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -2178,6 +2178,12 @@ namespace Periodic_GUI
             this.button8.Name = "button8";
             this.button8.UseVisualStyleBackColor = false;
             // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Name = "label7";
+            // 
             // Molarity
             // 
             this.Molarity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
@@ -2528,8 +2534,34 @@ namespace Periodic_GUI
             this.molaritySolve.UseVisualStyleBackColor = false;
             this.molaritySolve.Click += new System.EventHandler(this.molaritySolve_Click);
             // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Name = "label6";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Name = "label5";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Name = "label4";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Name = "label3";
+            // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.tabPage2.BackgroundImage = global::Periodic_GUI.Properties.Resources.background1;
             this.tabPage2.Controls.Add(this.balanced6);
             this.tabPage2.Controls.Add(this.balanced5);
             this.tabPage2.Controls.Add(this.balanced4);
@@ -2543,7 +2575,6 @@ namespace Periodic_GUI
             this.tabPage2.Controls.Add(this.pictureBox16);
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // balanced6
             // 
@@ -2649,36 +2680,6 @@ namespace Periodic_GUI
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.TabStop = false;
             this.pictureBox16.Click += new System.EventHandler(this.pictureBox16_Click);
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Name = "label3";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Name = "label4";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Name = "label5";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Name = "label6";
-            // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Name = "label7";
             // 
             // Form1
             // 
