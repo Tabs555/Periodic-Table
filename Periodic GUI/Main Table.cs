@@ -13,10 +13,11 @@ namespace Periodic_GUI
     public partial class Form1 : Form
     {
         static double dang;
-        static int count;
+        static int count = 0;
         static double molar;
         static int count2 = 1;
 
+        static Boolean hasBal = false;
         static double MM1;
         static double MM2;
         static double MM3;
@@ -81,7 +82,7 @@ namespace Periodic_GUI
         }
 
 
-        static Boolean first = false;
+        static Boolean first = true;
         List<int[]> bad = new List<int[]>();
         static int[] a = new int[118];
         static int[] b = new int[118];
@@ -8751,110 +8752,111 @@ namespace Periodic_GUI
         //Add function
         private void add_Click(object sender, EventArgs e)
         {
-            //sorts through each box as items are added
-            Color c = Color.LightGray;
+            if (compoundBuilder.Text != "")
+            {
+                //sorts through each box as items are added
+                Color c = Color.LightGray;
 
-            mmReactant1.SelectionFont = 
-            mmReactant2.SelectionFont = 
-            mmReactant3.SelectionFont = 
-            mmProduct1.SelectionFont  = 
-            mmProduct2.SelectionFont  = 
-            mmProduct3.SelectionFont  = new Font("Verdana", 13);
-            mmEquation1.SelectionFont =
-            mmEquation2.SelectionFont =
-            mmEquation3.SelectionFont =
-            mmEquation4.SelectionFont =
-            mmEquation5.SelectionFont =
-            mmEquation6.SelectionFont = new Font("Verdana", 15);
-            count++;
-            Console.WriteLine(count);
-            if (count == 1)
-            {
-                balanceBox1.Rtf = compoundBuilder.Rtf;
-                balanceBox1.BackColor = c;
-                balanceBox2.BackColor = Color.WhiteSmoke;
-                balanceBox3.BackColor = c;
-                balanceBox4.BackColor = c;
-                balanceBox5.BackColor = c;
-                balanceBox6.BackColor = c;
-                setMM1(molar);
-                mmReactant1.Text = molar.ToString() + "g";
-                mmEquation1.Rtf = compoundBuilder.Rtf;
-                reactant1.Rtf = compoundBuilder.Rtf;
+                mmReactant1.SelectionFont =
+                mmReactant2.SelectionFont =
+                mmReactant3.SelectionFont =
+                mmProduct1.SelectionFont =
+                mmProduct2.SelectionFont =
+                mmProduct3.SelectionFont = new Font("Verdana", 13);
+                mmEquation1.SelectionFont =
+                mmEquation2.SelectionFont =
+                mmEquation3.SelectionFont =
+                mmEquation4.SelectionFont =
+                mmEquation5.SelectionFont =
+                mmEquation6.SelectionFont = new Font("Verdana", 15); 
+                if (count == 0)
+                {
+                    balanceBox1.Rtf = compoundBuilder.Rtf;
+                    balanceBox1.BackColor = c;
+                    balanceBox2.BackColor = Color.WhiteSmoke;
+                    balanceBox3.BackColor = c;
+                    balanceBox4.BackColor = c;
+                    balanceBox5.BackColor = c;
+                    balanceBox6.BackColor = c;
+                    setMM1(molar);
+                    mmReactant1.Text = molar.ToString() + "g";
+                    mmEquation1.Rtf = compoundBuilder.Rtf;
+                    reactant1.Rtf = compoundBuilder.Rtf;
+                }
+                else if (count == 1)
+                {
+                    balanceBox2.Rtf = compoundBuilder.Rtf;
+                    balanceBox1.BackColor = c;
+                    balanceBox2.BackColor = c;
+                    balanceBox3.BackColor = Color.WhiteSmoke;
+                    balanceBox4.BackColor = c;
+                    balanceBox5.BackColor = c;
+                    balanceBox6.BackColor = c;
+                    setMM2(molar);
+                    mmReactant2.Text = molar.ToString() + "g";
+                    mmEquation2.Rtf = compoundBuilder.Rtf;
+                    reactant2.Rtf = compoundBuilder.Rtf;
+                }
+                else if (count == 2)
+                {
+                    balanceBox3.Rtf = compoundBuilder.Rtf;
+                    balanceBox1.BackColor = c;
+                    balanceBox2.BackColor = c;
+                    balanceBox3.BackColor = c;
+                    balanceBox4.BackColor = Color.WhiteSmoke;
+                    balanceBox5.BackColor = c;
+                    balanceBox6.BackColor = c;
+                    setMM3(molar);
+                    mmReactant3.Text = molar.ToString() + "g";
+                    mmEquation3.Rtf = compoundBuilder.Rtf;
+                    reactant3.Rtf = compoundBuilder.Rtf;
+                }
+                else if (count == 3)
+                {
+                    balanceBox4.Rtf = compoundBuilder.Rtf;
+                    balanceBox1.BackColor = c;
+                    balanceBox2.BackColor = c;
+                    balanceBox3.BackColor = c;
+                    balanceBox4.BackColor = c;
+                    balanceBox5.BackColor = Color.WhiteSmoke;
+                    balanceBox6.BackColor = c;
+                    setMM4(molar);
+                    mmProduct1.Text = molar.ToString() + "g";
+                    mmEquation4.Rtf = compoundBuilder.Rtf;
+                    product1.Rtf = compoundBuilder.Rtf;
+                }
+                else if (count == 4)
+                {
+                    balanceBox5.Rtf = compoundBuilder.Rtf;
+                    balanceBox1.BackColor = c;
+                    balanceBox2.BackColor = c;
+                    balanceBox3.BackColor = c;
+                    balanceBox4.BackColor = c;
+                    balanceBox5.BackColor = c;
+                    balanceBox6.BackColor = Color.WhiteSmoke;
+                    setMM5(molar);
+                    mmProduct2.Text = molar.ToString() + "g";
+                    mmEquation5.Rtf = compoundBuilder.Rtf;
+                    product2.Rtf = compoundBuilder.Rtf;
+                }
+                else if (count == 5)
+                {
+                    balanceBox6.Rtf = compoundBuilder.Rtf;
+                    balanceBox1.BackColor = c;
+                    balanceBox2.BackColor = c;
+                    balanceBox3.BackColor = c;
+                    balanceBox4.BackColor = c;
+                    balanceBox5.BackColor = c;
+                    balanceBox6.BackColor = c;
+                    setMM6(molar);
+                    mmProduct3.Text = molar.ToString() + "g";
+                    mmEquation1.Rtf = compoundBuilder.Rtf;
+                    product3.Rtf = compoundBuilder.Rtf;
+                }
+                count++;
+                compoundBuilder.Rtf = "";
+                molar = 0;
             }
-            else if (count == 2)
-            {
-                balanceBox2.Rtf = compoundBuilder.Rtf;
-                balanceBox1.BackColor = c;
-                balanceBox2.BackColor = c;
-                balanceBox3.BackColor = Color.WhiteSmoke;
-                balanceBox4.BackColor = c;
-                balanceBox5.BackColor = c;
-                balanceBox6.BackColor = c;
-                setMM2(molar);
-                mmReactant2.Text = molar.ToString() + "g";                
-                mmEquation2.Rtf = compoundBuilder.Rtf;
-                reactant2.Rtf = compoundBuilder.Rtf;
-            }
-            else if (count == 3)
-            {
-                balanceBox3.Rtf = compoundBuilder.Rtf;
-                balanceBox1.BackColor = c;
-                balanceBox2.BackColor = c;
-                balanceBox3.BackColor = c;
-                balanceBox4.BackColor = Color.WhiteSmoke;
-                balanceBox5.BackColor = c;
-                balanceBox6.BackColor = c;
-                setMM3(molar);
-                mmReactant3.Text = molar.ToString() + "g";
-                mmEquation3.Rtf = compoundBuilder.Rtf;
-                reactant3.Rtf = compoundBuilder.Rtf;
-            }
-            else if (count == 4)
-            {
-                balanceBox4.Rtf = compoundBuilder.Rtf;
-                balanceBox1.BackColor = c;
-                balanceBox2.BackColor = c;
-                balanceBox3.BackColor = c;
-                balanceBox4.BackColor = c;
-                balanceBox5.BackColor = Color.WhiteSmoke;
-                balanceBox6.BackColor = c;
-                setMM4(molar);
-                mmProduct1.Text= molar.ToString() + "g";
-                mmEquation4.Rtf = compoundBuilder.Rtf;
-                product1.Rtf = compoundBuilder.Rtf;
-            }
-            else if (count == 5)
-            {
-                balanceBox5.Rtf = compoundBuilder.Rtf;
-                balanceBox1.BackColor = c;
-                balanceBox2.BackColor = c;
-                balanceBox3.BackColor = c;
-                balanceBox4.BackColor = c;
-                balanceBox5.BackColor = c;
-                balanceBox6.BackColor = Color.WhiteSmoke;
-                setMM5(molar);
-                mmProduct2.Text = molar.ToString() + "g";
-                mmEquation5.Rtf = compoundBuilder.Rtf;
-                product2.Rtf = compoundBuilder.Rtf;
-            }
-            else if (count == 6)
-            {
-                balanceBox6.Rtf = compoundBuilder.Rtf;
-                balanceBox1.BackColor = c;
-                balanceBox2.BackColor = c;
-                balanceBox3.BackColor = c;
-                balanceBox4.BackColor = c;
-                balanceBox5.BackColor = c;
-                balanceBox6.BackColor = c;
-                setMM6(molar);
-                mmProduct3.Text = molar.ToString() + "g";
-                mmEquation1.Rtf = compoundBuilder.Rtf;
-                product3.Rtf = compoundBuilder.Rtf;
-            }
-            compoundBuilder.Rtf = "";
-            molar = 0;
-
         }
 
         private static List<double> solveMat(int[][] rows)
@@ -9042,9 +9044,127 @@ namespace Periodic_GUI
         //switches sides of the equation
         private void yeild_Click(object sender, EventArgs e)
         {
-            if (count < 3)
+            if (compoundBuilder.Text != "" || balanceBox1.Text != "")
             {
+                //sorts through each box as items are added
                 Color c = Color.LightGray;
+
+                mmReactant1.SelectionFont =
+                mmReactant2.SelectionFont =
+                mmReactant3.SelectionFont =
+                mmProduct1.SelectionFont =
+                mmProduct2.SelectionFont =
+                mmProduct3.SelectionFont = new Font("Verdana", 13);
+                mmEquation1.SelectionFont =
+                mmEquation2.SelectionFont =
+                mmEquation3.SelectionFont =
+                mmEquation4.SelectionFont =
+                mmEquation5.SelectionFont =
+                mmEquation6.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    balanceBox1.Rtf = compoundBuilder.Rtf;
+                    balanceBox1.BackColor = c;
+                    balanceBox2.BackColor = c;
+                    balanceBox3.BackColor = c;
+                    balanceBox4.BackColor = Color.WhiteSmoke;
+                    balanceBox5.BackColor = c;
+                    balanceBox6.BackColor = c;
+                    setMM1(molar);
+                    mmReactant1.Text = molar.ToString() + "g";
+                    mmEquation1.Rtf = compoundBuilder.Rtf;
+                    reactant1.Rtf = compoundBuilder.Rtf;
+                }
+                else if (count == 1)
+                {
+                    balanceBox2.Rtf = compoundBuilder.Rtf;
+                    balanceBox1.BackColor = c;
+                    balanceBox2.BackColor = c;
+                    balanceBox3.BackColor = c;
+                    balanceBox4.BackColor = Color.WhiteSmoke;
+                    balanceBox5.BackColor = c;
+                    balanceBox6.BackColor = c;
+                    setMM2(molar);
+                    mmReactant2.Text = molar.ToString() + "g";
+                    mmEquation2.Rtf = compoundBuilder.Rtf;
+                    reactant2.Rtf = compoundBuilder.Rtf;
+                }
+                else if (count == 2)
+                {
+                    balanceBox3.Rtf = compoundBuilder.Rtf;
+                    balanceBox1.BackColor = c;
+                    balanceBox2.BackColor = c;
+                    balanceBox3.BackColor = c;
+                    balanceBox4.BackColor = Color.WhiteSmoke;
+                    balanceBox5.BackColor = c;
+                    balanceBox6.BackColor = c;
+                    setMM3(molar);
+                    mmReactant3.Text = molar.ToString() + "g";
+                    mmEquation3.Rtf = compoundBuilder.Rtf;
+                    reactant3.Rtf = compoundBuilder.Rtf;
+                }
+                else if (count == 3)
+                {
+                    balanceBox4.Rtf = compoundBuilder.Rtf;
+                    balanceBox1.BackColor = c;
+                    balanceBox2.BackColor = c;
+                    balanceBox3.BackColor = c;
+                    balanceBox4.BackColor = Color.WhiteSmoke;
+                    balanceBox5.BackColor = c;
+                    balanceBox6.BackColor = c;
+                    setMM4(molar);
+                    mmProduct1.Text = molar.ToString() + "g";
+                    mmEquation4.Rtf = compoundBuilder.Rtf;
+                    product1.Rtf = compoundBuilder.Rtf;
+                }
+                else if (count == 4)
+                {
+                    balanceBox5.Rtf = compoundBuilder.Rtf;
+                    balanceBox1.BackColor = c;
+                    balanceBox2.BackColor = c;
+                    balanceBox3.BackColor = c;
+                    balanceBox4.BackColor = Color.WhiteSmoke;
+                    balanceBox5.BackColor = c;
+                    balanceBox6.BackColor = c;
+                    setMM5(molar);
+                    mmProduct2.Text = molar.ToString() + "g";
+                    mmEquation5.Rtf = compoundBuilder.Rtf;
+                    product2.Rtf = compoundBuilder.Rtf;
+                }
+                else if (count == 5)
+                {
+                    balanceBox6.Rtf = compoundBuilder.Rtf;
+                    balanceBox1.BackColor = c;
+                    balanceBox2.BackColor = c;
+                    balanceBox3.BackColor = c;
+                    balanceBox4.BackColor = Color.WhiteSmoke;
+                    balanceBox5.BackColor = c;
+                    balanceBox6.BackColor = c;
+                    setMM6(molar);
+                    mmProduct3.Text = molar.ToString() + "g";
+                    mmEquation1.Rtf = compoundBuilder.Rtf;
+                    product3.Rtf = compoundBuilder.Rtf;
+                }
+
+                compoundBuilder.Rtf = "";
+                count = 3;
+                molar = 0;
+            }
+            
+
+            
+        }
+
+        
+        private void balanceEquation_Click(object sender, EventArgs e)
+        {
+
+
+            if (hasBal == false)
+            {
+                
+                Color c = Color.LightGray;
+                //finalizes equation with gui
                 if (count == 0)
                 {
                     balanceBox1.Rtf = compoundBuilder.Rtf;
@@ -9063,228 +9183,137 @@ namespace Periodic_GUI
                 }
                 else if (count == 2)
                 {
-                    balanceBox3.Rtf = compoundBuilder.Rtf;
+                    balanceBox3.Text = compoundBuilder.Rtf;
                     setMM3(molar);
                     mmReactant3.Text = molar.ToString() + "g";
                     mmEquation3.Rtf = compoundBuilder.Rtf;
                     reactant3.Rtf = compoundBuilder.Rtf;
                 }
+                else if (count == 3)
+                {
+                    balanceBox4.Rtf = compoundBuilder.Rtf;
+                    setMM4(molar);
+                    mmProduct1.Text = molar.ToString() + "g";
+                    mmEquation4.Rtf = compoundBuilder.Rtf;
+                    product1.Rtf = compoundBuilder.Rtf;
+                }
+                else if (count == 4)
+                {
+                    balanceBox5.Rtf = compoundBuilder.Rtf;
+                    setMM5(molar);
+                    mmProduct2.Text = molar.ToString() + "g";
+                    mmEquation5.Rtf = compoundBuilder.Rtf;
+                    product2.Rtf = compoundBuilder.Rtf;
+                }
+                else if (count == 5)
+                {
+                    balanceBox6.Rtf = compoundBuilder.Rtf;
+                    setMM6(molar);
+                    mmProduct3.Text = molar.ToString() + "g";
+                    mmEquation6.Rtf = compoundBuilder.Rtf;
+                    product3.Rtf = compoundBuilder.Rtf;
+                }
 
                 balanceBox1.BackColor = c;
                 balanceBox2.BackColor = c;
                 balanceBox3.BackColor = c;
-                balanceBox4.BackColor = Color.WhiteSmoke;
+                balanceBox4.BackColor = c;
                 balanceBox5.BackColor = c;
                 balanceBox6.BackColor = c;
 
                 compoundBuilder.Rtf = "";
-                count = 3;                
+                molar = 0;
             }
-            molar = 0;
-        }
 
-        //balances the equation
-        static int var1;
-        static int var2;
-        static int var3;
-        static int var4;
-        static int var5;
-        static int var6;
-        public static int[] balance(int terms)
-        {
-            double t1 = MM3;
-            double t2 = MM2;
-            double t3 = MM1;
-            double t4 = MM4;
-            double t5 = MM5;
-            double t6 = MM6;
-            int[] list = new int[terms];
-            for (int a = 1; a < 100; a++)
-            {
-                for (int b = 1; b < 100; b++)
+                int onLeft = 0;
+                int onRight = 0;
+
+                if (balanceBox1.Text != "")
+                    onLeft++;
+                if (balanceBox2.Text != "")
+                    onLeft++;
+                if (balanceBox3.Text != "")
+                    onLeft++;
+                if (balanceBox4.Text != "")
+                    onRight++;
+                if (balanceBox5.Text != "")
+                    onRight++;
+                if (balanceBox6.Text != "")
+                    onRight++;
+
+                if (hasBal == false && onLeft > 0 && onRight > 0)
                 {
-                    for (int c = 1; c < 100; c++)
+                  /*  int[][] jagged = this.matrix();
+                    for (int i = 0; i < jagged.Length; i++)
                     {
-                        for (int d = 1; d < 100; d++)
+                        int[] innerArray = jagged[i];
+                        for (int a = 0; a < innerArray.Length; a++)
                         {
-                            for (int e = 1; e < 100; e++)
-                            {
-                                for (int f = 1; f < 100; f++)
-                                {
-                                    if (a * t1 + b * t2 + c * t3 == d * t4 + e * t5 + f * t6)
-                                    {
-                                        list[0] = a;
-                                        list[1] = b;
-                                        list[2] = c;
-                                        list[3] = d;
-                                        list[4] = e;
-                                        list[5] = f;
-                                        return list;
-                                    }
-                                }
-                            }
+                            Console.Write(innerArray[a] + " ");
                         }
+                        Console.WriteLine();
                     }
+                    */
+
+                   List<double> print = solveMat(this.matrix());
+                    double simple2 = simple(print);
+                    for (int i = 0; i < print.Count; i++)
+                    {
+                        print[i] = print[i] * simple2;
+                    }
+
+                    print.Add((int)simple2);
+
+                    for (int i = 0; i < print.Count; i++)
+                    {
+                        print[i] = Math.Abs((print[i]));
+                        Console.WriteLine(print[i]);
+                    }
+
+                    balanceBox1.SelectionFont =
+                    balanceBox1.SelectionFont =
+                    balanceBox1.SelectionFont =
+                    balanceBox1.SelectionFont =
+                    balanceBox1.SelectionFont =
+                    balanceBox1.SelectionFont = new Font("Verdana", 16);
+
+                    if (onLeft == 1)
+                    {
+                        balanceBox1.SelectedText = print[0] + " " + balanceBox1.SelectedText;
+                    }
+                    if (onLeft == 2)
+                    {
+                        balanceBox1.SelectedText = print[0] + " " + balanceBox1.SelectedText;
+                        balanceBox2.SelectedText = print[1] + " " + balanceBox2.SelectedText;
+                    }
+                    if (onLeft == 3)
+                    {
+                        balanceBox1.SelectedText = print[0] + " " + balanceBox1.SelectedText;
+                        balanceBox2.SelectedText = print[1] + " " + balanceBox2.SelectedText;
+                        balanceBox3.SelectedText = print[2] + " " + balanceBox3.SelectedText;
+                    }
+
+                    if (onRight == 1)
+                    {
+                        balanceBox4.SelectedText = print[3 - (3 - onLeft)] + " " + balanceBox4.SelectedText;
+                    }
+                    if (onRight == 2)
+                    {
+                        balanceBox4.SelectedText = print[3 - (3 - onLeft)] + " " + balanceBox4.SelectedText;
+                        balanceBox5.SelectedText = print[4 - (3 - onLeft)] + " " + balanceBox5.SelectedText;
+                    }
+                    if (onRight == 3)
+                    {
+                        balanceBox4.SelectedText = print[3 - (3 - onLeft)] + " " + balanceBox4.SelectedText;
+                        balanceBox5.SelectedText = print[4 - (3 - onLeft)] + " " + balanceBox5.SelectedText;
+                        balanceBox6.SelectedText = print[5 - (3 - onLeft)] + " " + balanceBox6.SelectedText;
+                    }
+
                 }
-            }
-            return list;
-        }
-        public static int modulus(int[] next)
-        {
-            for (int i = 0; i < balance(6).Length; i++)
-            {
-                int counter = 0;
-                for (int k = 2; k < 100; k++)
-                {
-                    if (counter == balance(6).Length)
-                        return k;
-                    if (next[i] % k == 0)
-                        counter++;
-                }
-            }
-            return 1;
-        }
-
-        private void balanceEquation_Click(object sender, EventArgs e)
-        {
-            Color c = Color.LightGray;
-            //finalizes equation with gui
-           if (count == 0)
-            {
-                balanceBox1.Rtf = compoundBuilder.Rtf;
-                setMM1(molar);
-                mmReactant1.Text = molar.ToString() + "g";
-                mmEquation1.Rtf = compoundBuilder.Rtf;
-                reactant1.Rtf = compoundBuilder.Rtf;
-            }
-            else if (count == 1)
-            {
-                balanceBox2.Rtf = compoundBuilder.Rtf;
-                setMM2(molar);
-                mmReactant2.Text = molar.ToString() + "g";
-                mmEquation2.Rtf = compoundBuilder.Rtf;
-                reactant2.Rtf = compoundBuilder.Rtf;
-            }
-            else if (count == 2)
-            {
-                balanceBox3.Text = compoundBuilder.Rtf;
-                setMM3(molar);
-                mmReactant3.Text = molar.ToString() + "g";
-                mmEquation3.Rtf = compoundBuilder.Rtf;
-                reactant3.Rtf = compoundBuilder.Rtf;
-            }
-            else if (count == 3)
-            {
-                balanceBox4.Rtf = compoundBuilder.Rtf;
-                setMM4(molar);
-                mmProduct1.Text = molar.ToString() + "g";
-                mmEquation4.Rtf = compoundBuilder.Rtf;
-                product1.Rtf = compoundBuilder.Rtf;
-            }
-            else if (count == 4)
-            {
-                balanceBox5.Rtf = compoundBuilder.Rtf;
-                setMM5(molar);
-                mmProduct2.Text = molar.ToString() + "g";
-                mmEquation5.Rtf = compoundBuilder.Rtf;
-                product2.Rtf = compoundBuilder.Rtf;
-            }
-            else if (count == 5)
-            {
-                balanceBox6.Rtf = compoundBuilder.Rtf;
-                setMM6(molar);
-                mmProduct3.Text = molar.ToString() + "g";
-                mmEquation6.Rtf = compoundBuilder.Rtf;
-                product3.Rtf = compoundBuilder.Rtf;
-            }
-
-            balanceBox1.BackColor = c;
-            balanceBox2.BackColor = c;
-            balanceBox3.BackColor = c;
-            balanceBox4.BackColor = c;
-            balanceBox5.BackColor = c;
-            balanceBox6.BackColor = c;
-
-            compoundBuilder.Rtf = "";
-           molar = 0;
-
-
-          List<double> print = solveMat(this.matrix());
-
-            for(int i = 0; i < print.Count; i++)
-            {
-                print[i] = print[i] * simple(print);
-            }    
-            
-            print.Add(simple(print));
-
-            for (int i = 0; i < print.Count; i++)
-            {
-                print[i] = (print[i]);
-                Console.WriteLine(print[i]);
-            }
-
-            balanceBox1.SelectionFont = 
-            balanceBox1.SelectionFont = 
-            balanceBox1.SelectionFont = 
-            balanceBox1.SelectionFont = 
-            balanceBox1.SelectionFont = 
-            balanceBox1.SelectionFont = new Font("Verdana",16);
-
-
-            int onLeft = 0;
-            int onRight = 0;
-
-            if (balanceBox1.Text != "")
-                onLeft++;
-            if (balanceBox2.Text != "")
-                onLeft++;
-            if (balanceBox3.Text != "")
-                onLeft++;
-            if (balanceBox4.Text != "")
-                onRight++;
-            if (balanceBox5.Text != "")
-                onRight++;
-            if (balanceBox6.Text != "")
-                onRight++;
-
-            if(onLeft == 1)
-            {
-                balanceBox1.SelectedText = print[0] + " " + balanceBox1.SelectedText; 
-            }
-            if(onLeft == 2)
-            {
-                balanceBox1.SelectedText = print[0] + " " + balanceBox1.SelectedText;
-                balanceBox2.SelectedText = print[1] + " " + balanceBox2.SelectedText; 
-            }
-            if(onLeft == 3)
-            {
-                balanceBox1.SelectedText = print[0] + " " + balanceBox1.SelectedText;
-                balanceBox2.SelectedText = print[1] + " " + balanceBox2.SelectedText;
-                balanceBox3.SelectedText = print[2] + " " + balanceBox3.SelectedText; 
-            }
-
-            if (onRight == 1)
-            {
-                balanceBox4.SelectedText = print[3-(3-onLeft)] + " " + balanceBox4.SelectedText;
-            }
-            if (onRight == 2)
-            {
-                balanceBox4.SelectedText = print[3 - (3 - onLeft)] + " " + balanceBox4.SelectedText;
-                balanceBox5.SelectedText = print[4 - (3 - onLeft)] + " " + balanceBox5.SelectedText;
-            }
-            if (onRight == 3)
-            {
-                balanceBox4.SelectedText = print[3 - (3 - onLeft)] + " " + balanceBox4.SelectedText;
-                balanceBox5.SelectedText = print[4 - (3 - onLeft)] + " " + balanceBox5.SelectedText;
-                balanceBox6.SelectedText = print[5 - (3 - onLeft)] + " " + balanceBox6.SelectedText;
-            }
-            
-
-            
 
 
 
+                hasBal = true;
         }
 
         private void setBalanced(int var1)
@@ -9362,14 +9391,50 @@ namespace Periodic_GUI
         }
         private void clearBuilder_Click(object sender, EventArgs e)
         {
-            compoundBuilder.Rtf = "";
+            for (int i = 0; i < 118; i++)
+            {
+                if (count == 0)
+                    a[i] = 0;
+                if (count == 1)
+                    b[i] = 0;
+                if (count == 2)
+                    c[i] = 0;
+                if (count == 3)
+                    d[i] = 0;
+                if (count == 4)
+                    e1[i] = 0;
+                if (count == 5)
+                    f[i] = 0;
+            }
+                compoundBuilder.Rtf = "";
 
         }
 
         //clears the equations
         private void clearEquation_Click(object sender, EventArgs e)
         {
-            count = 1;
+            
+            hasBal = false;
+            for (int i = 0; i < 118; i++)
+            {
+                a[i] = 0;
+                b[i] = 0;
+                c[i] = 0;
+                d[i] = 0;
+                e1[i] = 0;
+                f[i] = 0;
+            }
+            for (int i = 0; i < bad.Count; i++)
+            {
+                bad.Remove(bad[i]);
+            }
+            for (int i = 0; i < tracker.Count; i++)
+            {
+                tracker.Remove(tracker[i]);
+            }
+            first = true;  
+
+            count = 0;
             compoundBuilder.Rtf =
             balanceBox1.Rtf =
             balanceBox2.Rtf =
