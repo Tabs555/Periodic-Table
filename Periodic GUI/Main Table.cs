@@ -8,6 +8,19 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
+/* 
+ * Sean Nesbit
+ * Sagan Richardson
+ * Lucas Hwang
+ * 
+ * 6-7-15
+ * 
+ * Per 4
+ * 
+ * A chemistry app that has multiple features such as balancing equations, calculating Molar Mass, and solving Molarity problems.
+ */
+
+
 namespace Periodic_GUI
 {
     public partial class Form1 : Form
