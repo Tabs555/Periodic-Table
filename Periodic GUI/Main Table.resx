@@ -121,13 +121,2837 @@
   <data name="tabPage1.Appearance" type="System.Windows.Forms.TabAppearance, System.Windows.Forms">
     <value>FlatButtons</value>
   </data>
+  <data name="&gt;&gt;clearBuilder.Name" xml:space="preserve">
+    <value>clearBuilder</value>
+  </data>
+  <data name="&gt;&gt;clearBuilder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clearBuilder.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;clearBuilder.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;balanceBox6.Name" xml:space="preserve">
+    <value>balanceBox6</value>
+  </data>
+  <data name="&gt;&gt;balanceBox6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;balanceBox6.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;balanceBox6.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;balanceBox5.Name" xml:space="preserve">
+    <value>balanceBox5</value>
+  </data>
+  <data name="&gt;&gt;balanceBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;balanceBox5.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;balanceBox5.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;balanceBox4.Name" xml:space="preserve">
+    <value>balanceBox4</value>
+  </data>
+  <data name="&gt;&gt;balanceBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;balanceBox4.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;balanceBox4.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;balanceBox3.Name" xml:space="preserve">
+    <value>balanceBox3</value>
+  </data>
+  <data name="&gt;&gt;balanceBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;balanceBox3.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;balanceBox3.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;balanceBox2.Name" xml:space="preserve">
+    <value>balanceBox2</value>
+  </data>
+  <data name="&gt;&gt;balanceBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;balanceBox2.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;balanceBox2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;balanceBox1.Name" xml:space="preserve">
+    <value>balanceBox1</value>
+  </data>
+  <data name="&gt;&gt;balanceBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;balanceBox1.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;balanceBox1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;compoundBuilder.Name" xml:space="preserve">
+    <value>compoundBuilder</value>
+  </data>
+  <data name="&gt;&gt;compoundBuilder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;compoundBuilder.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;compoundBuilder.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;pictureBox6.Name" xml:space="preserve">
+    <value>pictureBox6</value>
+  </data>
+  <data name="&gt;&gt;pictureBox6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox6.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;pictureBox6.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;pictureBox7.Name" xml:space="preserve">
+    <value>pictureBox7</value>
+  </data>
+  <data name="&gt;&gt;pictureBox7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox7.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;pictureBox7.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.Name" xml:space="preserve">
+    <value>pictureBox4</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;pictureBox4.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.Name" xml:space="preserve">
+    <value>pictureBox3</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;pictureBox3.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Name" xml:space="preserve">
+    <value>pictureBox2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;pictureBox2.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;balanceEquation.Name" xml:space="preserve">
+    <value>balanceEquation</value>
+  </data>
+  <data name="&gt;&gt;balanceEquation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;balanceEquation.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;balanceEquation.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;yeild.Name" xml:space="preserve">
+    <value>yeild</value>
+  </data>
+  <data name="&gt;&gt;yeild.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;yeild.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;yeild.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;add.Name" xml:space="preserve">
+    <value>add</value>
+  </data>
+  <data name="&gt;&gt;add.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;add.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;add.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;lawrencium.Name" xml:space="preserve">
+    <value>lawrencium</value>
+  </data>
+  <data name="&gt;&gt;lawrencium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lawrencium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;lawrencium.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;nobelium.Name" xml:space="preserve">
+    <value>nobelium</value>
+  </data>
+  <data name="&gt;&gt;nobelium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nobelium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;nobelium.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;lutetium.Name" xml:space="preserve">
+    <value>lutetium</value>
+  </data>
+  <data name="&gt;&gt;lutetium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lutetium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;lutetium.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;ytterbium.Name" xml:space="preserve">
+    <value>ytterbium</value>
+  </data>
+  <data name="&gt;&gt;ytterbium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ytterbium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;ytterbium.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;mendelevium.Name" xml:space="preserve">
+    <value>mendelevium</value>
+  </data>
+  <data name="&gt;&gt;mendelevium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mendelevium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;mendelevium.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;fermium.Name" xml:space="preserve">
+    <value>fermium</value>
+  </data>
+  <data name="&gt;&gt;fermium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fermium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;fermium.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;thulium.Name" xml:space="preserve">
+    <value>thulium</value>
+  </data>
+  <data name="&gt;&gt;thulium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;thulium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;thulium.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;erbium.Name" xml:space="preserve">
+    <value>erbium</value>
+  </data>
+  <data name="&gt;&gt;erbium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;erbium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;erbium.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;einsteinium.Name" xml:space="preserve">
+    <value>einsteinium</value>
+  </data>
+  <data name="&gt;&gt;einsteinium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;einsteinium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;einsteinium.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;californium.Name" xml:space="preserve">
+    <value>californium</value>
+  </data>
+  <data name="&gt;&gt;californium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;californium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;californium.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;holmium.Name" xml:space="preserve">
+    <value>holmium</value>
+  </data>
+  <data name="&gt;&gt;holmium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;holmium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;holmium.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;dysprosium.Name" xml:space="preserve">
+    <value>dysprosium</value>
+  </data>
+  <data name="&gt;&gt;dysprosium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dysprosium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;dysprosium.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;berkelium.Name" xml:space="preserve">
+    <value>berkelium</value>
+  </data>
+  <data name="&gt;&gt;berkelium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;berkelium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;berkelium.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;curium.Name" xml:space="preserve">
+    <value>curium</value>
+  </data>
+  <data name="&gt;&gt;curium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;curium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;curium.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;terbium.Name" xml:space="preserve">
+    <value>terbium</value>
+  </data>
+  <data name="&gt;&gt;terbium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;terbium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;terbium.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;gadolinium.Name" xml:space="preserve">
+    <value>gadolinium</value>
+  </data>
+  <data name="&gt;&gt;gadolinium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gadolinium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;gadolinium.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;americium.Name" xml:space="preserve">
+    <value>americium</value>
+  </data>
+  <data name="&gt;&gt;americium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;americium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;americium.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;plutonium.Name" xml:space="preserve">
+    <value>plutonium</value>
+  </data>
+  <data name="&gt;&gt;plutonium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;plutonium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;plutonium.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;europium.Name" xml:space="preserve">
+    <value>europium</value>
+  </data>
+  <data name="&gt;&gt;europium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;europium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;europium.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;samarium.Name" xml:space="preserve">
+    <value>samarium</value>
+  </data>
+  <data name="&gt;&gt;samarium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;samarium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;samarium.ZOrder" xml:space="preserve">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;neptunium.Name" xml:space="preserve">
+    <value>neptunium</value>
+  </data>
+  <data name="&gt;&gt;neptunium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;neptunium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;neptunium.ZOrder" xml:space="preserve">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;uranium.Name" xml:space="preserve">
+    <value>uranium</value>
+  </data>
+  <data name="&gt;&gt;uranium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;uranium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;uranium.ZOrder" xml:space="preserve">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;promethium.Name" xml:space="preserve">
+    <value>promethium</value>
+  </data>
+  <data name="&gt;&gt;promethium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;promethium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;promethium.ZOrder" xml:space="preserve">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;neodymium.Name" xml:space="preserve">
+    <value>neodymium</value>
+  </data>
+  <data name="&gt;&gt;neodymium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;neodymium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;neodymium.ZOrder" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;protactinium.Name" xml:space="preserve">
+    <value>protactinium</value>
+  </data>
+  <data name="&gt;&gt;protactinium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;protactinium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;protactinium.ZOrder" xml:space="preserve">
+    <value>41</value>
+  </data>
+  <data name="&gt;&gt;thorium.Name" xml:space="preserve">
+    <value>thorium</value>
+  </data>
+  <data name="&gt;&gt;thorium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;thorium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;thorium.ZOrder" xml:space="preserve">
+    <value>42</value>
+  </data>
+  <data name="&gt;&gt;praseodymium.Name" xml:space="preserve">
+    <value>praseodymium</value>
+  </data>
+  <data name="&gt;&gt;praseodymium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;praseodymium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;praseodymium.ZOrder" xml:space="preserve">
+    <value>43</value>
+  </data>
+  <data name="&gt;&gt;cerium.Name" xml:space="preserve">
+    <value>cerium</value>
+  </data>
+  <data name="&gt;&gt;cerium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cerium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;cerium.ZOrder" xml:space="preserve">
+    <value>44</value>
+  </data>
+  <data name="&gt;&gt;actinium.Name" xml:space="preserve">
+    <value>actinium</value>
+  </data>
+  <data name="&gt;&gt;actinium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;actinium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;actinium.ZOrder" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="&gt;&gt;lanthanum.Name" xml:space="preserve">
+    <value>lanthanum</value>
+  </data>
+  <data name="&gt;&gt;lanthanum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lanthanum.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;lanthanum.ZOrder" xml:space="preserve">
+    <value>46</value>
+  </data>
+  <data name="&gt;&gt;helium.Name" xml:space="preserve">
+    <value>helium</value>
+  </data>
+  <data name="&gt;&gt;helium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;helium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;helium.ZOrder" xml:space="preserve">
+    <value>47</value>
+  </data>
+  <data name="&gt;&gt;ununoctium.Name" xml:space="preserve">
+    <value>ununoctium</value>
+  </data>
+  <data name="&gt;&gt;ununoctium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ununoctium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;ununoctium.ZOrder" xml:space="preserve">
+    <value>48</value>
+  </data>
+  <data name="&gt;&gt;ununseptium.Name" xml:space="preserve">
+    <value>ununseptium</value>
+  </data>
+  <data name="&gt;&gt;ununseptium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ununseptium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;ununseptium.ZOrder" xml:space="preserve">
+    <value>49</value>
+  </data>
+  <data name="&gt;&gt;radon.Name" xml:space="preserve">
+    <value>radon</value>
+  </data>
+  <data name="&gt;&gt;radon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radon.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;radon.ZOrder" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="&gt;&gt;astatine.Name" xml:space="preserve">
+    <value>astatine</value>
+  </data>
+  <data name="&gt;&gt;astatine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;astatine.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;astatine.ZOrder" xml:space="preserve">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;xenon.Name" xml:space="preserve">
+    <value>xenon</value>
+  </data>
+  <data name="&gt;&gt;xenon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;xenon.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;xenon.ZOrder" xml:space="preserve">
+    <value>52</value>
+  </data>
+  <data name="&gt;&gt;iodine.Name" xml:space="preserve">
+    <value>iodine</value>
+  </data>
+  <data name="&gt;&gt;iodine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iodine.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;iodine.ZOrder" xml:space="preserve">
+    <value>53</value>
+  </data>
+  <data name="&gt;&gt;livermorium.Name" xml:space="preserve">
+    <value>livermorium</value>
+  </data>
+  <data name="&gt;&gt;livermorium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;livermorium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;livermorium.ZOrder" xml:space="preserve">
+    <value>54</value>
+  </data>
+  <data name="&gt;&gt;ununpentium.Name" xml:space="preserve">
+    <value>ununpentium</value>
+  </data>
+  <data name="&gt;&gt;ununpentium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ununpentium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;ununpentium.ZOrder" xml:space="preserve">
+    <value>55</value>
+  </data>
+  <data name="&gt;&gt;polonium.Name" xml:space="preserve">
+    <value>polonium</value>
+  </data>
+  <data name="&gt;&gt;polonium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;polonium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;polonium.ZOrder" xml:space="preserve">
+    <value>56</value>
+  </data>
+  <data name="&gt;&gt;Bismuth.Name" xml:space="preserve">
+    <value>Bismuth</value>
+  </data>
+  <data name="&gt;&gt;Bismuth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Bismuth.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;Bismuth.ZOrder" xml:space="preserve">
+    <value>57</value>
+  </data>
+  <data name="&gt;&gt;tellurium.Name" xml:space="preserve">
+    <value>tellurium</value>
+  </data>
+  <data name="&gt;&gt;tellurium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tellurium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;tellurium.ZOrder" xml:space="preserve">
+    <value>58</value>
+  </data>
+  <data name="&gt;&gt;antimony.Name" xml:space="preserve">
+    <value>antimony</value>
+  </data>
+  <data name="&gt;&gt;antimony.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;antimony.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;antimony.ZOrder" xml:space="preserve">
+    <value>59</value>
+  </data>
+  <data name="&gt;&gt;Flerovium.Name" xml:space="preserve">
+    <value>Flerovium</value>
+  </data>
+  <data name="&gt;&gt;Flerovium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Flerovium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;Flerovium.ZOrder" xml:space="preserve">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;ununtrium.Name" xml:space="preserve">
+    <value>ununtrium</value>
+  </data>
+  <data name="&gt;&gt;ununtrium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ununtrium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;ununtrium.ZOrder" xml:space="preserve">
+    <value>61</value>
+  </data>
+  <data name="&gt;&gt;lead.Name" xml:space="preserve">
+    <value>lead</value>
+  </data>
+  <data name="&gt;&gt;lead.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lead.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;lead.ZOrder" xml:space="preserve">
+    <value>62</value>
+  </data>
+  <data name="&gt;&gt;thallium.Name" xml:space="preserve">
+    <value>thallium</value>
+  </data>
+  <data name="&gt;&gt;thallium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;thallium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;thallium.ZOrder" xml:space="preserve">
+    <value>63</value>
+  </data>
+  <data name="&gt;&gt;tin.Name" xml:space="preserve">
+    <value>tin</value>
+  </data>
+  <data name="&gt;&gt;tin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tin.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;tin.ZOrder" xml:space="preserve">
+    <value>64</value>
+  </data>
+  <data name="&gt;&gt;indium.Name" xml:space="preserve">
+    <value>indium</value>
+  </data>
+  <data name="&gt;&gt;indium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;indium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;indium.ZOrder" xml:space="preserve">
+    <value>65</value>
+  </data>
+  <data name="&gt;&gt;krypton.Name" xml:space="preserve">
+    <value>krypton</value>
+  </data>
+  <data name="&gt;&gt;krypton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;krypton.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;krypton.ZOrder" xml:space="preserve">
+    <value>66</value>
+  </data>
+  <data name="&gt;&gt;bromine.Name" xml:space="preserve">
+    <value>bromine</value>
+  </data>
+  <data name="&gt;&gt;bromine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bromine.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;bromine.ZOrder" xml:space="preserve">
+    <value>67</value>
+  </data>
+  <data name="&gt;&gt;argon.Name" xml:space="preserve">
+    <value>argon</value>
+  </data>
+  <data name="&gt;&gt;argon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;argon.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;argon.ZOrder" xml:space="preserve">
+    <value>68</value>
+  </data>
+  <data name="&gt;&gt;chlorine.Name" xml:space="preserve">
+    <value>chlorine</value>
+  </data>
+  <data name="&gt;&gt;chlorine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chlorine.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;chlorine.ZOrder" xml:space="preserve">
+    <value>69</value>
+  </data>
+  <data name="&gt;&gt;neon.Name" xml:space="preserve">
+    <value>neon</value>
+  </data>
+  <data name="&gt;&gt;neon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;neon.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;neon.ZOrder" xml:space="preserve">
+    <value>70</value>
+  </data>
+  <data name="&gt;&gt;flourine.Name" xml:space="preserve">
+    <value>flourine</value>
+  </data>
+  <data name="&gt;&gt;flourine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flourine.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;flourine.ZOrder" xml:space="preserve">
+    <value>71</value>
+  </data>
+  <data name="&gt;&gt;selenium.Name" xml:space="preserve">
+    <value>selenium</value>
+  </data>
+  <data name="&gt;&gt;selenium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;selenium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;selenium.ZOrder" xml:space="preserve">
+    <value>72</value>
+  </data>
+  <data name="&gt;&gt;arsenic.Name" xml:space="preserve">
+    <value>arsenic</value>
+  </data>
+  <data name="&gt;&gt;arsenic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;arsenic.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;arsenic.ZOrder" xml:space="preserve">
+    <value>73</value>
+  </data>
+  <data name="&gt;&gt;sulfur.Name" xml:space="preserve">
+    <value>sulfur</value>
+  </data>
+  <data name="&gt;&gt;sulfur.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sulfur.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;sulfur.ZOrder" xml:space="preserve">
+    <value>74</value>
+  </data>
+  <data name="&gt;&gt;phosporous.Name" xml:space="preserve">
+    <value>phosporous</value>
+  </data>
+  <data name="&gt;&gt;phosporous.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;phosporous.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;phosporous.ZOrder" xml:space="preserve">
+    <value>75</value>
+  </data>
+  <data name="&gt;&gt;oxygen.Name" xml:space="preserve">
+    <value>oxygen</value>
+  </data>
+  <data name="&gt;&gt;oxygen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;oxygen.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;oxygen.ZOrder" xml:space="preserve">
+    <value>76</value>
+  </data>
+  <data name="&gt;&gt;nitrogen.Name" xml:space="preserve">
+    <value>nitrogen</value>
+  </data>
+  <data name="&gt;&gt;nitrogen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nitrogen.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;nitrogen.ZOrder" xml:space="preserve">
+    <value>77</value>
+  </data>
+  <data name="&gt;&gt;germanium.Name" xml:space="preserve">
+    <value>germanium</value>
+  </data>
+  <data name="&gt;&gt;germanium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;germanium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;germanium.ZOrder" xml:space="preserve">
+    <value>78</value>
+  </data>
+  <data name="&gt;&gt;gallium.Name" xml:space="preserve">
+    <value>gallium</value>
+  </data>
+  <data name="&gt;&gt;gallium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gallium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;gallium.ZOrder" xml:space="preserve">
+    <value>79</value>
+  </data>
+  <data name="&gt;&gt;silicon.Name" xml:space="preserve">
+    <value>silicon</value>
+  </data>
+  <data name="&gt;&gt;silicon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;silicon.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;silicon.ZOrder" xml:space="preserve">
+    <value>80</value>
+  </data>
+  <data name="&gt;&gt;aluminum.Name" xml:space="preserve">
+    <value>aluminum</value>
+  </data>
+  <data name="&gt;&gt;aluminum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;aluminum.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;aluminum.ZOrder" xml:space="preserve">
+    <value>81</value>
+  </data>
+  <data name="&gt;&gt;carbon.Name" xml:space="preserve">
+    <value>carbon</value>
+  </data>
+  <data name="&gt;&gt;carbon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;carbon.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;carbon.ZOrder" xml:space="preserve">
+    <value>82</value>
+  </data>
+  <data name="&gt;&gt;boron.Name" xml:space="preserve">
+    <value>boron</value>
+  </data>
+  <data name="&gt;&gt;boron.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;boron.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;boron.ZOrder" xml:space="preserve">
+    <value>83</value>
+  </data>
+  <data name="&gt;&gt;copernicium.Name" xml:space="preserve">
+    <value>copernicium</value>
+  </data>
+  <data name="&gt;&gt;copernicium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;copernicium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;copernicium.ZOrder" xml:space="preserve">
+    <value>84</value>
+  </data>
+  <data name="&gt;&gt;roentgenium.Name" xml:space="preserve">
+    <value>roentgenium</value>
+  </data>
+  <data name="&gt;&gt;roentgenium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;roentgenium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;roentgenium.ZOrder" xml:space="preserve">
+    <value>85</value>
+  </data>
+  <data name="&gt;&gt;mercury.Name" xml:space="preserve">
+    <value>mercury</value>
+  </data>
+  <data name="&gt;&gt;mercury.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mercury.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;mercury.ZOrder" xml:space="preserve">
+    <value>86</value>
+  </data>
+  <data name="&gt;&gt;gold.Name" xml:space="preserve">
+    <value>gold</value>
+  </data>
+  <data name="&gt;&gt;gold.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gold.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;gold.ZOrder" xml:space="preserve">
+    <value>87</value>
+  </data>
+  <data name="&gt;&gt;cadium.Name" xml:space="preserve">
+    <value>cadium</value>
+  </data>
+  <data name="&gt;&gt;cadium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cadium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;cadium.ZOrder" xml:space="preserve">
+    <value>88</value>
+  </data>
+  <data name="&gt;&gt;silver.Name" xml:space="preserve">
+    <value>silver</value>
+  </data>
+  <data name="&gt;&gt;silver.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;silver.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;silver.ZOrder" xml:space="preserve">
+    <value>89</value>
+  </data>
+  <data name="&gt;&gt;zinc.Name" xml:space="preserve">
+    <value>zinc</value>
+  </data>
+  <data name="&gt;&gt;zinc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;zinc.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;zinc.ZOrder" xml:space="preserve">
+    <value>90</value>
+  </data>
+  <data name="&gt;&gt;copper.Name" xml:space="preserve">
+    <value>copper</value>
+  </data>
+  <data name="&gt;&gt;copper.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;copper.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;copper.ZOrder" xml:space="preserve">
+    <value>91</value>
+  </data>
+  <data name="&gt;&gt;darmstadtium.Name" xml:space="preserve">
+    <value>darmstadtium</value>
+  </data>
+  <data name="&gt;&gt;darmstadtium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;darmstadtium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;darmstadtium.ZOrder" xml:space="preserve">
+    <value>92</value>
+  </data>
+  <data name="&gt;&gt;meitnerium.Name" xml:space="preserve">
+    <value>meitnerium</value>
+  </data>
+  <data name="&gt;&gt;meitnerium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;meitnerium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;meitnerium.ZOrder" xml:space="preserve">
+    <value>93</value>
+  </data>
+  <data name="&gt;&gt;platinum.Name" xml:space="preserve">
+    <value>platinum</value>
+  </data>
+  <data name="&gt;&gt;platinum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;platinum.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;platinum.ZOrder" xml:space="preserve">
+    <value>94</value>
+  </data>
+  <data name="&gt;&gt;iridium.Name" xml:space="preserve">
+    <value>iridium</value>
+  </data>
+  <data name="&gt;&gt;iridium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iridium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;iridium.ZOrder" xml:space="preserve">
+    <value>95</value>
+  </data>
+  <data name="&gt;&gt;palladium.Name" xml:space="preserve">
+    <value>palladium</value>
+  </data>
+  <data name="&gt;&gt;palladium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;palladium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;palladium.ZOrder" xml:space="preserve">
+    <value>96</value>
+  </data>
+  <data name="&gt;&gt;Rhodium.Name" xml:space="preserve">
+    <value>Rhodium</value>
+  </data>
+  <data name="&gt;&gt;Rhodium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Rhodium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;Rhodium.ZOrder" xml:space="preserve">
+    <value>97</value>
+  </data>
+  <data name="&gt;&gt;nickel.Name" xml:space="preserve">
+    <value>nickel</value>
+  </data>
+  <data name="&gt;&gt;nickel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nickel.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;nickel.ZOrder" xml:space="preserve">
+    <value>98</value>
+  </data>
+  <data name="&gt;&gt;cobalt.Name" xml:space="preserve">
+    <value>cobalt</value>
+  </data>
+  <data name="&gt;&gt;cobalt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cobalt.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;cobalt.ZOrder" xml:space="preserve">
+    <value>99</value>
+  </data>
+  <data name="&gt;&gt;hassium.Name" xml:space="preserve">
+    <value>hassium</value>
+  </data>
+  <data name="&gt;&gt;hassium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hassium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;hassium.ZOrder" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="&gt;&gt;bohrium.Name" xml:space="preserve">
+    <value>bohrium</value>
+  </data>
+  <data name="&gt;&gt;bohrium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bohrium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;bohrium.ZOrder" xml:space="preserve">
+    <value>101</value>
+  </data>
+  <data name="&gt;&gt;osmium.Name" xml:space="preserve">
+    <value>osmium</value>
+  </data>
+  <data name="&gt;&gt;osmium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;osmium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;osmium.ZOrder" xml:space="preserve">
+    <value>102</value>
+  </data>
+  <data name="&gt;&gt;rhenium.Name" xml:space="preserve">
+    <value>rhenium</value>
+  </data>
+  <data name="&gt;&gt;rhenium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rhenium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;rhenium.ZOrder" xml:space="preserve">
+    <value>103</value>
+  </data>
+  <data name="&gt;&gt;Ruthenium.Name" xml:space="preserve">
+    <value>Ruthenium</value>
+  </data>
+  <data name="&gt;&gt;Ruthenium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Ruthenium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;Ruthenium.ZOrder" xml:space="preserve">
+    <value>104</value>
+  </data>
+  <data name="&gt;&gt;technetium.Name" xml:space="preserve">
+    <value>technetium</value>
+  </data>
+  <data name="&gt;&gt;technetium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;technetium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;technetium.ZOrder" xml:space="preserve">
+    <value>105</value>
+  </data>
+  <data name="&gt;&gt;iron.Name" xml:space="preserve">
+    <value>iron</value>
+  </data>
+  <data name="&gt;&gt;iron.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;iron.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;iron.ZOrder" xml:space="preserve">
+    <value>106</value>
+  </data>
+  <data name="&gt;&gt;manganese.Name" xml:space="preserve">
+    <value>manganese</value>
+  </data>
+  <data name="&gt;&gt;manganese.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;manganese.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;manganese.ZOrder" xml:space="preserve">
+    <value>107</value>
+  </data>
+  <data name="&gt;&gt;seaborgium.Name" xml:space="preserve">
+    <value>seaborgium</value>
+  </data>
+  <data name="&gt;&gt;seaborgium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;seaborgium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;seaborgium.ZOrder" xml:space="preserve">
+    <value>108</value>
+  </data>
+  <data name="&gt;&gt;dubnium.Name" xml:space="preserve">
+    <value>dubnium</value>
+  </data>
+  <data name="&gt;&gt;dubnium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dubnium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;dubnium.ZOrder" xml:space="preserve">
+    <value>109</value>
+  </data>
+  <data name="&gt;&gt;tungsten.Name" xml:space="preserve">
+    <value>tungsten</value>
+  </data>
+  <data name="&gt;&gt;tungsten.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tungsten.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;tungsten.ZOrder" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="&gt;&gt;tantlum.Name" xml:space="preserve">
+    <value>tantlum</value>
+  </data>
+  <data name="&gt;&gt;tantlum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tantlum.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;tantlum.ZOrder" xml:space="preserve">
+    <value>111</value>
+  </data>
+  <data name="&gt;&gt;Molybdenum.Name" xml:space="preserve">
+    <value>Molybdenum</value>
+  </data>
+  <data name="&gt;&gt;Molybdenum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Molybdenum.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;Molybdenum.ZOrder" xml:space="preserve">
+    <value>112</value>
+  </data>
+  <data name="&gt;&gt;Niobium.Name" xml:space="preserve">
+    <value>Niobium</value>
+  </data>
+  <data name="&gt;&gt;Niobium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Niobium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;Niobium.ZOrder" xml:space="preserve">
+    <value>113</value>
+  </data>
+  <data name="&gt;&gt;chromium.Name" xml:space="preserve">
+    <value>chromium</value>
+  </data>
+  <data name="&gt;&gt;chromium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chromium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;chromium.ZOrder" xml:space="preserve">
+    <value>114</value>
+  </data>
+  <data name="&gt;&gt;vanadium.Name" xml:space="preserve">
+    <value>vanadium</value>
+  </data>
+  <data name="&gt;&gt;vanadium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;vanadium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;vanadium.ZOrder" xml:space="preserve">
+    <value>115</value>
+  </data>
+  <data name="&gt;&gt;rutherfordium.Name" xml:space="preserve">
+    <value>rutherfordium</value>
+  </data>
+  <data name="&gt;&gt;rutherfordium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rutherfordium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;rutherfordium.ZOrder" xml:space="preserve">
+    <value>116</value>
+  </data>
+  <data name="&gt;&gt;hafnium.Name" xml:space="preserve">
+    <value>hafnium</value>
+  </data>
+  <data name="&gt;&gt;hafnium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hafnium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;hafnium.ZOrder" xml:space="preserve">
+    <value>117</value>
+  </data>
+  <data name="&gt;&gt;Zirconium.Name" xml:space="preserve">
+    <value>Zirconium</value>
+  </data>
+  <data name="&gt;&gt;Zirconium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Zirconium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;Zirconium.ZOrder" xml:space="preserve">
+    <value>118</value>
+  </data>
+  <data name="&gt;&gt;yittrium.Name" xml:space="preserve">
+    <value>yittrium</value>
+  </data>
+  <data name="&gt;&gt;yittrium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;yittrium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;yittrium.ZOrder" xml:space="preserve">
+    <value>119</value>
+  </data>
+  <data name="&gt;&gt;titanium.Name" xml:space="preserve">
+    <value>titanium</value>
+  </data>
+  <data name="&gt;&gt;titanium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;titanium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;titanium.ZOrder" xml:space="preserve">
+    <value>120</value>
+  </data>
+  <data name="&gt;&gt;scandium.Name" xml:space="preserve">
+    <value>scandium</value>
+  </data>
+  <data name="&gt;&gt;scandium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scandium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;scandium.ZOrder" xml:space="preserve">
+    <value>121</value>
+  </data>
+  <data name="&gt;&gt;hydrogen.Name" xml:space="preserve">
+    <value>hydrogen</value>
+  </data>
+  <data name="&gt;&gt;hydrogen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hydrogen.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;hydrogen.ZOrder" xml:space="preserve">
+    <value>122</value>
+  </data>
+  <data name="&gt;&gt;radium.Name" xml:space="preserve">
+    <value>radium</value>
+  </data>
+  <data name="&gt;&gt;radium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;radium.ZOrder" xml:space="preserve">
+    <value>123</value>
+  </data>
+  <data name="&gt;&gt;francium.Name" xml:space="preserve">
+    <value>francium</value>
+  </data>
+  <data name="&gt;&gt;francium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;francium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;francium.ZOrder" xml:space="preserve">
+    <value>124</value>
+  </data>
+  <data name="&gt;&gt;barium.Name" xml:space="preserve">
+    <value>barium</value>
+  </data>
+  <data name="&gt;&gt;barium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;barium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;barium.ZOrder" xml:space="preserve">
+    <value>125</value>
+  </data>
+  <data name="&gt;&gt;cesium.Name" xml:space="preserve">
+    <value>cesium</value>
+  </data>
+  <data name="&gt;&gt;cesium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cesium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;cesium.ZOrder" xml:space="preserve">
+    <value>126</value>
+  </data>
+  <data name="&gt;&gt;stronium.Name" xml:space="preserve">
+    <value>stronium</value>
+  </data>
+  <data name="&gt;&gt;stronium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stronium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;stronium.ZOrder" xml:space="preserve">
+    <value>127</value>
+  </data>
+  <data name="&gt;&gt;rubidium.Name" xml:space="preserve">
+    <value>rubidium</value>
+  </data>
+  <data name="&gt;&gt;rubidium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rubidium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;rubidium.ZOrder" xml:space="preserve">
+    <value>128</value>
+  </data>
+  <data name="&gt;&gt;calcium.Name" xml:space="preserve">
+    <value>calcium</value>
+  </data>
+  <data name="&gt;&gt;calcium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;calcium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;calcium.ZOrder" xml:space="preserve">
+    <value>129</value>
+  </data>
+  <data name="&gt;&gt;potassium.Name" xml:space="preserve">
+    <value>potassium</value>
+  </data>
+  <data name="&gt;&gt;potassium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;potassium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;potassium.ZOrder" xml:space="preserve">
+    <value>130</value>
+  </data>
+  <data name="&gt;&gt;magnesium.Name" xml:space="preserve">
+    <value>magnesium</value>
+  </data>
+  <data name="&gt;&gt;magnesium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;magnesium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;magnesium.ZOrder" xml:space="preserve">
+    <value>131</value>
+  </data>
+  <data name="&gt;&gt;sodium.Name" xml:space="preserve">
+    <value>sodium</value>
+  </data>
+  <data name="&gt;&gt;sodium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sodium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;sodium.ZOrder" xml:space="preserve">
+    <value>132</value>
+  </data>
+  <data name="&gt;&gt;beryllium.Name" xml:space="preserve">
+    <value>beryllium</value>
+  </data>
+  <data name="&gt;&gt;beryllium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;beryllium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;beryllium.ZOrder" xml:space="preserve">
+    <value>133</value>
+  </data>
+  <data name="&gt;&gt;lithium.Name" xml:space="preserve">
+    <value>lithium</value>
+  </data>
+  <data name="&gt;&gt;lithium.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lithium.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;lithium.ZOrder" xml:space="preserve">
+    <value>134</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>135</value>
+  </data>
+  <data name="&gt;&gt;elementHover.Name" xml:space="preserve">
+    <value>elementHover</value>
+  </data>
+  <data name="&gt;&gt;elementHover.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;elementHover.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;elementHover.ZOrder" xml:space="preserve">
+    <value>136</value>
+  </data>
+  <data name="&gt;&gt;button3.Name" xml:space="preserve">
+    <value>button3</value>
+  </data>
+  <data name="&gt;&gt;button3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
+    <value>137</value>
+  </data>
+  <data name="&gt;&gt;equationBackground.Name" xml:space="preserve">
+    <value>equationBackground</value>
+  </data>
+  <data name="&gt;&gt;equationBackground.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;equationBackground.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;equationBackground.ZOrder" xml:space="preserve">
+    <value>138</value>
+  </data>
+  <data name="&gt;&gt;tableBackground.Name" xml:space="preserve">
+    <value>tableBackground</value>
+  </data>
+  <data name="&gt;&gt;tableBackground.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableBackground.Parent" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;tableBackground.ZOrder" xml:space="preserve">
+    <value>139</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Balancer.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 11.25pt</value>
+  </data>
+  <data name="Balancer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="Balancer.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Balancer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1147, 871</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Balancer.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Balancer.Text" xml:space="preserve">
+    <value>       Balancer     </value>
+  </data>
+  <data name="&gt;&gt;Balancer.Name" xml:space="preserve">
+    <value>Balancer</value>
+  </data>
+  <data name="&gt;&gt;Balancer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Balancer.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;Balancer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;mmProduct3.Name" xml:space="preserve">
+    <value>mmProduct3</value>
+  </data>
+  <data name="&gt;&gt;mmProduct3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mmProduct3.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;mmProduct3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;mmProduct2.Name" xml:space="preserve">
+    <value>mmProduct2</value>
+  </data>
+  <data name="&gt;&gt;mmProduct2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mmProduct2.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;mmProduct2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;mmProduct1.Name" xml:space="preserve">
+    <value>mmProduct1</value>
+  </data>
+  <data name="&gt;&gt;mmProduct1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mmProduct1.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;mmProduct1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;mmReactant3.Name" xml:space="preserve">
+    <value>mmReactant3</value>
+  </data>
+  <data name="&gt;&gt;mmReactant3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mmReactant3.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;mmReactant3.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;mmReactant2.Name" xml:space="preserve">
+    <value>mmReactant2</value>
+  </data>
+  <data name="&gt;&gt;mmReactant2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mmReactant2.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;mmReactant2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;mmReactant1.Name" xml:space="preserve">
+    <value>mmReactant1</value>
+  </data>
+  <data name="&gt;&gt;mmReactant1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mmReactant1.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;mmReactant1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;product3.Name" xml:space="preserve">
+    <value>product3</value>
+  </data>
+  <data name="&gt;&gt;product3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;product3.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;product3.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;product1.Name" xml:space="preserve">
+    <value>product1</value>
+  </data>
+  <data name="&gt;&gt;product1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;product1.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;product1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;product2.Name" xml:space="preserve">
+    <value>product2</value>
+  </data>
+  <data name="&gt;&gt;product2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;product2.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;product2.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;reactant3.Name" xml:space="preserve">
+    <value>reactant3</value>
+  </data>
+  <data name="&gt;&gt;reactant3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reactant3.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;reactant3.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;reactant1.Name" xml:space="preserve">
+    <value>reactant1</value>
+  </data>
+  <data name="&gt;&gt;reactant1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reactant1.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;reactant1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;reactant2.Name" xml:space="preserve">
+    <value>reactant2</value>
+  </data>
+  <data name="&gt;&gt;reactant2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reactant2.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;reactant2.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;mmEquation6.Name" xml:space="preserve">
+    <value>mmEquation6</value>
+  </data>
+  <data name="&gt;&gt;mmEquation6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mmEquation6.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;mmEquation6.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;mmEquation5.Name" xml:space="preserve">
+    <value>mmEquation5</value>
+  </data>
+  <data name="&gt;&gt;mmEquation5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mmEquation5.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;mmEquation5.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;mmEquation4.Name" xml:space="preserve">
+    <value>mmEquation4</value>
+  </data>
+  <data name="&gt;&gt;mmEquation4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mmEquation4.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;mmEquation4.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;mmEquation3.Name" xml:space="preserve">
+    <value>mmEquation3</value>
+  </data>
+  <data name="&gt;&gt;mmEquation3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mmEquation3.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;mmEquation3.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;mmEquation2.Name" xml:space="preserve">
+    <value>mmEquation2</value>
+  </data>
+  <data name="&gt;&gt;mmEquation2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mmEquation2.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;mmEquation2.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;mmEquation1.Name" xml:space="preserve">
+    <value>mmEquation1</value>
+  </data>
+  <data name="&gt;&gt;mmEquation1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mmEquation1.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;mmEquation1.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;pictureBox5.Name" xml:space="preserve">
+    <value>pictureBox5</value>
+  </data>
+  <data name="&gt;&gt;pictureBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox5.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;pictureBox5.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;pictureBox8.Name" xml:space="preserve">
+    <value>pictureBox8</value>
+  </data>
+  <data name="&gt;&gt;pictureBox8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox8.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;pictureBox8.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;pictureBox9.Name" xml:space="preserve">
+    <value>pictureBox9</value>
+  </data>
+  <data name="&gt;&gt;pictureBox9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox9.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;pictureBox9.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;pictureBox10.Name" xml:space="preserve">
+    <value>pictureBox10</value>
+  </data>
+  <data name="&gt;&gt;pictureBox10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox10.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;pictureBox10.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;pictureBox11.Name" xml:space="preserve">
+    <value>pictureBox11</value>
+  </data>
+  <data name="&gt;&gt;pictureBox11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox11.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;pictureBox11.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;reactantBackground1.Name" xml:space="preserve">
+    <value>reactantBackground1</value>
+  </data>
+  <data name="&gt;&gt;reactantBackground1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reactantBackground1.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;reactantBackground1.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;reactantBackground2.Name" xml:space="preserve">
+    <value>reactantBackground2</value>
+  </data>
+  <data name="&gt;&gt;reactantBackground2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reactantBackground2.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;reactantBackground2.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;reactantBackgorund3.Name" xml:space="preserve">
+    <value>reactantBackgorund3</value>
+  </data>
+  <data name="&gt;&gt;reactantBackgorund3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;reactantBackgorund3.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;reactantBackgorund3.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;button4.Name" xml:space="preserve">
+    <value>button4</value>
+  </data>
+  <data name="&gt;&gt;button4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button4.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;button4.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;button5.Name" xml:space="preserve">
+    <value>button5</value>
+  </data>
+  <data name="&gt;&gt;button5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button5.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;button6.Name" xml:space="preserve">
+    <value>button6</value>
+  </data>
+  <data name="&gt;&gt;button6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button6.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;button6.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;button7.Name" xml:space="preserve">
+    <value>button7</value>
+  </data>
+  <data name="&gt;&gt;button7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button7.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;button7.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;button8.Name" xml:space="preserve">
+    <value>button8</value>
+  </data>
+  <data name="&gt;&gt;button8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button8.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;button8.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="MolarMass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="MolarMass.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="MolarMass.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1147, 871</value>
+  </data>
+  <data name="MolarMass.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="MolarMass.Text" xml:space="preserve">
+    <value>      Molar Mass      </value>
+  </data>
+  <data name="&gt;&gt;MolarMass.Name" xml:space="preserve">
+    <value>MolarMass</value>
+  </data>
+  <data name="&gt;&gt;MolarMass.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MolarMass.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;MolarMass.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;clearMolality.Name" xml:space="preserve">
+    <value>clearMolality</value>
+  </data>
+  <data name="&gt;&gt;clearMolality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clearMolality.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;clearMolality.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;clearConversion.Name" xml:space="preserve">
+    <value>clearConversion</value>
+  </data>
+  <data name="&gt;&gt;clearConversion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clearConversion.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;clearConversion.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;clearMolarity.Name" xml:space="preserve">
+    <value>clearMolarity</value>
+  </data>
+  <data name="&gt;&gt;clearMolarity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clearMolarity.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;clearMolarity.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;button19.Name" xml:space="preserve">
+    <value>button19</value>
+  </data>
+  <data name="&gt;&gt;button19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button19.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;button19.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;densityConvert.Name" xml:space="preserve">
+    <value>densityConvert</value>
+  </data>
+  <data name="&gt;&gt;densityConvert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;densityConvert.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;densityConvert.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;button20.Name" xml:space="preserve">
+    <value>button20</value>
+  </data>
+  <data name="&gt;&gt;button20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button20.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;button20.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;molarMassConvert.Name" xml:space="preserve">
+    <value>molarMassConvert</value>
+  </data>
+  <data name="&gt;&gt;molarMassConvert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;molarMassConvert.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;molarMassConvert.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;button18.Name" xml:space="preserve">
+    <value>button18</value>
+  </data>
+  <data name="&gt;&gt;button18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button18.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;button18.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;button17.Name" xml:space="preserve">
+    <value>button17</value>
+  </data>
+  <data name="&gt;&gt;button17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button17.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;button17.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;molalitySolve.Name" xml:space="preserve">
+    <value>molalitySolve</value>
+  </data>
+  <data name="&gt;&gt;molalitySolve.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;molalitySolve.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;molalitySolve.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;button11.Name" xml:space="preserve">
+    <value>button11</value>
+  </data>
+  <data name="&gt;&gt;button11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button11.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;button11.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;molalityAnswer.Name" xml:space="preserve">
+    <value>molalityAnswer</value>
+  </data>
+  <data name="&gt;&gt;molalityAnswer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;molalityAnswer.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;molalityAnswer.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;button12.Name" xml:space="preserve">
+    <value>button12</value>
+  </data>
+  <data name="&gt;&gt;button12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button12.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;button12.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;button13.Name" xml:space="preserve">
+    <value>button13</value>
+  </data>
+  <data name="&gt;&gt;button13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button13.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;button13.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;button14.Name" xml:space="preserve">
+    <value>button14</value>
+  </data>
+  <data name="&gt;&gt;button14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button14.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;button14.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;kgMolality.Name" xml:space="preserve">
+    <value>kgMolality</value>
+  </data>
+  <data name="&gt;&gt;kgMolality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;kgMolality.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;kgMolality.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;button15.Name" xml:space="preserve">
+    <value>button15</value>
+  </data>
+  <data name="&gt;&gt;button15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button15.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;button15.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;button16.Name" xml:space="preserve">
+    <value>button16</value>
+  </data>
+  <data name="&gt;&gt;button16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button16.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;button16.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;molesMolality.Name" xml:space="preserve">
+    <value>molesMolality</value>
+  </data>
+  <data name="&gt;&gt;molesMolality.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;molesMolality.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;molesMolality.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;conversion.Name" xml:space="preserve">
+    <value>conversion</value>
+  </data>
+  <data name="&gt;&gt;conversion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;conversion.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;conversion.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;molalityLabel.Name" xml:space="preserve">
+    <value>molalityLabel</value>
+  </data>
+  <data name="&gt;&gt;molalityLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;molalityLabel.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;molalityLabel.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;molarityConvert.Name" xml:space="preserve">
+    <value>molarityConvert</value>
+  </data>
+  <data name="&gt;&gt;molarityConvert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;molarityConvert.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;molarityConvert.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;molesLabel2.Name" xml:space="preserve">
+    <value>molesLabel2</value>
+  </data>
+  <data name="&gt;&gt;molesLabel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;molesLabel2.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;molesLabel2.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;molalityConvert.Name" xml:space="preserve">
+    <value>molalityConvert</value>
+  </data>
+  <data name="&gt;&gt;molalityConvert.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;molalityConvert.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;molalityConvert.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;molarityLabel.Name" xml:space="preserve">
+    <value>molarityLabel</value>
+  </data>
+  <data name="&gt;&gt;molarityLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;molarityLabel.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;molarityLabel.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;molarityAnswer.Name" xml:space="preserve">
+    <value>molarityAnswer</value>
+  </data>
+  <data name="&gt;&gt;molarityAnswer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;molarityAnswer.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;molarityAnswer.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;eq1.Name" xml:space="preserve">
+    <value>eq1</value>
+  </data>
+  <data name="&gt;&gt;eq1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;eq1.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;eq1.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;eq2.Name" xml:space="preserve">
+    <value>eq2</value>
+  </data>
+  <data name="&gt;&gt;eq2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;eq2.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;eq2.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;litersLabel.Name" xml:space="preserve">
+    <value>litersLabel</value>
+  </data>
+  <data name="&gt;&gt;litersLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;litersLabel.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;litersLabel.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;litersMolarity.Name" xml:space="preserve">
+    <value>litersMolarity</value>
+  </data>
+  <data name="&gt;&gt;litersMolarity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;litersMolarity.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;litersMolarity.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;divisor1.Name" xml:space="preserve">
+    <value>divisor1</value>
+  </data>
+  <data name="&gt;&gt;divisor1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;divisor1.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;divisor1.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;molesLabel.Name" xml:space="preserve">
+    <value>molesLabel</value>
+  </data>
+  <data name="&gt;&gt;molesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;molesLabel.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;molesLabel.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;molesMolarity.Name" xml:space="preserve">
+    <value>molesMolarity</value>
+  </data>
+  <data name="&gt;&gt;molesMolarity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;molesMolarity.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;molesMolarity.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;molaritySolve.Name" xml:space="preserve">
+    <value>molaritySolve</value>
+  </data>
+  <data name="&gt;&gt;molaritySolve.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;molaritySolve.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;molaritySolve.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>37</value>
+  </data>
+  <data name="Molarity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="Molarity.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="Molarity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1147, 871</value>
+  </data>
+  <data name="Molarity.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="Molarity.Text" xml:space="preserve">
+    <value>       Molarity       </value>
+  </data>
+  <data name="&gt;&gt;Molarity.Name" xml:space="preserve">
+    <value>Molarity</value>
+  </data>
+  <data name="&gt;&gt;Molarity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Molarity.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;Molarity.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;balanced6.Name" xml:space="preserve">
+    <value>balanced6</value>
+  </data>
+  <data name="&gt;&gt;balanced6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;balanced6.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;balanced6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;balanced5.Name" xml:space="preserve">
+    <value>balanced5</value>
+  </data>
+  <data name="&gt;&gt;balanced5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;balanced5.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;balanced5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;balanced4.Name" xml:space="preserve">
+    <value>balanced4</value>
+  </data>
+  <data name="&gt;&gt;balanced4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;balanced4.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;balanced4.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;balanced3.Name" xml:space="preserve">
+    <value>balanced3</value>
+  </data>
+  <data name="&gt;&gt;balanced3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;balanced3.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;balanced3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;balanced2.Name" xml:space="preserve">
+    <value>balanced2</value>
+  </data>
+  <data name="&gt;&gt;balanced2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;balanced2.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;balanced2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;balanced1.Name" xml:space="preserve">
+    <value>balanced1</value>
+  </data>
+  <data name="&gt;&gt;balanced1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;balanced1.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;balanced1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;pictureBox12.Name" xml:space="preserve">
+    <value>pictureBox12</value>
+  </data>
+  <data name="&gt;&gt;pictureBox12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox12.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox12.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;pictureBox13.Name" xml:space="preserve">
+    <value>pictureBox13</value>
+  </data>
+  <data name="&gt;&gt;pictureBox13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox13.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox13.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;pictureBox14.Name" xml:space="preserve">
+    <value>pictureBox14</value>
+  </data>
+  <data name="&gt;&gt;pictureBox14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox14.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox14.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;pictureBox15.Name" xml:space="preserve">
+    <value>pictureBox15</value>
+  </data>
+  <data name="&gt;&gt;pictureBox15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox15.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox15.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;pictureBox16.Name" xml:space="preserve">
+    <value>pictureBox16</value>
+  </data>
+  <data name="&gt;&gt;pictureBox16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox16.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;pictureBox16.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 25</value>
+  </data>
+  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1147, 871</value>
+  </data>
+  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>    Stoichiometry    </value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabPage1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1155, 900</value>
+  </data>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="clearBuilder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
   <data name="clearBuilder.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="clearBuilder.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 11.25pt, style=Bold</value>
   </data>
@@ -140,7 +2964,6 @@
   <data name="clearBuilder.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 53</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="clearBuilder.TabIndex" type="System.Int32, mscorlib">
     <value>282</value>
   </data>
@@ -5070,36 +7893,6 @@
   <data name="&gt;&gt;tableBackground.ZOrder" xml:space="preserve">
     <value>139</value>
   </data>
-  <data name="Balancer.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Verdana, 11.25pt</value>
-  </data>
-  <data name="Balancer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="Balancer.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="Balancer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1147, 871</value>
-  </data>
-  <data name="Balancer.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="Balancer.Text" xml:space="preserve">
-    <value>       Balancer     </value>
-  </data>
-  <data name="&gt;&gt;Balancer.Name" xml:space="preserve">
-    <value>Balancer</value>
-  </data>
-  <data name="&gt;&gt;Balancer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Balancer.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;Balancer.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
@@ -6227,33 +9020,6 @@
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
     <value>34</value>
-  </data>
-  <data name="MolarMass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="MolarMass.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="MolarMass.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1147, 871</value>
-  </data>
-  <data name="MolarMass.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="MolarMass.Text" xml:space="preserve">
-    <value>      Molar Mass      </value>
-  </data>
-  <data name="&gt;&gt;MolarMass.Name" xml:space="preserve">
-    <value>MolarMass</value>
-  </data>
-  <data name="&gt;&gt;MolarMass.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;MolarMass.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;MolarMass.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="clearMolality.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -7599,33 +10365,6 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>37</value>
   </data>
-  <data name="Molarity.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="Molarity.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="Molarity.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1147, 871</value>
-  </data>
-  <data name="Molarity.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="Molarity.Text" xml:space="preserve">
-    <value>       Molarity       </value>
-  </data>
-  <data name="&gt;&gt;Molarity.Name" xml:space="preserve">
-    <value>Molarity</value>
-  </data>
-  <data name="&gt;&gt;Molarity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Molarity.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;Molarity.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="balanced6.Location" type="System.Drawing.Point, System.Drawing">
     <value>973, 20</value>
   </data>
@@ -7928,57 +10667,6 @@
   </data>
   <data name="&gt;&gt;pictureBox16.ZOrder" xml:space="preserve">
     <value>10</value>
-  </data>
-  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 25</value>
-  </data>
-  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1147, 871</value>
-  </data>
-  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tabPage2.Text" xml:space="preserve">
-    <value>    Stoichiometry    </value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
-    <value>tabPage2</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tabPage1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1155, 900</value>
-  </data>
-  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
-    <value>tabPage1</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

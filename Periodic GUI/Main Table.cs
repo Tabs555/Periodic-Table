@@ -80,6 +80,18 @@ namespace Periodic_GUI
 
         }
 
+
+        static Boolean first = false;
+        List<int[]> bad = new List<int[]>();
+        static int[] a = new int[118];
+        static int[] b = new int[118];
+        static int[] c = new int[118];
+        static int[] d = new int[118];
+        static int[] e1 = new int[118];
+        static int[] f = new int[118];
+        List<int> tracker = new List<int>();
+
+
         #endregion
 
 
@@ -460,37 +472,231 @@ namespace Periodic_GUI
 
         //================================================================================================================================
         // --
-        //                                      Element Buttons
+        //                                      Solving Matrix
         // --
         //================================================================================================================================
          
 
-        #region Button Junk
-        private void hydrogen_Click(object sender, EventArgs e)
+        #region Matrix
+
+
+
+        public int[][] matrix()
         {
-            buttonSelect test;
-          
-            if (Hydclick == true)
+            int[] termCount = new int[6];
+            //how many terms? this determines how many of a, b, and c are being used
+            if (balanceBox1.Text != "")
             {
-                 test = new buttonSelect(HydrogenMM, 1);
-                
+                check(a);
+                bad.Add(a);
+            }
+            if (balanceBox2.Text != "")
+            {
+                check(b);
+                bad.Add(b);
+            }
+            if (balanceBox3.Text != "")
+            {
+                check(c);
+                bad.Add(c);
+            }
+            if (balanceBox4.Text != "")
+            {
+                check(d);
+                bad.Add(d);
+            }
+            if (balanceBox5.Text != "")
+            {
+                check(e1);
+                bad.Add(e1);
+            }
+            if (balanceBox6.Text != "")
+            {
+                check(f);
+                bad.Add(f);
+            }
+            //converts the products to negatives
+            makeNegative();
+            //overall counter of how many elements in the equation, this will be the part in the jagged array that changes from the video the amount of rows
+            int elementCount = tracker.Count;
+            int[][] matrix = new int[elementCount][];
+            //check how many of each element
+            for (int i = 0; i < tracker.Count; i++) //as long as i is less than the amount of elements in tracker
+            {
+                if (bad.Count == 1)
+                {
+                    int[] temp = bad[0];
+                    int tempy = tracker[i];
+                    matrix[i] = new int[] { temp[tempy] };
+                }
+                if (bad.Count == 2)
+                {
+                    int[] temp = bad[0];
+                    int[] temp2 = bad[1];
+                    int tempy = tracker[i];
+                    matrix[i] = new int[] { temp[tempy], temp2[tempy] };
+
+                }
+                if (bad.Count == 3)
+                {
+                    int[] temp = bad[0];
+                    int[] temp2 = bad[1];
+                    int[] temp3 = bad[2];
+                    int tempy = tracker[i];
+                    matrix[i] = new int[] { temp[tempy], temp2[tempy], temp3[tempy] };
+
+                }
+                if (bad.Count == 4)
+                {
+                    int[] temp = bad[0];
+                    int[] temp2 = bad[1];
+                    int[] temp3 = bad[2];
+                    int[] temp4 = bad[3];
+                    int tempy = tracker[i];
+                    matrix[i] = new int[] { temp[tempy], temp2[tempy], temp3[tempy], temp4[tempy] };
+
+                }
+                if (bad.Count == 5)
+                {
+                    int[] temp = bad[0];
+                    int[] temp2 = bad[1];
+                    int[] temp3 = bad[2];
+                    int[] temp4 = bad[3];
+                    int[] temp5 = bad[4];
+                    int tempy = tracker[i];
+                    matrix[i] = new int[] { temp[tempy], temp2[tempy], temp3[tempy], temp4[tempy], temp5[tempy] };
+
+                }
+                if (bad.Count == 6)
+                {
+                    int[] temp = bad[0];
+                    int[] temp2 = bad[1];
+                    int[] temp3 = bad[2];
+                    int[] temp4 = bad[3];
+                    int[] temp5 = bad[4];
+                    int[] temp6 = bad[5];
+                    int tempy = tracker[i];
+                    matrix[i] = new int[] { temp[tempy], temp2[tempy], temp3[tempy], temp4[tempy], temp5[tempy], temp6[tempy] };
+                }
+            }
+            return matrix;
+        }
+        public void check(int[] array) //checks for how many elements used
+        {
+            for (int i = 0; i < 118; i++)
+            {
+                if (array[i] > 0)
+                    addIndex(i);
+            }
+        }
+        public void makeNegative()
+        {
+            for (int i = 0; i < 118; i++)
+            {
+                d[i] *= -1;
+                e1[i] *= -1;
+                f[i] *= -1;
+            }
+        }
+
+        public int addIndex(int index) //prevents repeat indexes
+        {
+            if (first)
+            {
+                tracker.Add(index);
+                first = false;
             }
             else
             {
-                hyd = count2;
-                test = new buttonSelect(HydrogenMM, 1);
-                //count2+=2;
-                Hydclick = true;
-                Console.WriteLine(count2);
+                for (int k = 0; k < tracker.Count; k++) //checks the tracker list for repeat indexes
+                {
+                    if (tracker[k] == index)
+                        return -1; //ends the method if it finds a repeat index
+                }
+                tracker.Add(index);
+                return 1;
             }
-           
+            return -2;
+        }
+
+        #endregion
+
+
+
+
+
+        //================================================================================================================================
+        // --
+        //                                      Buttons
+        // --
+        //================================================================================================================================
+
+
+
+        #region Buttons
+
+
+        private void hydrogen_Click(object sender, EventArgs e)
+        {
+            buttonSelect test = new buttonSelect(HydrogenMM);
             test.ShowDialog();
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + hydrogen.Text;
+                if (count == 0)
+                {
+                    a[0]++;
+                }
+                if (count == 1)
+                {
+                    b[0]++;
+                }
+                if (count == 2)
+                {
+                    c[0]++;
+                }
+                if (count == 3)
+                {
+                    d[0]++;
+                }
+                if (count == 4)
+                {
+                    e1[0]++;
+                }
+                if (count == 5)
+                {
+                    f[0]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[0] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[0] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[0] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[0] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[0] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[0] += myInt;
+                }
+
                 compoundBuilder.SelectedText += hydrogen.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -505,9 +711,60 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[54]++;
+                }
+                if (count == 1)
+                {
+                    b[54]++;
+                }
+                if (count == 2)
+                {
+                    c[54]++;
+                }
+                if (count == 3)
+                {
+                    d[54]++;
+                }
+                if (count == 4)
+                {
+                    e1[54]++;
+                }
+                if (count == 5)
+                {
+                    f[54]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + cesium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[54] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[54] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[54] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[54] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[54] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[54] += myInt;
+                }
+
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + cesium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -524,9 +781,59 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[101]++;
+                }
+                if (count == 1)
+                {
+                    b[101]++;
+                }
+                if (count == 2)
+                {
+                    c[101]++;
+                }
+                if (count == 3)
+                {
+                    d[101]++;
+                }
+                if (count == 4)
+                {
+                    e1[101]++;
+                }
+                if (count == 5)
+                {
+                    f[101]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + nobelium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[101] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[101] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[101] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[101] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[101] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[101] += myInt;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + nobelium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -535,6 +842,9 @@ namespace Periodic_GUI
 
         }
 
+
+
+
         private void lutetium_Click(object sender, EventArgs e)
         {
             buttonSelect test = new buttonSelect(LutetiumMM);
@@ -542,13 +852,65 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + lutetium.Text;
+                if (count == 0)
+                {
+                    a[70]++;
+                }
+                if (count == 1)
+                {
+                    b[70]++;
+                }
+                if (count == 2)
+                {
+                    c[70]++;
+                }
+                if (count == 3)
+                {
+                    d[70]++;
+                }
+                if (count == 4)
+                {
+                    e1[70]++;
+                }
+                if (count == 5)
+                {
+                    f[70]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[70] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[70] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[70] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[70] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[70] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[70] += myInt;
+                }
+
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + lutetium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+
             }
 
         }
@@ -560,9 +922,60 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + ytterbium.Text;
+                if (count == 0)
+                {
+                    a[69]++;
+                }
+                if (count == 1)
+                {
+                    b[69]++;
+                }
+                if (count == 2)
+                {
+                    c[69]++;
+                }
+                if (count == 3)
+                {
+                    d[69]++;
+                }
+                if (count == 4)
+                {
+                    e1[69]++;
+                }
+                if (count == 5)
+                {
+                    f[69]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[69] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[69] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[69] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[69] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[69] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[69] += myInt;
+                }
+
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + ytterbium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -578,9 +991,60 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[100]++;
+                }
+                if (count == 1)
+                {
+                    b[100]++;
+                }
+                if (count == 2)
+                {
+                    c[100]++;
+                }
+                if (count == 3)
+                {
+                    d[100]++;
+                }
+                if (count == 4)
+                {
+                    e1[100]++;
+                }
+                if (count == 5)
+                {
+                    f[100]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + mendelevium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[100] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[100] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[100] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[100] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[100] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[100] += myInt;
+                }
+
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + mendelevium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -596,13 +1060,65 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + fermium.Text;
+                if (count == 0)
+                {
+                    a[99]++;
+                }
+                if (count == 1)
+                {
+                    b[99]++;
+                }
+                if (count == 2)
+                {
+                    c[99]++;
+                }
+                if (count == 3)
+                {
+                    d[99]++;
+                }
+                if (count == 4)
+                {
+                    e1[99]++;
+                }
+                if (count == 5)
+                {
+                    f[99]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + fermium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[99] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[99] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[99] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[99] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[99] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[99] += myInt;
+                }
+
+
             }
 
         }
@@ -614,9 +1130,61 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + thulium.Text;
+                if (count == 0)
+                {
+                    a[68]++;
+                }
+                if (count == 1)
+                {
+                    b[68]++;
+                }
+                if (count == 2)
+                {
+                    c[68]++;
+                }
+                if (count == 3)
+                {
+                    d[68]++;
+                }
+                if (count == 4)
+                {
+                    e1[68]++;
+                }
+                if (count == 5)
+                {
+                    f[68]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[68] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[68] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[68] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[68] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[68] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[68] += myInt;
+                }
+
+
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + thulium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -632,9 +1200,61 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + erbium.Text;
+                if (count == 0)
+                {
+                    a[67]++;
+                }
+                if (count == 1)
+                {
+                    b[67]++;
+                }
+                if (count == 2)
+                {
+                    c[67]++;
+                }
+                if (count == 3)
+                {
+                    d[67]++;
+                }
+                if (count == 4)
+                {
+                    e1[67]++;
+                }
+                if (count == 5)
+                {
+                    f[67]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[67] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[67] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[67] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[67] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[67] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[67] += myInt;
+                }
+
+
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + erbium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -650,13 +1270,65 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[98]++;
+                }
+                if (count == 1)
+                {
+                    b[98]++;
+                }
+                if (count == 2)
+                {
+                    c[98]++;
+                }
+                if (count == 3)
+                {
+                    d[98]++;
+                }
+                if (count == 4)
+                {
+                    e1[98]++;
+                }
+                if (count == 5)
+                {
+                    f[98]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + einsteinium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + einsteinium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[98] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[98] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[98] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[98] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[98] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[98] += myInt;
+                }
+
+
             }
 
         }
@@ -668,13 +1340,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[97]++;
+                }
+                if (count == 1)
+                {
+                    b[97]++;
+                }
+                if (count == 2)
+                {
+                    c[97]++;
+                }
+                if (count == 3)
+                {
+                    d[97]++;
+                }
+                if (count == 4)
+                {
+                    e1[97]++;
+                }
+                if (count == 5)
+                {
+                    f[97]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + californium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + californium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[97] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[97] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[97] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[97] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[97] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[97] += myInt;
+                }
             }
 
         }
@@ -686,13 +1408,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + holmium.Text;
+                if (count == 0)
+                {
+                    a[66]++;
+                }
+                if (count == 1)
+                {
+                    b[66]++;
+                }
+                if (count == 2)
+                {
+                    c[66]++;
+                }
+                if (count == 3)
+                {
+                    d[66]++;
+                }
+                if (count == 4)
+                {
+                    e1[66]++;
+                }
+                if (count == 5)
+                {
+                    f[66]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + holmium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[66] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[66] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[66] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[66] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[66] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[66] += myInt;
+                }
             }
 
         }
@@ -704,13 +1476,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + dysprosium.Text;
+                if (count == 0)
+                {
+                    a[65]++;
+                }
+                if (count == 1)
+                {
+                    b[65]++;
+                }
+                if (count == 2)
+                {
+                    c[65]++;
+                }
+                if (count == 3)
+                {
+                    d[65]++;
+                }
+                if (count == 4)
+                {
+                    e1[65]++;
+                }
+                if (count == 5)
+                {
+                    f[65]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + dysprosium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[65] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[65] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[65] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[65] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[65] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[65] += myInt;
+                }
             }
 
         }
@@ -722,13 +1544,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + berkelium.Text;
+                if (count == 0)
+                {
+                    a[96]++;
+                }
+                if (count == 1)
+                {
+                    b[96]++;
+                }
+                if (count == 2)
+                {
+                    c[96]++;
+                }
+                if (count == 3)
+                {
+                    d[96]++;
+                }
+                if (count == 4)
+                {
+                    e1[96]++;
+                }
+                if (count == 5)
+                {
+                    f[96]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + berkelium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[96] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[96] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[96] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[96] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[96] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[96] += myInt;
+                }
             }
 
         }
@@ -740,13 +1612,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + curium.Text;
+                if (count == 0)
+                {
+                    a[95]++;
+                }
+                if (count == 1)
+                {
+                    b[95]++;
+                }
+                if (count == 2)
+                {
+                    c[95]++;
+                }
+                if (count == 3)
+                {
+                    d[95]++;
+                }
+                if (count == 4)
+                {
+                    e1[95]++;
+                }
+                if (count == 5)
+                {
+                    f[95]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + curium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[95] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[95] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[95] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[95] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[95] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[95] += myInt;
+                }
             }
 
         }
@@ -758,13 +1680,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + terbium.Text;
+                if (count == 0)
+                {
+                    a[64]++;
+                }
+                if (count == 1)
+                {
+                    b[64]++;
+                }
+                if (count == 2)
+                {
+                    c[64]++;
+                }
+                if (count == 3)
+                {
+                    d[64]++;
+                }
+                if (count == 4)
+                {
+                    e1[64]++;
+                }
+                if (count == 5)
+                {
+                    f[64]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + terbium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[64] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[64] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[64] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[64] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[64] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[64] += myInt;
+                }
             }
 
         }
@@ -776,13 +1748,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + gadolinium.Text;
+                if (count == 0)
+                {
+                    a[63]++;
+                }
+                if (count == 1)
+                {
+                    b[63]++;
+                }
+                if (count == 2)
+                {
+                    c[63]++;
+                }
+                if (count == 3)
+                {
+                    d[63]++;
+                }
+                if (count == 4)
+                {
+                    e1[63]++;
+                }
+                if (count == 5)
+                {
+                    f[63]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + gadolinium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[63] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[63] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[63] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[63] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[63] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[63] += myInt;
+                }
+
             }
 
         }
@@ -794,13 +1817,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + americium.Text;
+                if (count == 0)
+                {
+                    a[94]++;
+                }
+                if (count == 1)
+                {
+                    b[94]++;
+                }
+                if (count == 2)
+                {
+                    c[94]++;
+                }
+                if (count == 3)
+                {
+                    d[94]++;
+                }
+                if (count == 4)
+                {
+                    e1[94]++;
+                }
+                if (count == 5)
+                {
+                    f[94]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + americium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[94] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[94] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[94] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[94] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[94] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[94] += myInt;
+                }
+
             }
 
         }
@@ -812,13 +1886,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + plutonium.Text;
+                if (count == 0)
+                {
+                    a[93]++;
+                }
+                if (count == 1)
+                {
+                    b[93]++;
+                }
+                if (count == 2)
+                {
+                    c[93]++;
+                }
+                if (count == 3)
+                {
+                    d[93]++;
+                }
+                if (count == 4)
+                {
+                    e1[93]++;
+                }
+                if (count == 5)
+                {
+                    f[93]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + plutonium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[93] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[93] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[93] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[93] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[93] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[93] += myInt;
+                }
             }
 
         }
@@ -830,13 +1954,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + europium.Text;
+                if (count == 0)
+                {
+                    a[62]++;
+                }
+                if (count == 1)
+                {
+                    b[62]++;
+                }
+                if (count == 2)
+                {
+                    c[62]++;
+                }
+                if (count == 3)
+                {
+                    d[62]++;
+                }
+                if (count == 4)
+                {
+                    e1[62]++;
+                }
+                if (count == 5)
+                {
+                    f[62]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + europium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[62] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[62] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[62] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[62] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[62] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[62] += myInt;
+                }
             }
 
         }
@@ -848,13 +2022,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + samarium.Text;
+                if (count == 0)
+                {
+                    a[61]++;
+                }
+                if (count == 1)
+                {
+                    b[61]++;
+                }
+                if (count == 2)
+                {
+                    c[61]++;
+                }
+                if (count == 3)
+                {
+                    d[61]++;
+                }
+                if (count == 4)
+                {
+                    e1[61]++;
+                }
+                if (count == 5)
+                {
+                    f[61]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + samarium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[61] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[61] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[61] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[61] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[61] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[61] += myInt;
+                }
             }
 
         }
@@ -866,13 +2090,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + neptunium.Text;
+                if (count == 0)
+                {
+                    a[92]++;
+                }
+                if (count == 1)
+                {
+                    b[92]++;
+                }
+                if (count == 2)
+                {
+                    c[92]++;
+                }
+                if (count == 3)
+                {
+                    d[92]++;
+                }
+                if (count == 4)
+                {
+                    e1[92]++;
+                }
+                if (count == 5)
+                {
+                    f[92]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + neptunium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[92] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[92] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[92] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[92] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[92] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[92] += myInt;
+                }
             }
 
         }
@@ -884,13 +2158,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + uranium.Text;
+                if (count == 0)
+                {
+                    a[91]++;
+                }
+                if (count == 1)
+                {
+                    b[91]++;
+                }
+                if (count == 2)
+                {
+                    c[91]++;
+                }
+                if (count == 3)
+                {
+                    d[91]++;
+                }
+                if (count == 4)
+                {
+                    e1[91]++;
+                }
+                if (count == 5)
+                {
+                    f[91]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + uranium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[91] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[91] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[91] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[91] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[91] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[91] += myInt;
+                }
+
             }
 
         }
@@ -902,13 +2227,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + promethium.Text;
+                if (count == 0)
+                {
+                    a[60]++;
+                }
+                if (count == 1)
+                {
+                    b[60]++;
+                }
+                if (count == 2)
+                {
+                    c[60]++;
+                }
+                if (count == 3)
+                {
+                    d[60]++;
+                }
+                if (count == 4)
+                {
+                    e1[60]++;
+                }
+                if (count == 5)
+                {
+                    f[60]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + promethium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[60] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[60] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[60] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[60] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[60] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[60] += myInt;
+                }
             }
 
         }
@@ -920,13 +2295,65 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + neodymium.Text;
+                if (count == 0)
+                {
+                    a[59]++;
+                }
+                if (count == 1)
+                {
+                    b[59]++;
+                }
+                if (count == 2)
+                {
+                    c[59]++;
+                }
+                if (count == 3)
+                {
+                    d[59]++;
+                }
+                if (count == 4)
+                {
+                    e1[59]++;
+                }
+                if (count == 5)
+                {
+                    f[59]++;
+                }
+
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + neodymium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+
+                if (count == 0)
+                {
+                    a[59] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[59] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[59] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[59] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[59] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[59] += myInt;
+                }
             }
 
         }
@@ -938,13 +2365,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + protactinium.Text;
+                if (count == 0)
+                {
+                    a[90]++;
+                }
+                if (count == 1)
+                {
+                    b[90]++;
+                }
+                if (count == 2)
+                {
+                    c[90]++;
+                }
+                if (count == 3)
+                {
+                    d[90]++;
+                }
+                if (count == 4)
+                {
+                    e1[90]++;
+                }
+                if (count == 5)
+                {
+                    f[90]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + protactinium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[90] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[90] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[90] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[90] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[90] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[90] += myInt;
+                }
             }
 
         }
@@ -956,13 +2433,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + thorium.Text;
+                if (count == 0)
+                {
+                    a[89]++;
+                }
+                if (count == 1)
+                {
+                    b[89]++;
+                }
+                if (count == 2)
+                {
+                    c[89]++;
+                }
+                if (count == 3)
+                {
+                    d[89]++;
+                }
+                if (count == 4)
+                {
+                    e1[89]++;
+                }
+                if (count == 5)
+                {
+                    f[89]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + thorium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[89] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[89] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[89] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[89] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[89] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[89] += myInt;
+                }
             }
 
         }
@@ -974,13 +2501,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + praseodymium.Text;
+                if (count == 0)
+                {
+                    a[58]++;
+                }
+                if (count == 1)
+                {
+                    b[58]++;
+                }
+                if (count == 2)
+                {
+                    c[58]++;
+                }
+                if (count == 3)
+                {
+                    d[58]++;
+                }
+                if (count == 4)
+                {
+                    e1[58]++;
+                }
+                if (count == 5)
+                {
+                    f[58]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + praseodymium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[58] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[58] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[58] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[58] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[58] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[58] += myInt;
+                }
             }
 
         }
@@ -992,13 +2569,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + cerium.Text;
+                if (count == 0)
+                {
+                    a[57]++;
+                }
+                if (count == 1)
+                {
+                    b[57]++;
+                }
+                if (count == 2)
+                {
+                    c[57]++;
+                }
+                if (count == 3)
+                {
+                    d[57]++;
+                }
+                if (count == 4)
+                {
+                    e1[57]++;
+                }
+                if (count == 5)
+                {
+                    f[57]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + cerium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[57] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[57] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[57] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[57] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[57] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[57] += myInt;
+                }
             }
 
         }
@@ -1010,13 +2637,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + actinium.Text;
+                if (count == 0)
+                {
+                    a[88]++;
+                }
+                if (count == 1)
+                {
+                    b[88]++;
+                }
+                if (count == 2)
+                {
+                    c[88]++;
+                }
+                if (count == 3)
+                {
+                    d[88]++;
+                }
+                if (count == 4)
+                {
+                    e1[88]++;
+                }
+                if (count == 5)
+                {
+                    f[88]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + actinium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[88] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[88] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[88] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[88] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[88] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[88] += myInt;
+                }
             }
 
         }
@@ -1028,13 +2705,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + lanthanum.Text;
+                if (count == 0)
+                {
+                    a[56]++;
+                }
+                if (count == 1)
+                {
+                    b[56]++;
+                }
+                if (count == 2)
+                {
+                    c[56]++;
+                }
+                if (count == 3)
+                {
+                    d[56]++;
+                }
+                if (count == 4)
+                {
+                    e1[56]++;
+                }
+                if (count == 5)
+                {
+                    f[56]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + lanthanum.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[56] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[56] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[56] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[56] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[56] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[56] += myInt;
+                }
             }
 
         }
@@ -1046,13 +2773,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + helium.Text;
+                if (count == 0)
+                {
+                    a[1]++;
+                }
+                if (count == 1)
+                {
+                    b[1]++;
+                }
+                if (count == 2)
+                {
+                    c[1]++;
+                }
+                if (count == 3)
+                {
+                    d[1]++;
+                }
+                if (count == 4)
+                {
+                    e1[1]++;
+                }
+                if (count == 5)
+                {
+                    f[1]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + helium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[1] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[1] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[1] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[1] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[1] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[1] += myInt;
+                }
             }
 
         }
@@ -1064,13 +2841,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + ununoctium.Text;
+                if (count == 0)
+                {
+                    a[117]++;
+                }
+                if (count == 1)
+                {
+                    b[117]++;
+                }
+                if (count == 2)
+                {
+                    c[117]++;
+                }
+                if (count == 3)
+                {
+                    d[117]++;
+                }
+                if (count == 4)
+                {
+                    e1[117]++;
+                }
+                if (count == 5)
+                {
+                    f[117]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + ununoctium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[117] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[117] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[117] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[117] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[117] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[117] += myInt;
+                }
             }
 
         }
@@ -1082,13 +2909,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + ununseptium.Text;
+                if (count == 0)
+                {
+                    a[116]++;
+                }
+                if (count == 1)
+                {
+                    b[116]++;
+                }
+                if (count == 2)
+                {
+                    c[116]++;
+                }
+                if (count == 3)
+                {
+                    d[116]++;
+                }
+                if (count == 4)
+                {
+                    e1[116]++;
+                }
+                if (count == 5)
+                {
+                    f[116]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + ununseptium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[116] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[116] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[116] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[116] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[116] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[116] += myInt;
+                }
             }
 
         }
@@ -1100,13 +2977,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + radon.Text;
+                if (count == 0)
+                {
+                    a[85]++;
+                }
+                if (count == 1)
+                {
+                    b[85]++;
+                }
+                if (count == 2)
+                {
+                    c[85]++;
+                }
+                if (count == 3)
+                {
+                    d[85]++;
+                }
+                if (count == 4)
+                {
+                    e1[85]++;
+                }
+                if (count == 5)
+                {
+                    f[85]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + radon.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[85] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[85] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[85] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[85] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[85] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[85] += myInt;
+                }
             }
 
         }
@@ -1118,13 +3045,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + astatine.Text;
+                if (count == 0)
+                {
+                    a[84]++;
+                }
+                if (count == 1)
+                {
+                    b[84]++;
+                }
+                if (count == 2)
+                {
+                    c[84]++;
+                }
+                if (count == 3)
+                {
+                    d[84]++;
+                }
+                if (count == 4)
+                {
+                    e1[84]++;
+                }
+                if (count == 5)
+                {
+                    f[84]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + astatine.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[84] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[84] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[84] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[84] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[84] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[84] += myInt;
+                }
             }
 
         }
@@ -1136,13 +3113,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
-                compoundBuilder.SelectedText = compoundBuilder.SelectedText + xenon.Text;
-            else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + xenon.Text;
+                if (count == 0)
+                {
+                    a[53]++;
+                }
+                if (count == 1)
+                {
+                    b[53]++;
+                }
+                if (count == 2)
+                {
+                    c[53]++;
+                }
+                if (count == 3)
+                {
+                    d[53]++;
+                }
+                if (count == 4)
+                {
+                    e1[53]++;
+                }
+                if (count == 5)
+                {
+                    f[53]++;
+                }
+            }
+            else if (isNumerical && myInt != 0)
+            {
+                compoundBuilder.SelectedText = compoundBuilder.SelectedText + Molybdenum.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[53] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[53] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[53] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[53] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[53] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[53] += myInt;
+                }
+
             }
 
         }
@@ -1154,13 +3182,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + iodine.Text;
+                if (count == 0)
+                {
+                    a[52]++;
+                }
+                if (count == 1)
+                {
+                    b[52]++;
+                }
+                if (count == 2)
+                {
+                    c[52]++;
+                }
+                if (count == 3)
+                {
+                    d[52]++;
+                }
+                if (count == 4)
+                {
+                    e1[52]++;
+                }
+                if (count == 5)
+                {
+                    f[52]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + iodine.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[52] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[52] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[52] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[52] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[52] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[52] += myInt;
+                }
+
             }
 
         }
@@ -1172,13 +3251,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + livermorium.Text;
+                if (count == 0)
+                {
+                    a[115]++;
+                }
+                if (count == 1)
+                {
+                    b[115]++;
+                }
+                if (count == 2)
+                {
+                    c[115]++;
+                }
+                if (count == 3)
+                {
+                    d[115]++;
+                }
+                if (count == 4)
+                {
+                    e1[115]++;
+                }
+                if (count == 5)
+                {
+                    f[115]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + livermorium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[115] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[115] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[115] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[115] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[115] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[115] += myInt;
+                }
+
             }
 
         }
@@ -1190,13 +3320,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + ununpentium.Text;
+                if (count == 0)
+                {
+                    a[114]++;
+                }
+                if (count == 1)
+                {
+                    b[114]++;
+                }
+                if (count == 2)
+                {
+                    c[114]++;
+                }
+                if (count == 3)
+                {
+                    d[114]++;
+                }
+                if (count == 4)
+                {
+                    e1[114]++;
+                }
+                if (count == 5)
+                {
+                    f[114]++;
+                }
+
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + ununpentium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[114] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[114] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[114] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[114] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[114] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[114] += myInt;
+                }
             }
 
         }
@@ -1208,13 +3389,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + polonium.Text;
+                if (count == 0)
+                {
+                    a[83]++;
+                }
+                if (count == 1)
+                {
+                    b[83]++;
+                }
+                if (count == 2)
+                {
+                    c[83]++;
+                }
+                if (count == 3)
+                {
+                    d[83]++;
+                }
+                if (count == 4)
+                {
+                    e1[83]++;
+                }
+                if (count == 5)
+                {
+                    f[83]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + polonium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[83] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[83] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[83] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[83] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[83] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[83] += myInt;
+                }
             }
 
         }
@@ -1226,13 +3457,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + Bismuth.Text;
+                if (count == 0)
+                {
+                    a[82]++;
+                }
+                if (count == 1)
+                {
+                    b[82]++;
+                }
+                if (count == 2)
+                {
+                    c[82]++;
+                }
+                if (count == 3)
+                {
+                    d[82]++;
+                }
+                if (count == 4)
+                {
+                    e1[82]++;
+                }
+                if (count == 5)
+                {
+                    f[82]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + Bismuth.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[82] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[82] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[82] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[82] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[82] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[82] += myInt;
+                }
+
             }
 
         }
@@ -1244,13 +3526,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + tellurium.Text;
+                if (count == 0)
+                {
+                    a[51]++;
+                }
+                if (count == 1)
+                {
+                    b[51]++;
+                }
+                if (count == 2)
+                {
+                    c[51]++;
+                }
+                if (count == 3)
+                {
+                    d[51]++;
+                }
+                if (count == 4)
+                {
+                    e1[51]++;
+                }
+                if (count == 5)
+                {
+                    f[51]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + tellurium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[51] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[51] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[51] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[51] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[51] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[51] += myInt;
+                }
+
             }
 
         }
@@ -1262,13 +3595,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + antimony.Text;
+                if (count == 0)
+                {
+                    a[50]++;
+                }
+                if (count == 1)
+                {
+                    b[50]++;
+                }
+                if (count == 2)
+                {
+                    c[50]++;
+                }
+                if (count == 3)
+                {
+                    d[50]++;
+                }
+                if (count == 4)
+                {
+                    e1[50]++;
+                }
+                if (count == 5)
+                {
+                    f[50]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + antimony.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[50] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[50] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[50] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[50] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[50] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[50] += myInt;
+                }
             }
 
         }
@@ -1280,13 +3663,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + Flerovium.Text;
+                if (count == 0)
+                {
+                    a[113]++;
+                }
+                if (count == 1)
+                {
+                    b[113]++;
+                }
+                if (count == 2)
+                {
+                    c[113]++;
+                }
+                if (count == 3)
+                {
+                    d[113]++;
+                }
+                if (count == 4)
+                {
+                    e1[113]++;
+                }
+                if (count == 5)
+                {
+                    f[113]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + Flerovium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[113] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[113] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[113] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[113] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[113] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[113] += myInt;
+                }
             }
 
         }
@@ -1298,13 +3731,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + ununtrium.Text;
+                if (count == 0)
+                {
+                    a[112]++;
+                }
+                if (count == 1)
+                {
+                    b[112]++;
+                }
+                if (count == 2)
+                {
+                    c[112]++;
+                }
+                if (count == 3)
+                {
+                    d[112]++;
+                }
+                if (count == 4)
+                {
+                    e1[112]++;
+                }
+                if (count == 5)
+                {
+                    f[112]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + ununtrium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[112] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[112] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[112] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[112] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[112] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[112] += myInt;
+                }
             }
 
         }
@@ -1316,13 +3799,40 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + lead.Text;
+
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + lead.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[81] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[81] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[81] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[81] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[81] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[81] += myInt;
+                }
             }
         }
 
@@ -1333,13 +3843,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + thallium.Text;
+                if (count == 0)
+                {
+                    a[80]++;
+                }
+                if (count == 1)
+                {
+                    b[80]++;
+                }
+                if (count == 2)
+                {
+                    c[80]++;
+                }
+                if (count == 3)
+                {
+                    d[80]++;
+                }
+                if (count == 4)
+                {
+                    e1[80]++;
+                }
+                if (count == 5)
+                {
+                    f[80]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + thallium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[80] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[80] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[80] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[80] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[80] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[80] += myInt;
+                }
             }
 
         }
@@ -1351,13 +3911,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + tin.Text;
+                if (count == 0)
+                {
+                    a[49]++;
+                }
+                if (count == 1)
+                {
+                    b[49]++;
+                }
+                if (count == 2)
+                {
+                    c[49]++;
+                }
+                if (count == 3)
+                {
+                    d[49]++;
+                }
+                if (count == 4)
+                {
+                    e1[49]++;
+                }
+                if (count == 5)
+                {
+                    f[49]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + tin.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[49] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[49] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[49] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[49] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[49] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[49] += myInt;
+                }
+
             }
 
         }
@@ -1369,13 +3980,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + indium.Text;
+                if (count == 0)
+                {
+                    a[48]++;
+                }
+                if (count == 1)
+                {
+                    b[48]++;
+                }
+                if (count == 2)
+                {
+                    c[48]++;
+                }
+                if (count == 3)
+                {
+                    d[48]++;
+                }
+                if (count == 4)
+                {
+                    e1[48]++;
+                }
+                if (count == 5)
+                {
+                    f[48]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + indium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[48] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[48] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[48] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[48] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[48] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[48] += myInt;
+                }
+
             }
 
         }
@@ -1387,13 +4049,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + krypton.Text;
+                if (count == 0)
+                {
+                    a[35]++;
+                }
+                if (count == 1)
+                {
+                    b[35]++;
+                }
+                if (count == 2)
+                {
+                    c[35]++;
+                }
+                if (count == 3)
+                {
+                    d[35]++;
+                }
+                if (count == 4)
+                {
+                    e1[35]++;
+                }
+                if (count == 5)
+                {
+                    f[35]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + krypton.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[35] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[35] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[35] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[35] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[35] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[35] += myInt;
+                }
             }
 
         }
@@ -1405,13 +4117,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + bromine.Text;
+                if (count == 0)
+                {
+                    a[34]++;
+                }
+                if (count == 1)
+                {
+                    b[34]++;
+                }
+                if (count == 2)
+                {
+                    c[34]++;
+                }
+                if (count == 3)
+                {
+                    d[34]++;
+                }
+                if (count == 4)
+                {
+                    e1[34]++;
+                }
+                if (count == 5)
+                {
+                    f[34]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + bromine.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[34] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[34] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[34] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[34] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[34] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[34] += myInt;
+                }
             }
 
         }
@@ -1423,45 +4185,131 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + argon.Text;
+                if (count == 0)
+                {
+                    a[17]++;
+                }
+                if (count == 1)
+                {
+                    b[17]++;
+                }
+                if (count == 2)
+                {
+                    c[17]++;
+                }
+                if (count == 3)
+                {
+                    d[17]++;
+                }
+                if (count == 4)
+                {
+                    e1[17]++;
+                }
+                if (count == 5)
+                {
+                    f[17]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + argon.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[17] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[17] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[17] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[17] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[17] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[17] += myInt;
+                }
             }
 
         }
 
         private void chlorine_Click(object sender, EventArgs e)
         {
-            buttonSelect test;
-
-            if (Chlorclick == true)
-            {
-                test = new buttonSelect(ChlorineMM, 1);
-
-            }
-            else
-            {
-                chlor = count2;
-                test = new buttonSelect(ChlorineMM, 1);
-                //count2+=2;
-                Chlorclick = true;
-                Console.WriteLine(count2);
-            }
+            buttonSelect test = new buttonSelect(ChlorineMM);
             test.ShowDialog();
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + chlorine.Text;
+                if (count == 0)
+                {
+                    a[16]++;
+                }
+                if (count == 1)
+                {
+                    b[16]++;
+                }
+                if (count == 2)
+                {
+                    c[16]++;
+                }
+                if (count == 3)
+                {
+                    d[16]++;
+                }
+                if (count == 4)
+                {
+                    e1[16]++;
+                }
+                if (count == 5)
+                {
+                    f[16]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + chlorine.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[16] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[16] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[16] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[16] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[16] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[16] += myInt;
+                }
             }
 
         }
@@ -1473,13 +4321,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + neon.Text;
+                if (count == 0)
+                {
+                    a[9]++;
+                }
+                if (count == 1)
+                {
+                    b[9]++;
+                }
+                if (count == 2)
+                {
+                    c[9]++;
+                }
+                if (count == 3)
+                {
+                    d[9]++;
+                }
+                if (count == 4)
+                {
+                    e1[9]++;
+                }
+                if (count == 5)
+                {
+                    f[9]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + neon.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[9] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[9] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[9] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[9] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[9] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[9] += myInt;
+                }
             }
 
         }
@@ -1491,13 +4389,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + flourine.Text;
+                if (count == 0)
+                {
+                    a[8]++;
+                }
+                if (count == 1)
+                {
+                    b[8]++;
+                }
+                if (count == 2)
+                {
+                    c[8]++;
+                }
+                if (count == 3)
+                {
+                    d[8]++;
+                }
+                if (count == 4)
+                {
+                    e1[8]++;
+                }
+                if (count == 5)
+                {
+                    f[8]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + flourine.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[8] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[8] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[8] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[8] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[8] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[8] += myInt;
+                }
             }
 
         }
@@ -1509,13 +4457,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + selenium.Text;
+                if (count == 0)
+                {
+                    a[33]++;
+                }
+                if (count == 1)
+                {
+                    b[33]++;
+                }
+                if (count == 2)
+                {
+                    c[33]++;
+                }
+                if (count == 3)
+                {
+                    d[33]++;
+                }
+                if (count == 4)
+                {
+                    e1[33]++;
+                }
+                if (count == 5)
+                {
+                    f[33]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + selenium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[33] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[33] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[33] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[33] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[33] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[33] += myInt;
+                }
+
             }
 
         }
@@ -1527,13 +4526,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + arsenic.Text;
+                if (count == 0)
+                {
+                    a[32]++;
+                }
+                if (count == 1)
+                {
+                    b[32]++;
+                }
+                if (count == 2)
+                {
+                    c[32]++;
+                }
+                if (count == 3)
+                {
+                    d[32]++;
+                }
+                if (count == 4)
+                {
+                    e1[32]++;
+                }
+                if (count == 5)
+                {
+                    f[32]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + arsenic.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[32] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[32] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[32] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[32] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[32] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[32] += myInt;
+                }
+
             }
 
         }
@@ -1545,13 +4595,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + sulfur.Text;
+                if (count == 0)
+                {
+                    a[7]++;
+                }
+                if (count == 1)
+                {
+                    b[7]++;
+                }
+                if (count == 2)
+                {
+                    c[7]++;
+                }
+                if (count == 3)
+                {
+                    d[7]++;
+                }
+                if (count == 4)
+                {
+                    e1[7]++;
+                }
+                if (count == 5)
+                {
+                    f[7]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + sulfur.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[7] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[7] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[7] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[7] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[7] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[7] += myInt;
+                }
             }
 
         }
@@ -1563,31 +4663,131 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + phosporous.Text;
+                if (count == 0)
+                {
+                    a[14]++;
+                }
+                if (count == 1)
+                {
+                    b[14]++;
+                }
+                if (count == 2)
+                {
+                    c[14]++;
+                }
+                if (count == 3)
+                {
+                    d[14]++;
+                }
+                if (count == 4)
+                {
+                    e1[14]++;
+                }
+                if (count == 5)
+                {
+                    f[14]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + phosporous.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[14] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[14] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[14] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[14] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[14] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[14] += myInt;
+                }
             }
 
         }
 
         private void oxygen_Click(object sender, EventArgs e)
         {
-            buttonSelect test = new buttonSelect(OxygenMM,1);
+            buttonSelect test = new buttonSelect(OxygenMM);
             test.ShowDialog();
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + oxygen.Text;
+                if (count == 0)
+                {
+                    a[7]++;
+                }
+                if (count == 1)
+                {
+                    b[7]++;
+                }
+                if (count == 2)
+                {
+                    c[7]++;
+                }
+                if (count == 3)
+                {
+                    d[7]++;
+                }
+                if (count == 4)
+                {
+                    e1[7]++;
+                }
+                if (count == 5)
+                {
+                    f[7]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + oxygen.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[7] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[7] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[7] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[7] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[7] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[7] += myInt;
+                }
             }
 
         }
@@ -1599,13 +4799,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + nitrogen.Text;
+                if (count == 0)
+                {
+                    a[6]++;
+                }
+                if (count == 1)
+                {
+                    b[6]++;
+                }
+                if (count == 2)
+                {
+                    c[6]++;
+                }
+                if (count == 3)
+                {
+                    d[6]++;
+                }
+                if (count == 4)
+                {
+                    e1[6]++;
+                }
+                if (count == 5)
+                {
+                    f[6]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + nitrogen.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[6] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[6] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[6] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[6] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[6] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[6] += myInt;
+                }
             }
 
         }
@@ -1617,13 +4867,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + germanium.Text;
+                if (count == 0)
+                {
+                    a[31]++;
+                }
+                if (count == 1)
+                {
+                    b[31]++;
+                }
+                if (count == 2)
+                {
+                    c[31]++;
+                }
+                if (count == 3)
+                {
+                    d[31]++;
+                }
+                if (count == 4)
+                {
+                    e1[31]++;
+                }
+                if (count == 5)
+                {
+                    f[31]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + germanium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[31] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[31] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[31] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[31] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[31] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[31] += myInt;
+                }
             }
 
         }
@@ -1635,13 +4935,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + gallium.Text;
+                if (count == 0)
+                {
+                    a[30]++;
+                }
+                if (count == 1)
+                {
+                    b[30]++;
+                }
+                if (count == 2)
+                {
+                    c[30]++;
+                }
+                if (count == 3)
+                {
+                    d[30]++;
+                }
+                if (count == 4)
+                {
+                    e1[30]++;
+                }
+                if (count == 5)
+                {
+                    f[30]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + gallium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[30] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[30] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[30] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[30] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[30] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[30] += myInt;
+                }
             }
 
         }
@@ -1653,13 +5003,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + silicon.Text;
+                if (count == 0)
+                {
+                    a[13]++;
+                }
+                if (count == 1)
+                {
+                    b[13]++;
+                }
+                if (count == 2)
+                {
+                    c[13]++;
+                }
+                if (count == 3)
+                {
+                    d[13]++;
+                }
+                if (count == 4)
+                {
+                    e1[13]++;
+                }
+                if (count == 5)
+                {
+                    f[13]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + silicon.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[13] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[13] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[13] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[13] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[13] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[13] += myInt;
+                }
             }
 
         }
@@ -1671,31 +5071,131 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + aluminum.Text;
+                if (count == 0)
+                {
+                    a[12]++;
+                }
+                if (count == 1)
+                {
+                    b[12]++;
+                }
+                if (count == 2)
+                {
+                    c[12]++;
+                }
+                if (count == 3)
+                {
+                    d[12]++;
+                }
+                if (count == 4)
+                {
+                    e1[12]++;
+                }
+                if (count == 5)
+                {
+                    f[12]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + aluminum.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[12] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[12] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[12] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[12] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[12] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[12] += myInt;
+                }
             }
 
         }
 
         private void carbon_Click(object sender, EventArgs e)
         {
-            buttonSelect test = new buttonSelect(CarbonMM,1);
+            buttonSelect test = new buttonSelect(CarbonMM);
             test.ShowDialog();
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + carbon.Text;
+                if (count == 0)
+                {
+                    a[5]++;
+                }
+                if (count == 1)
+                {
+                    b[5]++;
+                }
+                if (count == 2)
+                {
+                    c[5]++;
+                }
+                if (count == 3)
+                {
+                    d[5]++;
+                }
+                if (count == 4)
+                {
+                    e1[5]++;
+                }
+                if (count == 5)
+                {
+                    f[5]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + carbon.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[5] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[5] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[5] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[5] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[5] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[5] += myInt;
+                }
             }
 
         }
@@ -1707,13 +5207,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + boron.Text;
+                if (count == 0)
+                {
+                    a[4]++;
+                }
+                if (count == 1)
+                {
+                    b[4]++;
+                }
+                if (count == 2)
+                {
+                    c[4]++;
+                }
+                if (count == 3)
+                {
+                    d[4]++;
+                }
+                if (count == 4)
+                {
+                    e1[4]++;
+                }
+                if (count == 5)
+                {
+                    f[4]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + boron.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[4] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[4] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[4] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[4] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[4] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[4] += myInt;
+                }
             }
 
         }
@@ -1725,13 +5275,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + copernicium.Text;
+                if (count == 0)
+                {
+                    a[111]++;
+                }
+                if (count == 1)
+                {
+                    b[111]++;
+                }
+                if (count == 2)
+                {
+                    c[111]++;
+                }
+                if (count == 3)
+                {
+                    d[111]++;
+                }
+                if (count == 4)
+                {
+                    e1[111]++;
+                }
+                if (count == 5)
+                {
+                    f[111]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + copernicium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[111] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[111] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[111] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[111] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[111] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[111] += myInt;
+                }
             }
 
         }
@@ -1743,13 +5343,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + roentgenium.Text;
+                if (count == 0)
+                {
+                    a[110]++;
+                }
+                if (count == 1)
+                {
+                    b[110]++;
+                }
+                if (count == 2)
+                {
+                    c[110]++;
+                }
+                if (count == 3)
+                {
+                    d[110]++;
+                }
+                if (count == 4)
+                {
+                    e1[110]++;
+                }
+                if (count == 5)
+                {
+                    f[110]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + roentgenium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[110] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[110] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[110] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[110] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[110] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[110] += myInt;
+                }
             }
 
         }
@@ -1761,13 +5411,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + mercury.Text;
+                if (count == 0)
+                {
+                    a[79]++;
+                }
+                if (count == 1)
+                {
+                    b[79]++;
+                }
+                if (count == 2)
+                {
+                    c[79]++;
+                }
+                if (count == 3)
+                {
+                    d[79]++;
+                }
+                if (count == 4)
+                {
+                    e1[79]++;
+                }
+                if (count == 5)
+                {
+                    f[79]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + mercury.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[79] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[79] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[79] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[79] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[79] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[79] += myInt;
+                }
             }
 
         }
@@ -1779,13 +5479,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + gold.Text;
+                if (count == 0)
+                {
+                    a[78]++;
+                }
+                if (count == 1)
+                {
+                    b[78]++;
+                }
+                if (count == 2)
+                {
+                    c[78]++;
+                }
+                if (count == 3)
+                {
+                    d[78]++;
+                }
+                if (count == 4)
+                {
+                    e1[78]++;
+                }
+                if (count == 5)
+                {
+                    f[78]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + gold.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[78] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[78] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[78] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[78] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[78] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[78] += myInt;
+                }
             }
 
         }
@@ -1797,13 +5547,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + cadium.Text;
+                if (count == 0)
+                {
+                    a[47]++;
+                }
+                if (count == 1)
+                {
+                    b[47]++;
+                }
+                if (count == 2)
+                {
+                    c[47]++;
+                }
+                if (count == 3)
+                {
+                    d[47]++;
+                }
+                if (count == 4)
+                {
+                    e1[47]++;
+                }
+                if (count == 5)
+                {
+                    f[47]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + cadium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[47] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[47] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[47] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[47] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[47] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[47] += myInt;
+                }
+
             }
 
         }
@@ -1815,13 +5616,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + silver.Text;
+                if (count == 0)
+                {
+                    a[46]++;
+                }
+                if (count == 1)
+                {
+                    b[46]++;
+                }
+                if (count == 2)
+                {
+                    c[46]++;
+                }
+                if (count == 3)
+                {
+                    d[46]++;
+                }
+                if (count == 4)
+                {
+                    e1[46]++;
+                }
+                if (count == 5)
+                {
+                    f[46]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + silver.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[46] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[46] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[46] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[46] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[46] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[46] += myInt;
+                }
+
             }
 
         }
@@ -1833,13 +5685,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + zinc.Text;
+                if (count == 0)
+                {
+                    a[29]++;
+                }
+                if (count == 1)
+                {
+                    b[29]++;
+                }
+                if (count == 2)
+                {
+                    c[29]++;
+                }
+                if (count == 3)
+                {
+                    d[29]++;
+                }
+                if (count == 4)
+                {
+                    e1[29]++;
+                }
+                if (count == 5)
+                {
+                    f[29]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + zinc.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[29] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[29] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[29] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[29] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[29] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[29] += myInt;
+                }
+
             }
 
         }
@@ -1851,13 +5754,65 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + copper.Text;
+                if (count == 0)
+                {
+                    a[28]++;
+                }
+                if (count == 1)
+                {
+                    b[28]++;
+                }
+                if (count == 2)
+                {
+                    c[28]++;
+                }
+                if (count == 3)
+                {
+                    d[28]++;
+                }
+                if (count == 4)
+                {
+                    e1[28]++;
+                }
+                if (count == 5)
+                {
+                    f[28]++;
+                }
+
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + copper.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[28] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[28] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[28] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[28] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[28] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[28] += myInt;
+                }
+
             }
 
         }
@@ -1869,13 +5824,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + darmstadtium.Text;
+                if (count == 0)
+                {
+                    a[109]++;
+                }
+                if (count == 1)
+                {
+                    b[109]++;
+                }
+                if (count == 2)
+                {
+                    c[109]++;
+                }
+                if (count == 3)
+                {
+                    d[109]++;
+                }
+                if (count == 4)
+                {
+                    e1[109]++;
+                }
+                if (count == 5)
+                {
+                    f[109]++;
+                }
+
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + darmstadtium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[109] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[109] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[109] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[109] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[109] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[109] += myInt;
+                }
             }
 
         }
@@ -1887,13 +5893,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + meitnerium.Text;
+                if (count == 0)
+                {
+                    a[108]++;
+                }
+                if (count == 1)
+                {
+                    b[108]++;
+                }
+                if (count == 2)
+                {
+                    c[108]++;
+                }
+                if (count == 3)
+                {
+                    d[108]++;
+                }
+                if (count == 4)
+                {
+                    e1[108]++;
+                }
+                if (count == 5)
+                {
+                    f[108]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + meitnerium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[108] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[108] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[108] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[108] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[108] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[108] += myInt;
+                }
             }
 
         }
@@ -1905,13 +5961,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + platinum.Text;
+                if (count == 0)
+                {
+                    a[77]++;
+                }
+                if (count == 1)
+                {
+                    b[77]++;
+                }
+                if (count == 2)
+                {
+                    c[77]++;
+                }
+                if (count == 3)
+                {
+                    d[77]++;
+                }
+                if (count == 4)
+                {
+                    e1[77]++;
+                }
+                if (count == 5)
+                {
+                    f[77]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + platinum.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[77] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[77] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[77] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[77] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[77] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[77] += myInt;
+                }
             }
 
         }
@@ -1923,13 +6029,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + iridium.Text;
+                if (count == 0)
+                {
+                    a[76]++;
+                }
+                if (count == 1)
+                {
+                    b[76]++;
+                }
+                if (count == 2)
+                {
+                    c[76]++;
+                }
+                if (count == 3)
+                {
+                    d[76]++;
+                }
+                if (count == 4)
+                {
+                    e1[76]++;
+                }
+                if (count == 5)
+                {
+                    f[76]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + iridium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[76] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[76] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[76] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[76] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[76] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[76] += myInt;
+                }
             }
 
         }
@@ -1941,13 +6097,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + palladium.Text;
+                if (count == 0)
+                {
+                    a[45]++;
+                }
+                if (count == 1)
+                {
+                    b[45]++;
+                }
+                if (count == 2)
+                {
+                    c[45]++;
+                }
+                if (count == 3)
+                {
+                    d[45]++;
+                }
+                if (count == 4)
+                {
+                    e1[45]++;
+                }
+                if (count == 5)
+                {
+                    f[45]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + palladium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[45] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[45] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[45] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[45] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[45] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[45] += myInt;
+                }
             }
 
         }
@@ -1959,13 +6165,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + Rhodium.Text;
+                if (count == 0)
+                {
+                    a[44]++;
+                }
+                if (count == 1)
+                {
+                    b[44]++;
+                }
+                if (count == 2)
+                {
+                    c[44]++;
+                }
+                if (count == 3)
+                {
+                    d[44]++;
+                }
+                if (count == 4)
+                {
+                    e1[44]++;
+                }
+                if (count == 5)
+                {
+                    f[44]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + Rhodium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[44] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[44] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[44] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[44] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[44] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[44] += myInt;
+                }
             }
 
         }
@@ -1977,13 +6233,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + nickel.Text;
+                if (count == 0)
+                {
+                    a[27]++;
+                }
+                if (count == 1)
+                {
+                    b[27]++;
+                }
+                if (count == 2)
+                {
+                    c[27]++;
+                }
+                if (count == 3)
+                {
+                    d[27]++;
+                }
+                if (count == 4)
+                {
+                    e1[27]++;
+                }
+                if (count == 5)
+                {
+                    f[27]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + nickel.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[27] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[27] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[27] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[27] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[27] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[27] += myInt;
+                }
             }
 
         }
@@ -1995,13 +6301,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + cobalt.Text;
+                if (count == 0)
+                {
+                    a[26]++;
+                }
+                if (count == 1)
+                {
+                    b[26]++;
+                }
+                if (count == 2)
+                {
+                    c[26]++;
+                }
+                if (count == 3)
+                {
+                    d[26]++;
+                }
+                if (count == 4)
+                {
+                    e1[26]++;
+                }
+                if (count == 5)
+                {
+                    f[26]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + cobalt.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[26] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[26] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[26] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[26] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[26] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[26] += myInt;
+                }
             }
 
         }
@@ -2013,13 +6369,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + hassium.Text;
+                if (count == 0)
+                {
+                    a[107]++;
+                }
+                if (count == 1)
+                {
+                    b[107]++;
+                }
+                if (count == 2)
+                {
+                    c[107]++;
+                }
+                if (count == 3)
+                {
+                    d[107]++;
+                }
+                if (count == 4)
+                {
+                    e1[107]++;
+                }
+                if (count == 5)
+                {
+                    f[107]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + hassium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[107] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[107] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[107] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[107] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[107] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[107] += myInt;
+                }
             }
 
         }
@@ -2031,13 +6437,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + bohrium.Text;
+                if (count == 0)
+                {
+                    a[106]++;
+                }
+                if (count == 1)
+                {
+                    b[106]++;
+                }
+                if (count == 2)
+                {
+                    c[106]++;
+                }
+                if (count == 3)
+                {
+                    d[106]++;
+                }
+                if (count == 4)
+                {
+                    e1[106]++;
+                }
+                if (count == 5)
+                {
+                    f[106]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + bohrium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[106] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[106] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[106] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[106] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[106] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[106] += myInt;
+                }
             }
 
         }
@@ -2049,13 +6505,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + osmium.Text;
+                if (count == 0)
+                {
+                    a[75]++;
+                }
+                if (count == 1)
+                {
+                    b[75]++;
+                }
+                if (count == 2)
+                {
+                    c[75]++;
+                }
+                if (count == 3)
+                {
+                    d[75]++;
+                }
+                if (count == 4)
+                {
+                    e1[75]++;
+                }
+                if (count == 5)
+                {
+                    f[75]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + osmium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[75] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[75] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[75] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[75] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[75] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[75] += myInt;
+                }
             }
 
         }
@@ -2067,13 +6573,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + rhenium.Text;
+                if (count == 0)
+                {
+                    a[74]++;
+                }
+                if (count == 1)
+                {
+                    b[74]++;
+                }
+                if (count == 2)
+                {
+                    c[74]++;
+                }
+                if (count == 3)
+                {
+                    d[74]++;
+                }
+                if (count == 4)
+                {
+                    e1[74]++;
+                }
+                if (count == 5)
+                {
+                    f[74]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + rhenium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[74] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[74] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[74] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[74] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[74] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[74] += myInt;
+                }
             }
 
         }
@@ -2085,13 +6641,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + Ruthenium.Text;
+                if (count == 0)
+                {
+                    a[43]++;
+                }
+                if (count == 1)
+                {
+                    b[43]++;
+                }
+                if (count == 2)
+                {
+                    c[43]++;
+                }
+                if (count == 3)
+                {
+                    d[43]++;
+                }
+                if (count == 4)
+                {
+                    e1[43]++;
+                }
+                if (count == 5)
+                {
+                    f[43]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + Ruthenium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[43] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[43] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[43] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[43] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[43] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[43] += myInt;
+                }
             }
 
         }
@@ -2103,31 +6709,131 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + technetium.Text;
+                if (count == 0)
+                {
+                    a[42]++;
+                }
+                if (count == 1)
+                {
+                    b[42]++;
+                }
+                if (count == 2)
+                {
+                    c[42]++;
+                }
+                if (count == 3)
+                {
+                    d[42]++;
+                }
+                if (count == 4)
+                {
+                    e1[42]++;
+                }
+                if (count == 5)
+                {
+                    f[42]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + technetium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[42] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[42] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[42] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[42] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[42] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[42] += myInt;
+                }
             }
 
         }
 
         private void iron_Click(object sender, EventArgs e)
         {
-            buttonSelect test = new buttonSelect(IronMM,1);
+            buttonSelect test = new buttonSelect(IronMM);
             test.ShowDialog();
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + iron.Text;
+                if (count == 0)
+                {
+                    a[25]++;
+                }
+                if (count == 1)
+                {
+                    b[25]++;
+                }
+                if (count == 2)
+                {
+                    c[25]++;
+                }
+                if (count == 3)
+                {
+                    d[25]++;
+                }
+                if (count == 4)
+                {
+                    e1[25]++;
+                }
+                if (count == 5)
+                {
+                    f[25]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + iron.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[25] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[25] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[25] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[25] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[25] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[25] += myInt;
+                }
             }
 
         }
@@ -2139,13 +6845,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + manganese.Text;
+                if (count == 0)
+                {
+                    a[24]++;
+                }
+                if (count == 1)
+                {
+                    b[24]++;
+                }
+                if (count == 2)
+                {
+                    c[24]++;
+                }
+                if (count == 3)
+                {
+                    d[24]++;
+                }
+                if (count == 4)
+                {
+                    e1[24]++;
+                }
+                if (count == 5)
+                {
+                    f[24]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + manganese.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[24] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[24] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[24] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[24] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[24] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[24] += myInt;
+                }
             }
 
         }
@@ -2157,16 +6913,69 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + seaborgium.Text;
+                if (count == 0)
+                {
+                    a[105]++;
+                }
+                if (count == 1)
+                {
+                    b[105]++;
+                }
+                if (count == 2)
+                {
+                    c[105]++;
+                }
+                if (count == 3)
+                {
+                    d[105]++;
+                }
+                if (count == 4)
+                {
+                    e1[105]++;
+                }
+                if (count == 5)
+                {
+                    f[105]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + seaborgium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[105] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[105] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[105] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[105] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[105] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[105] += myInt;
+                }
             }
 
         }
+
+
+
 
         private void dubnium_Click(object sender, EventArgs e)
         {
@@ -2175,13 +6984,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + dubnium.Text;
+                if (count == 0)
+                {
+                    a[104]++;
+                }
+                if (count == 1)
+                {
+                    b[104]++;
+                }
+                if (count == 2)
+                {
+                    c[104]++;
+                }
+                if (count == 3)
+                {
+                    d[104]++;
+                }
+                if (count == 4)
+                {
+                    e1[104]++;
+                }
+                if (count == 5)
+                {
+                    f[104]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + dubnium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[104] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[104] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[104] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[104] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[104] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[104] += myInt;
+                }
             }
 
         }
@@ -2193,13 +7052,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + tungsten.Text;
+                if (count == 0)
+                {
+                    a[73]++;
+                }
+                if (count == 1)
+                {
+                    b[73]++;
+                }
+                if (count == 2)
+                {
+                    c[73]++;
+                }
+                if (count == 3)
+                {
+                    d[73]++;
+                }
+                if (count == 4)
+                {
+                    e1[73]++;
+                }
+                if (count == 5)
+                {
+                    f[73]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + tungsten.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[73] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[73] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[73] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[73] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[73] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[73] += myInt;
+                }
             }
 
         }
@@ -2211,13 +7120,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + tantlum.Text;
+                if (count == 0)
+                {
+                    a[72]++;
+                }
+                if (count == 1)
+                {
+                    b[72]++;
+                }
+                if (count == 2)
+                {
+                    c[72]++;
+                }
+                if (count == 3)
+                {
+                    d[72]++;
+                }
+                if (count == 4)
+                {
+                    e1[72]++;
+                }
+                if (count == 5)
+                {
+                    f[72]++;
+                }
+
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + tantlum.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[72] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[72] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[72] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[72] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[72] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[72] += myInt;
+                }
             }
 
         }
@@ -2229,13 +7189,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + Molybdenum.Text;
+                if (count == 0)
+                {
+                    a[41]++;
+                }
+                if (count == 1)
+                {
+                    b[41]++;
+                }
+                if (count == 2)
+                {
+                    c[41]++;
+                }
+                if (count == 3)
+                {
+                    d[41]++;
+                }
+                if (count == 4)
+                {
+                    e1[41]++;
+                }
+                if (count == 5)
+                {
+                    f[41]++;
+                }
+
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + Molybdenum.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[41] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[41] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[41] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[41] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[41] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[41] += myInt;
+                }
             }
 
         }
@@ -2247,13 +7258,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + Niobium.Text;
+                if (count == 0)
+                {
+                    a[40]++;
+                }
+                if (count == 1)
+                {
+                    b[40]++;
+                }
+                if (count == 2)
+                {
+                    c[40]++;
+                }
+                if (count == 3)
+                {
+                    d[40]++;
+                }
+                if (count == 4)
+                {
+                    e1[40]++;
+                }
+                if (count == 5)
+                {
+                    f[40]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + Niobium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[40] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[40] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[40] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[40] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[40] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[40] += myInt;
+                }
             }
 
         }
@@ -2265,13 +7326,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + chromium.Text;
+                if (count == 0)
+                {
+                    a[23]++;
+                }
+                if (count == 1)
+                {
+                    b[23]++;
+                }
+                if (count == 2)
+                {
+                    c[23]++;
+                }
+                if (count == 3)
+                {
+                    d[23]++;
+                }
+                if (count == 4)
+                {
+                    e1[23]++;
+                }
+                if (count == 5)
+                {
+                    f[23]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + chromium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[23] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[23] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[23] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[23] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[23] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[23] += myInt;
+                }
             }
 
         }
@@ -2283,13 +7394,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + vanadium.Text;
+                if (count == 0)
+                {
+                    a[22]++;
+                }
+                if (count == 1)
+                {
+                    b[22]++;
+                }
+                if (count == 2)
+                {
+                    c[22]++;
+                }
+                if (count == 3)
+                {
+                    d[22]++;
+                }
+                if (count == 4)
+                {
+                    e1[22]++;
+                }
+                if (count == 5)
+                {
+                    f[22]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + vanadium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[22] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[22] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[22] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[22] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[22] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[22] += myInt;
+                }
             }
 
         }
@@ -2301,13 +7462,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + rutherfordium.Text;
+                if (count == 0)
+                {
+                    a[103]++;
+                }
+                if (count == 1)
+                {
+                    b[103]++;
+                }
+                if (count == 2)
+                {
+                    c[103]++;
+                }
+                if (count == 3)
+                {
+                    d[103]++;
+                }
+                if (count == 4)
+                {
+                    e1[103]++;
+                }
+                if (count == 5)
+                {
+                    f[103]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + rutherfordium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[103] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[103] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[103] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[103] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[103] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[103] += myInt;
+                }
             }
 
         }
@@ -2319,13 +7530,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + hafnium.Text;
+                if (count == 0)
+                {
+                    a[71]++;
+                }
+                if (count == 1)
+                {
+                    b[71]++;
+                }
+                if (count == 2)
+                {
+                    c[71]++;
+                }
+                if (count == 3)
+                {
+                    d[71]++;
+                }
+                if (count == 4)
+                {
+                    e1[71]++;
+                }
+                if (count == 5)
+                {
+                    f[71]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + hafnium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[71] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[71] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[71] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[71] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[71] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[71] += myInt;
+                }
             }
 
         }
@@ -2337,13 +7598,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + Zirconium.Text;
+                if (count == 0)
+                {
+                    a[39]++;
+                }
+                if (count == 1)
+                {
+                    b[39]++;
+                }
+                if (count == 2)
+                {
+                    c[39]++;
+                }
+                if (count == 3)
+                {
+                    d[39]++;
+                }
+                if (count == 4)
+                {
+                    e1[39]++;
+                }
+                if (count == 5)
+                {
+                    f[39]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + Zirconium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[39] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[39] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[39] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[39] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[39] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[39] += myInt;
+                }
             }
 
         }
@@ -2355,13 +7666,64 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + yittrium.Text;
+                if (count == 0)
+                {
+                    a[38]++;
+                }
+                if (count == 1)
+                {
+                    b[38]++;
+                }
+                if (count == 2)
+                {
+                    c[38]++;
+                }
+                if (count == 3)
+                {
+                    d[38]++;
+                }
+                if (count == 4)
+                {
+                    e1[38]++;
+                }
+                if (count == 5)
+                {
+                    f[38]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + yittrium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[38] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[38] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[38] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[38] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[38] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[38] += myInt;
+                }
+
             }
 
         }
@@ -2373,13 +7735,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + titanium.Text;
+                if (count == 0)
+                {
+                    a[21]++;
+                }
+                if (count == 1)
+                {
+                    b[21]++;
+                }
+                if (count == 2)
+                {
+                    c[21]++;
+                }
+                if (count == 3)
+                {
+                    d[21]++;
+                }
+                if (count == 4)
+                {
+                    e1[21]++;
+                }
+                if (count == 5)
+                {
+                    f[21]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + titanium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[21] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[21] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[21] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[21] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[21] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[21] += myInt;
+                }
             }
 
         }
@@ -2391,13 +7803,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + scandium.Text;
+                if (count == 0)
+                {
+                    a[20]++;
+                }
+                if (count == 1)
+                {
+                    b[20]++;
+                }
+                if (count == 2)
+                {
+                    c[20]++;
+                }
+                if (count == 3)
+                {
+                    d[20]++;
+                }
+                if (count == 4)
+                {
+                    e1[20]++;
+                }
+                if (count == 5)
+                {
+                    f[20]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + scandium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[20] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[20] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[20] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[20] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[20] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[20] += myInt;
+                }
             }
 
         }
@@ -2409,13 +7871,63 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + radium.Text;
+                if (count == 0)
+                {
+                    a[87]++;
+                }
+                if (count == 1)
+                {
+                    b[87]++;
+                }
+                if (count == 2)
+                {
+                    c[87]++;
+                }
+                if (count == 3)
+                {
+                    d[87]++;
+                }
+                if (count == 4)
+                {
+                    e1[87]++;
+                }
+                if (count == 5)
+                {
+                    f[87]++;
+                }
+            }
             else if (isNumerical && myInt != 0)
             {
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + radium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
                 compoundBuilder.SelectionFont = new Font("Verdana", 15);
+                if (count == 0)
+                {
+                    a[87] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[87] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[87] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[87] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[87] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[87] += myInt;
+                }
             }
 
         }
@@ -2427,9 +7939,60 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[86]++;
+                }
+                if (count == 1)
+                {
+                    b[86]++;
+                }
+                if (count == 2)
+                {
+                    c[86]++;
+                }
+                if (count == 3)
+                {
+                    d[86]++;
+                }
+                if (count == 4)
+                {
+                    e1[86]++;
+                }
+                if (count == 5)
+                {
+                    f[86]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + francium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[86] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[86] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[86] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[86] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[86] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[86] += myInt;
+                }
+
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + francium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -2445,9 +8008,60 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[55]++;
+                }
+                if (count == 1)
+                {
+                    b[55]++;
+                }
+                if (count == 2)
+                {
+                    c[55]++;
+                }
+                if (count == 3)
+                {
+                    d[55]++;
+                }
+                if (count == 4)
+                {
+                    e1[55]++;
+                }
+                if (count == 5)
+                {
+                    f[55]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + barium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[55] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[55] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[55] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[55] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[55] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[55] += myInt;
+                }
+
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + barium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -2463,9 +8077,59 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[102]++;
+                }
+                if (count == 1)
+                {
+                    b[102]++;
+                }
+                if (count == 2)
+                {
+                    c[102]++;
+                }
+                if (count == 3)
+                {
+                    d[102]++;
+                }
+                if (count == 4)
+                {
+                    e1[102]++;
+                }
+                if (count == 5)
+                {
+                    f[102]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + lawrencium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[102] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[102] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[102] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[102] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[102] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[102] += myInt;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + lawrencium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -2481,9 +8145,60 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[37]++;
+                }
+                if (count == 1)
+                {
+                    b[37]++;
+                }
+                if (count == 2)
+                {
+                    c[37]++;
+                }
+                if (count == 3)
+                {
+                    d[37]++;
+                }
+                if (count == 4)
+                {
+                    e1[37]++;
+                }
+                if (count == 5)
+                {
+                    f[37]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + stronium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[37] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[37] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[37] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[37] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[37] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[37] += myInt;
+                }
+
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + stronium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -2499,9 +8214,59 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[36]++;
+                }
+                if (count == 1)
+                {
+                    b[36]++;
+                }
+                if (count == 2)
+                {
+                    c[36]++;
+                }
+                if (count == 3)
+                {
+                    d[36]++;
+                }
+                if (count == 4)
+                {
+                    e1[36]++;
+                }
+                if (count == 5)
+                {
+                    f[36]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + rubidium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[36] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[36] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[36] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[36] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[36] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[36] += myInt;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + rubidium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -2517,9 +8282,59 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[19]++;
+                }
+                if (count == 1)
+                {
+                    b[19]++;
+                }
+                if (count == 2)
+                {
+                    c[19]++;
+                }
+                if (count == 3)
+                {
+                    d[19]++;
+                }
+                if (count == 4)
+                {
+                    e1[19]++;
+                }
+                if (count == 5)
+                {
+                    f[19]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + calcium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[19] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[19] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[19] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[19] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[19] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[19] += myInt;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + calcium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -2535,9 +8350,59 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[18]++;
+                }
+                if (count == 1)
+                {
+                    b[18]++;
+                }
+                if (count == 2)
+                {
+                    c[18]++;
+                }
+                if (count == 3)
+                {
+                    d[18]++;
+                }
+                if (count == 4)
+                {
+                    e1[18]++;
+                }
+                if (count == 5)
+                {
+                    f[18]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + potassium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[18] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[18] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[18] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[18] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[18] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[18] += myInt;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + potassium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -2548,28 +8413,64 @@ namespace Periodic_GUI
 
         private void magnesium_Click(object sender, EventArgs e)
         {
-            buttonSelect test;
-
-            if (Magclick == true)
-            {
-                test = new buttonSelect(MagnesiumMM, 1);
-
-            }
-            else
-            {
-                mag = count2;
-                test = new buttonSelect(MagnesiumMM, 1);
-                //count2+=2;
-                Magclick = true;
-            }
-            
+            buttonSelect test = new buttonSelect(MagnesiumMM);
             test.ShowDialog();
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[11]++;
+                }
+                if (count == 1)
+                {
+                    b[11]++;
+                }
+                if (count == 2)
+                {
+                    c[11]++;
+                }
+                if (count == 3)
+                {
+                    d[11]++;
+                }
+                if (count == 4)
+                {
+                    e1[11]++;
+                }
+                if (count == 5)
+                {
+                    f[11]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + magnesium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[11] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[11] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[11] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[11] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[11] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[11] += myInt;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + magnesium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -2585,9 +8486,59 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[10]++;
+                }
+                if (count == 1)
+                {
+                    b[10]++;
+                }
+                if (count == 2)
+                {
+                    c[10]++;
+                }
+                if (count == 3)
+                {
+                    d[10]++;
+                }
+                if (count == 4)
+                {
+                    e1[10]++;
+                }
+                if (count == 5)
+                {
+                    f[10]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + sodium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[10] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[10] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[10] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[10] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[10] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[10] += myInt;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + sodium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -2603,9 +8554,59 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[3]++;
+                }
+                if (count == 1)
+                {
+                    b[3]++;
+                }
+                if (count == 2)
+                {
+                    c[3]++;
+                }
+                if (count == 3)
+                {
+                    d[3]++;
+                }
+                if (count == 4)
+                {
+                    e1[3]++;
+                }
+                if (count == 5)
+                {
+                    f[3]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + beryllium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[3] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[3] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[3] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[3] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[3] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[3] += myInt;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + beryllium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -2621,9 +8622,59 @@ namespace Periodic_GUI
             int myInt;
             bool isNumerical = int.TryParse(test.comboBox1.Text, out myInt);
             if (isNumerical && myInt == 1)
+            {
+                if (count == 0)
+                {
+                    a[2]++;
+                }
+                if (count == 1)
+                {
+                    b[2]++;
+                }
+                if (count == 2)
+                {
+                    c[2]++;
+                }
+                if (count == 3)
+                {
+                    d[2]++;
+                }
+                if (count == 4)
+                {
+                    e1[2]++;
+                }
+                if (count == 5)
+                {
+                    f[2]++;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + lithium.Text;
+            }
             else if (isNumerical && myInt != 0)
             {
+                if (count == 0)
+                {
+                    a[2] += myInt;
+                }
+                if (count == 1)
+                {
+                    b[2] += myInt;
+                }
+                if (count == 2)
+                {
+                    c[2] += myInt;
+                }
+                if (count == 3)
+                {
+                    d[2] += myInt;
+                }
+                if (count == 4)
+                {
+                    e1[2] += myInt;
+                }
+                if (count == 5)
+                {
+                    f[2] += myInt;
+                }
                 compoundBuilder.SelectedText = compoundBuilder.SelectedText + lithium.Text;
                 compoundBuilder.SelectionFont = new Font("Verdana", 7);
                 compoundBuilder.SelectedText = myInt.ToString();
@@ -2631,6 +8682,9 @@ namespace Periodic_GUI
             }
 
         }
+
+
+
 
         #endregion
 
@@ -2803,6 +8857,188 @@ namespace Periodic_GUI
 
         }
 
+        private static List<double> solveMat(int[][] rows)
+        {
+
+
+            List<double> values = new List<double>();
+
+            int length = rows[0].Length;
+            for (int i = 0; i < rows.Length - 1; i++)
+            {
+                for (int j = i; j < rows.Length; j++)
+                {
+                    int[] d = new int[length];
+                    for (int x = 0; x < length; x++)
+                    {
+                        if (i == j && rows[j][i] == 0)
+                        {
+                            bool changed = false;
+                            for (int z = rows.Length - 1; z > i; z--)
+                            {
+                                if (rows[z][i] != 0)
+                                {
+                                    int[] temp = new int[length];
+                                    temp = rows[z];
+                                    rows[z] = rows[j];
+                                    rows[j] = temp;
+                                    changed = true;
+                                }
+                            }
+                            if (!changed)
+                            {
+                                //textBox2.Text += "No Solution\r\n";
+                                //return;
+                            }
+                        }
+                        if (rows[j][i] != 0)
+                        {
+                            d[x] = rows[j][x] / rows[j][i];
+                        }
+                        else
+                        {
+                            d[x] = rows[j][x];
+                        }
+                    }
+                    rows[j] = d;
+                }
+                for (int y = i + 1; y < rows.Length; y++)
+                {
+                    int[] f = new int[length];
+                    for (int g = 0; g < length; g++)
+                    {
+                        if (rows[y][i] != 0)
+                        {
+                            f[g] = rows[y][g] - rows[i][g];
+                        }
+                        else
+                        {
+                            f[g] = rows[y][g];
+                        }
+                    }
+                    rows[y] = f;
+                }
+            }
+            double val = 0;
+            int k = length - 2;
+            double[] result = new double[rows.Length];
+            for (int i = rows.Length - 1; i >= 0; i--)
+            {
+                val = rows[i][length - 1];
+                for (int x = length - 2; x > k; x--)
+                {
+                    val -= rows[i][x] * result[x];
+                }
+                result[i] = val / rows[i][i];
+                if (result[i].ToString() == "NaN" || result[i].ToString().Contains("Infinity"))
+                {
+                    //textBox2.Text += "No Solution Found!\n";
+                    //return;
+                }
+                k--;
+            }
+            for (int i = 0; i < result.Length; i++)
+            {
+                values.Add(Math.Round(result[i], 10));
+            }
+            return values;
+        }
+
+
+
+
+
+        static double num1;
+        static double num2;
+        static Boolean isWhole = false;
+        private static double simple(List<double> dang)
+        {
+
+            for (int j = 0; j < dang.Count; j++)
+            {
+                if (dang[j] % 1 == 0)
+                {
+                    if (j == dang.Count - 1)
+                    {
+                        return 1;
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            double mult = 1;
+
+            for (double i = 2.0; i < 100; i++)
+            {
+                mult = i;
+                num1 = dang[0] * mult;
+                string nums = Convert.ToString(num1);
+                int dec = nums.IndexOf(".");
+                if (dec > -1)
+                {
+                    string Lenth = nums.Substring(dec);
+                    if (Lenth.Length > 3)
+                    {
+                        string lenth = nums.Substring(dec + 1, 3);
+                        if (lenth.CompareTo("000") == 0)
+                        {
+                            int numFix = Convert.ToInt32(num1);
+                            num1 = Convert.ToDouble(numFix);
+
+                        }
+                    }
+                }
+                if (num1 % 1 == 0)
+                {
+
+                    for (int k = 0; k < dang.Count; k++)
+                    {
+                        num2 = dang[k] * i;
+                        string nums2 = Convert.ToString(num2);
+                        int dec2 = nums2.IndexOf(".");
+
+                        if (dec2 > -1)
+                        {
+
+                            string Lenth2 = nums2.Substring(dec2);
+
+                            if (Lenth2.Length > 3)
+                            {
+
+                                string lenth2 = nums2.Substring(dec2 + 1, 3);
+                                if (lenth2.CompareTo("000") == 0)
+                                {
+                                    int numFix2 = Convert.ToInt32(num2);
+                                    num2 = Convert.ToDouble(numFix2);
+
+
+                                }
+                            }
+                        }
+                        if (num2 % 1 == 0)
+                        {
+                            if (k == dang.Count - 1)
+                            {
+
+                                return mult;
+                            }
+                        }
+                        else
+                        {
+                            break;
+
+                        }
+                    }
+                }
+
+
+            }
+            return 1;
+        }
+
         //switches sides of the equation
         private void yeild_Click(object sender, EventArgs e)
         {
@@ -2972,30 +9208,85 @@ namespace Periodic_GUI
             compoundBuilder.Rtf = "";
            molar = 0;
 
-            //TODO: implement Lucas' balance code
-            int[] list = balance(6);    
-            int[] list2= new int[6];
-            int div = modulus(list);
-            for (int i = 0; i < list.Length; i++)
-            {
-               int divided = list[i];
-               list2[i] = divided / div;
-               Console.WriteLine(list2[i]);
-            }
-            var1 = list2[2];
-            var2 = list2[1];
-            var3 = list2[0];
-            var4 = list2[3];
-            var5 = list2[4];
-            var6 = list2[5];
 
-            setBalanced(var1);
-            setBalanced2(var2);
-            setBalanced3(var3);
-            setBalanced4(var4);
-            setBalanced5(var5);
-            setBalanced6(var6);
+          List<double> print = solveMat(this.matrix());
+
+            for(int i = 0; i < print.Count; i++)
+            {
+                print[i] = print[i] * simple(print);
+            }    
+            
+            print.Add(simple(print));
+
+            for (int i = 0; i < print.Count; i++)
+            {
+                print[i] = (print[i]);
+                Console.WriteLine(print[i]);
+            }
+
+            balanceBox1.SelectionFont = 
+            balanceBox1.SelectionFont = 
+            balanceBox1.SelectionFont = 
+            balanceBox1.SelectionFont = 
+            balanceBox1.SelectionFont = 
+            balanceBox1.SelectionFont = new Font("Verdana",16);
+
+
+            int onLeft = 0;
+            int onRight = 0;
+
+            if (balanceBox1.Text != "")
+                onLeft++;
+            if (balanceBox2.Text != "")
+                onLeft++;
+            if (balanceBox3.Text != "")
+                onLeft++;
+            if (balanceBox4.Text != "")
+                onRight++;
+            if (balanceBox5.Text != "")
+                onRight++;
+            if (balanceBox6.Text != "")
+                onRight++;
+
+            if(onLeft == 1)
+            {
+                balanceBox1.SelectedText = print[0] + " " + balanceBox1.SelectedText; 
+            }
+            if(onLeft == 2)
+            {
+                balanceBox1.SelectedText = print[0] + " " + balanceBox1.SelectedText;
+                balanceBox2.SelectedText = print[1] + " " + balanceBox2.SelectedText; 
+            }
+            if(onLeft == 3)
+            {
+                balanceBox1.SelectedText = print[0] + " " + balanceBox1.SelectedText;
+                balanceBox2.SelectedText = print[1] + " " + balanceBox2.SelectedText;
+                balanceBox3.SelectedText = print[2] + " " + balanceBox3.SelectedText; 
+            }
+
+            if (onRight == 1)
+            {
+                balanceBox4.SelectedText = print[3-(3-onLeft)] + " " + balanceBox4.SelectedText;
+            }
+            if (onRight == 2)
+            {
+                balanceBox4.SelectedText = print[3 - (3 - onLeft)] + " " + balanceBox4.SelectedText;
+                balanceBox5.SelectedText = print[4 - (3 - onLeft)] + " " + balanceBox5.SelectedText;
+            }
+            if (onRight == 3)
+            {
+                balanceBox4.SelectedText = print[3 - (3 - onLeft)] + " " + balanceBox4.SelectedText;
+                balanceBox5.SelectedText = print[4 - (3 - onLeft)] + " " + balanceBox5.SelectedText;
+                balanceBox6.SelectedText = print[5 - (3 - onLeft)] + " " + balanceBox6.SelectedText;
+            }
+            
+
+            
+
+
+
         }
+
         private void setBalanced(int var1)
         {
             if (var1 == 1 && var1 == 0)
@@ -3078,6 +9369,7 @@ namespace Periodic_GUI
         //clears the equations
         private void clearEquation_Click(object sender, EventArgs e)
         {
+            count = 1;
             compoundBuilder.Rtf =
             balanceBox1.Rtf =
             balanceBox2.Rtf =

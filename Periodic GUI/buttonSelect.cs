@@ -14,18 +14,14 @@ namespace Periodic_GUI
     {
         static double num;
         static int amt;
-        static int count;
         
        
-        public buttonSelect(double number, int counted)
-        {
-            num = number;
-            count = counted;
-            InitializeComponent();
-        }
+
         public buttonSelect(double number)
         {
             num = number;
+
+            InitializeComponent();
         }
 
         public void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,7 +53,7 @@ namespace Periodic_GUI
                 object m = comboBox1.SelectedItem;
                 double k = Convert.ToDouble(m);
                 amt = Convert.ToInt32(k);
-                table.setDang(k * count);                
+                table.setDang(k * num);                
             }
             //uses keyboard input
             else
@@ -77,7 +73,7 @@ namespace Periodic_GUI
                    double g = Convert.ToDouble(j);
                    amt = Convert.ToInt32(g);
                    if (g > 0)
-                      table.setDang(g * count);                      
+                      table.setDang(g * num);                      
                }
             }             
             this.Close();
