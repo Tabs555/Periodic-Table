@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\Salty Spitoon.png" />
     <None Include="Images\background.png" />
     <Content Include="Images\scientific-background.jpg" />
     <None Include="Images\yeilds.png" />

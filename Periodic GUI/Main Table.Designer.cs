@@ -248,17 +248,8 @@ namespace Periodic_GUI
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.balanced6 = new System.Windows.Forms.RichTextBox();
-            this.balanced5 = new System.Windows.Forms.RichTextBox();
-            this.balanced4 = new System.Windows.Forms.RichTextBox();
-            this.balanced3 = new System.Windows.Forms.RichTextBox();
-            this.balanced2 = new System.Windows.Forms.RichTextBox();
-            this.balanced1 = new System.Windows.Forms.RichTextBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.WIP = new System.Windows.Forms.Label();
             this.tabPage1.SuspendLayout();
             this.Balancer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -276,10 +267,6 @@ namespace Periodic_GUI
             this.Molarity.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage1
@@ -2562,124 +2549,25 @@ namespace Periodic_GUI
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.tabPage2.BackgroundImage = global::Periodic_GUI.Properties.Resources.background1;
-            this.tabPage2.Controls.Add(this.balanced6);
-            this.tabPage2.Controls.Add(this.balanced5);
-            this.tabPage2.Controls.Add(this.balanced4);
-            this.tabPage2.Controls.Add(this.balanced3);
-            this.tabPage2.Controls.Add(this.balanced2);
-            this.tabPage2.Controls.Add(this.balanced1);
             this.tabPage2.Controls.Add(this.pictureBox12);
-            this.tabPage2.Controls.Add(this.pictureBox13);
-            this.tabPage2.Controls.Add(this.pictureBox14);
-            this.tabPage2.Controls.Add(this.pictureBox15);
-            this.tabPage2.Controls.Add(this.pictureBox16);
+            this.tabPage2.Controls.Add(this.WIP);
             resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             // 
-            // balanced6
-            // 
-            this.balanced6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(194)))), ((int)(((byte)(222)))));
-            this.balanced6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.balanced6.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.balanced6, "balanced6");
-            this.balanced6.Name = "balanced6";
-            this.balanced6.ReadOnly = true;
-            this.balanced6.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
-            // balanced5
-            // 
-            this.balanced5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(194)))), ((int)(((byte)(222)))));
-            this.balanced5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.balanced5.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.balanced5, "balanced5");
-            this.balanced5.Name = "balanced5";
-            this.balanced5.ReadOnly = true;
-            this.balanced5.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
-            // 
-            // balanced4
-            // 
-            this.balanced4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(194)))), ((int)(((byte)(222)))));
-            this.balanced4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.balanced4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.balanced4, "balanced4");
-            this.balanced4.Name = "balanced4";
-            this.balanced4.ReadOnly = true;
-            this.balanced4.TextChanged += new System.EventHandler(this.richTextBox3_TextChanged);
-            // 
-            // balanced3
-            // 
-            this.balanced3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(255)))), ((int)(((byte)(228)))));
-            this.balanced3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.balanced3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.balanced3, "balanced3");
-            this.balanced3.Name = "balanced3";
-            this.balanced3.ReadOnly = true;
-            this.balanced3.TextChanged += new System.EventHandler(this.richTextBox4_TextChanged);
-            // 
-            // balanced2
-            // 
-            this.balanced2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(255)))), ((int)(((byte)(228)))));
-            this.balanced2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.balanced2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.balanced2, "balanced2");
-            this.balanced2.Name = "balanced2";
-            this.balanced2.ReadOnly = true;
-            this.balanced2.TextChanged += new System.EventHandler(this.richTextBox5_TextChanged);
-            // 
-            // balanced1
-            // 
-            this.balanced1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(255)))), ((int)(((byte)(228)))));
-            this.balanced1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.balanced1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.balanced1, "balanced1");
-            this.balanced1.Name = "balanced1";
-            this.balanced1.ReadOnly = true;
-            this.balanced1.TextChanged += new System.EventHandler(this.richTextBox6_TextChanged);
-            // 
             // pictureBox12
             // 
-            this.pictureBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(223)))), ((int)(((byte)(237)))));
-            this.pictureBox12.Image = global::Periodic_GUI.Properties.Resources.addSign13;
+            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox12.BackgroundImage = global::Periodic_GUI.Properties.Resources.Salty_Spitoon;
             resources.ApplyResources(this.pictureBox12, "pictureBox12");
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.TabStop = false;
-            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
             // 
-            // pictureBox13
+            // WIP
             // 
-            this.pictureBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(223)))), ((int)(((byte)(237)))));
-            this.pictureBox13.Image = global::Periodic_GUI.Properties.Resources.addSign13;
-            resources.ApplyResources(this.pictureBox13, "pictureBox13");
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.TabStop = false;
-            this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(223)))), ((int)(((byte)(237)))));
-            this.pictureBox14.Image = global::Periodic_GUI.Properties.Resources.addSign13;
-            resources.ApplyResources(this.pictureBox14, "pictureBox14");
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.TabStop = false;
-            this.pictureBox14.Click += new System.EventHandler(this.pictureBox14_Click);
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(223)))), ((int)(((byte)(237)))));
-            this.pictureBox15.Image = global::Periodic_GUI.Properties.Resources.addSign13;
-            resources.ApplyResources(this.pictureBox15, "pictureBox15");
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.TabStop = false;
-            this.pictureBox15.Click += new System.EventHandler(this.pictureBox15_Click);
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(223)))), ((int)(((byte)(237)))));
-            this.pictureBox16.Image = global::Periodic_GUI.Properties.Resources.yeilds;
-            resources.ApplyResources(this.pictureBox16, "pictureBox16");
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.TabStop = false;
-            this.pictureBox16.Click += new System.EventHandler(this.pictureBox16_Click);
+            resources.ApplyResources(this.WIP, "WIP");
+            this.WIP.BackColor = System.Drawing.Color.Gray;
+            this.WIP.ForeColor = System.Drawing.Color.Black;
+            this.WIP.Name = "WIP";
             // 
             // Form1
             // 
@@ -2708,10 +2596,6 @@ namespace Periodic_GUI
             this.Molarity.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2885,17 +2769,6 @@ namespace Periodic_GUI
         private System.Windows.Forms.RichTextBox elementHover;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.RichTextBox balanced6;
-        private System.Windows.Forms.RichTextBox balanced5;
-        private System.Windows.Forms.RichTextBox balanced4;
-        private System.Windows.Forms.RichTextBox balanced3;
-        private System.Windows.Forms.RichTextBox balanced2;
-        private System.Windows.Forms.RichTextBox balanced1;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.PictureBox pictureBox15;
-        private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button reactantBackground1;
         private System.Windows.Forms.Button reactantBackground2;
@@ -2949,6 +2822,8 @@ namespace Periodic_GUI
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.Label WIP;
 
 
 

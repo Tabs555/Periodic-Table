@@ -15,7 +15,6 @@ namespace Periodic_GUI
         static double dang;
         static int count = 0;
         static double molar;
-        static int count2 = 1;
 
         static Boolean hasBal = false;
         static double MM1;
@@ -77,7 +76,6 @@ namespace Periodic_GUI
         private void addMass()
         {
             molar += dang;
-            Console.WriteLine(molar);
 
         }
 
@@ -457,13 +455,6 @@ namespace Periodic_GUI
         const double UnunseptiumMM = 294;
         const double UnunoctiumMM = 294;
 
-        static Boolean Magclick = false;
-        static Boolean Hydclick = false;
-        static Boolean Chlorclick = false;
-
-        static int hyd;
-        static int mag;
-        static int chlor;
 
         #endregion
 
@@ -9158,72 +9149,89 @@ namespace Periodic_GUI
         
         private void balanceEquation_Click(object sender, EventArgs e)
         {
-
-
-            if (hasBal == false)
+            int sum = 0;
+            for (int i = 0; i < 118; i++ )
             {
-                
-                Color c = Color.LightGray;
-                //finalizes equation with gui
-                if (count == 0)
-                {
-                    balanceBox1.Rtf = compoundBuilder.Rtf;
-                    setMM1(molar);
-                    mmReactant1.Text = molar.ToString() + "g";
-                    mmEquation1.Rtf = compoundBuilder.Rtf;
-                    reactant1.Rtf = compoundBuilder.Rtf;
-                }
-                else if (count == 1)
-                {
-                    balanceBox2.Rtf = compoundBuilder.Rtf;
-                    setMM2(molar);
-                    mmReactant2.Text = molar.ToString() + "g";
-                    mmEquation2.Rtf = compoundBuilder.Rtf;
-                    reactant2.Rtf = compoundBuilder.Rtf;
-                }
-                else if (count == 2)
-                {
-                    balanceBox3.Text = compoundBuilder.Rtf;
-                    setMM3(molar);
-                    mmReactant3.Text = molar.ToString() + "g";
-                    mmEquation3.Rtf = compoundBuilder.Rtf;
-                    reactant3.Rtf = compoundBuilder.Rtf;
-                }
-                else if (count == 3)
-                {
-                    balanceBox4.Rtf = compoundBuilder.Rtf;
-                    setMM4(molar);
-                    mmProduct1.Text = molar.ToString() + "g";
-                    mmEquation4.Rtf = compoundBuilder.Rtf;
-                    product1.Rtf = compoundBuilder.Rtf;
-                }
-                else if (count == 4)
-                {
-                    balanceBox5.Rtf = compoundBuilder.Rtf;
-                    setMM5(molar);
-                    mmProduct2.Text = molar.ToString() + "g";
-                    mmEquation5.Rtf = compoundBuilder.Rtf;
-                    product2.Rtf = compoundBuilder.Rtf;
-                }
-                else if (count == 5)
-                {
-                    balanceBox6.Rtf = compoundBuilder.Rtf;
-                    setMM6(molar);
-                    mmProduct3.Text = molar.ToString() + "g";
-                    mmEquation6.Rtf = compoundBuilder.Rtf;
-                    product3.Rtf = compoundBuilder.Rtf;
-                }
-
-                balanceBox1.BackColor = c;
-                balanceBox2.BackColor = c;
-                balanceBox3.BackColor = c;
-                balanceBox4.BackColor = c;
-                balanceBox5.BackColor = c;
-                balanceBox6.BackColor = c;
-
-                compoundBuilder.Rtf = "";
-                molar = 0;
+                sum += a[i] + b[i] + c[i] + d[i] + e1[i] + f[i];
             }
+
+            Console.Write("Tracker");
+
+            for (int i = 0; i < tracker.Count; i++)
+                Console.Write(tracker[i] + " ");
+
+            Console.Write("bad");
+
+            for (int i = 0; i < bad.Count; i++)
+                Console.Write(bad[i] + " ");
+            Console.Write("\nSum = " + sum);
+
+
+
+                if (hasBal == false)
+                {
+
+                    Color c = Color.LightGray;
+                    //finalizes equation with gui
+                    if (count == 0)
+                    {
+                        balanceBox1.Rtf = compoundBuilder.Rtf;
+                        setMM1(molar);
+                        mmReactant1.Text = molar.ToString() + "g";
+                        mmEquation1.Rtf = compoundBuilder.Rtf;
+                        reactant1.Rtf = compoundBuilder.Rtf;
+                    }
+                    else if (count == 1)
+                    {
+                        balanceBox2.Rtf = compoundBuilder.Rtf;
+                        setMM2(molar);
+                        mmReactant2.Text = molar.ToString() + "g";
+                        mmEquation2.Rtf = compoundBuilder.Rtf;
+                        reactant2.Rtf = compoundBuilder.Rtf;
+                    }
+                    else if (count == 2)
+                    {
+                        balanceBox3.Text = compoundBuilder.Rtf;
+                        setMM3(molar);
+                        mmReactant3.Text = molar.ToString() + "g";
+                        mmEquation3.Rtf = compoundBuilder.Rtf;
+                        reactant3.Rtf = compoundBuilder.Rtf;
+                    }
+                    else if (count == 3)
+                    {
+                        balanceBox4.Rtf = compoundBuilder.Rtf;
+                        setMM4(molar);
+                        mmProduct1.Text = molar.ToString() + "g";
+                        mmEquation4.Rtf = compoundBuilder.Rtf;
+                        product1.Rtf = compoundBuilder.Rtf;
+                    }
+                    else if (count == 4)
+                    {
+                        balanceBox5.Rtf = compoundBuilder.Rtf;
+                        setMM5(molar);
+                        mmProduct2.Text = molar.ToString() + "g";
+                        mmEquation5.Rtf = compoundBuilder.Rtf;
+                        product2.Rtf = compoundBuilder.Rtf;
+                    }
+                    else if (count == 5)
+                    {
+                        balanceBox6.Rtf = compoundBuilder.Rtf;
+                        setMM6(molar);
+                        mmProduct3.Text = molar.ToString() + "g";
+                        mmEquation6.Rtf = compoundBuilder.Rtf;
+                        product3.Rtf = compoundBuilder.Rtf;
+                    }
+
+                    balanceBox1.BackColor = c;
+                    balanceBox2.BackColor = c;
+                    balanceBox3.BackColor = c;
+                    balanceBox4.BackColor = c;
+                    balanceBox5.BackColor = c;
+                    balanceBox6.BackColor = c;
+
+                    compoundBuilder.Rtf = "";
+                    molar = 0;
+                }
 
                 int onLeft = 0;
                 int onRight = 0;
@@ -9267,7 +9275,6 @@ namespace Periodic_GUI
                     for (int i = 0; i < print.Count; i++)
                     {
                         print[i] = Math.Abs((print[i]));
-                        Console.WriteLine(print[i]);
                     }
 
                     balanceBox1.SelectionFont =
@@ -9316,79 +9323,7 @@ namespace Periodic_GUI
                 hasBal = true;
         }
 
-        private void setBalanced(int var1)
-        {
-            if (var1 == 1 && var1 == 0)
-            {
-                balanced1.Text = balanceBox1.Text;
-            }
-            else
-            {
-                
-                String Var1 = Convert.ToString(var1);
-                balanced1.Text = Var1 + balanceBox1.Text;
-            }
-        }
-        private void setBalanced2(int var2)
-        {
-            if (var2 == 1 && var2 == 0)
-            {
-                balanced2.Text = balanceBox2.Text;
-            }
-            else
-            {
-                String Var2 = Convert.ToString(var2);
-                balanced2.Text = Var2 + balanceBox2.Text;
-            }
-        }
-        private void setBalanced3(int var3)
-        {
-            if (var3 == 1&& var3 == 0)
-            {
-                balanced3.Text = balanceBox3.Text;
-            }
-            else
-            {
-                String Var3 = Convert.ToString(var3);
-                balanced3.Text = Var3 + balanceBox3.Text;
-            }
-        }
-        private void setBalanced4(int var4)
-        {
-            if (var4 == 1 && var4 == 0)
-            {
-                balanced4.Text = balanceBox4.Text;
-            }
-            else
-            {
-                String Var4 = Convert.ToString(var4);
-               balanced4.Text = Var4 + balanceBox4.Text;
-            }
-        }
-        private void setBalanced5(int var5)
-        {
-            if (var5 == 1 && var5 == 0)
-            {
-                balanced5.Text = balanceBox5.Text;
-            }
-            else
-            {
-                String Var5 = Convert.ToString(var5);
-               balanced5.Text = Var5 + balanceBox5.Text;
-            }
-        }
-        private void setBalanced6(int var6)
-        {
-            if (var6 == 1 && var6 == 0)
-            {
-                balanced6.Text = balanceBox6.Text;
-            }
-            else
-            {
-                String Var6 = Convert.ToString(var6);
-                balanced6.Text = Var6 + balanceBox6.Text;
-            }
-        }
+        
         private void clearBuilder_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < 118; i++)
@@ -9424,14 +9359,9 @@ namespace Periodic_GUI
                 e1[i] = 0;
                 f[i] = 0;
             }
-            for (int i = 0; i < bad.Count; i++)
-            {
-                bad.Remove(bad[i]);
-            }
-            for (int i = 0; i < tracker.Count; i++)
-            {
-                tracker.Remove(tracker[i]);
-            }
+
+            bad.Clear();
+            tracker.Clear();     
             first = true;  
 
             count = 0;
@@ -9468,6 +9398,24 @@ namespace Periodic_GUI
             delMM5();
             delMM6();
            // Console.WriteLine(MM1 + MM2 + MM3 + MM4 + MM5 + MM6);
+
+
+            int sum = 0;
+            for (int i = 0; i < 118; i++)
+            {
+                sum += a[i] + b[i] + c[i] + d[i] + e1[i] + f[i];
+            }
+
+            Console.Write("\nTracker");
+
+            for (int i = 0; i < tracker.Count; i++)
+                Console.Write(tracker[i] + " ");
+
+            Console.Write("bad");
+
+            for (int i = 0; i < bad.Count; i++)
+                Console.Write(bad[i] + " ");
+            Console.Write("\nSum = " + sum);
 
 
         }
